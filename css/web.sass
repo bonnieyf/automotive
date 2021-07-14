@@ -1,100 +1,36 @@
-body
-  font-family: "Nunito", sans-serif
+@import _variable
+@import _html_default
+@import _fontSize
 
-p
-  color: #666666
-
-h1, h3, h4, h5, h6
-  font-family: "Oswald", sans-serif
-
-h2
-  font-family: "Nunito", sans-serif
-
-h1
-  font-size: 3em
-
-h3
-  font-size: 1.5em
-
-$textColor: #626262
-$white: white
-$white2:#ebebeb
-$black: #191a1a
-$orgColor: #d54725
-
-
-.title-xl
-  font-size: 60px
-  font-weight: 600
-
-.title-m
-  font-size: 40px
-  font-weight: 600
-
-.txt-xl
-  font-size: 20px
-
-.txt-m
-  font-size: 18px
-
-
-//Custom setting
-#form
-  width: 40%
-  height: auto
-
-  /*margin: 150px auto;
-  position: relative
-  top: 150px
-  left: 50%
-  background-color: white
-  padding: 1.5em 3em 1.5em 1.5em
-  font-family: "Nunito", Helvetica, Arial, sans-serif
-  border-radius: 10px
-  background-color: #fafafa
+@import _form
 
 #logo
   position: absolute
   right: 50px
   top: 50px
 
-.checkbox-label, .checkbox-label2
-  font-size: 0.7em
 
-input
-  &[type="date"], &[type="email"], &[type="number"], &[type="password"], &[type="search"], &[type="tel"], &[type="text"], &[type="url"]
-    margin: 0.7em 0
-    color: $textColor
-    background-color: $white
-    border: solid 1px $white2
-    box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.02)
-    padding: 0.4em
+// Plugin Setting ======================
+.swiper-pagination-bullet-active
+  color: #d74b00
+  background-color: #d74b00
 
-select, textarea, .woocommerce .quantity input.qty
-  margin: 0.7em 0
-  color: $textColor
-  background-color: $white
-  border: solid 1px $white2
-  box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.02)
-  padding: 0.4em
+.swiper-container
+  width: 100%
 
-.dark
-  input
-    &[type="email"], &[type="password"], &[type="tel"], &[type="text"]
-      margin: 0.7em 0
-      color: $textColor
-      background-color: $white
-      border: solid 1px $white2
-      box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.02)
-      padding: 0.4em
+  /*padding-top: 50px;
+  padding-bottom: 50px
+  height: 520px
 
-  select, textarea
-    margin: 0.7em 0
-    color: $textColor
-    background-color: $white
-    border: solid 1px $white2
-    box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.02)
-    padding: 0.4em
+.swiper-slide
+  background-position: center
+  background-size: cover
+  width: 300px
+  height: 300px
+
+  img
+    display: block
+    width: 100%
 
 .bg-getac
   background-color: $orgColor
@@ -110,6 +46,98 @@ select, textarea, .woocommerce .quantity input.qty
   color: $orgColor
 
 
+.black-shadow
+  text-shadow: 1px 1px 2px black
+
+.black-shadow-box
+  box-shadow: 1px 1px 2px black
+
+.gray-shadow-box
+  box-shadow: 1px 1px 2px #aaa
+
+.white-shadow
+  text-shadow: 1px 1px 2px white
+
+
+// btn
+.btn-orange
+  background-color: $orgColor
+  color: $white
+  border-radius: 50px
+  display: none
+
+.btn-text
+  border-radius: 40px
+  font-weight: 700
+  color: $white
+  background-color: $orgColor
+  padding: 10px 30px
+  letter-spacing: .5px
+  font-size: 16px
+  transition: all .5s ease
+
+  &:hover
+    color: $white
+    background: $black
+    letter-spacing: 1px
+
+.btn-submit
+  background-color: $orgColor
+  color: $white
+  border-radius: 5px
+  border: none
+  appearance: none
+  border-radius: 50px
+  padding: 20px
+  display: block
+  width: 70% 
+  transition: all .5s ease
+  margin: 0 auto
+
+  &:hover
+    color: $white
+    letter-spacing: 1px
+    box-shadow: 0 0 10px rgba($orgColor,.5 )
+
+.btn-stick
+  display: none
+
+.btn-block-head
+  display: unset
+
+#myBtn
+  display: none
+  position: fixed
+  bottom: 20px
+  right: 30px
+  z-index: 99
+  font-size: 18px
+  border: none
+  outline: none
+  background-color: $orgColor
+  color: white
+  cursor: pointer
+  padding: 15px
+  border-radius: 4px
+  
+.elq-item-input
+  display: block
+  height: 50px
+  margin-bottom: 10px
+
+.elq-item-select
+  height: 50px
+  padding-right: 40px
+
+.form-rule-layout
+  padding-left: 15px
+  padding-right: 15px
+
+
+
+
+
+// navigation ============================
 .nav-link
   font-size: 20px
   font-weight: 600
@@ -125,18 +153,21 @@ header
   position: sticky
   z-index: 100
 
-.slide-bg-1
-  background: url(https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80)
-  background-repeat: no-repeat
-  background-position: center center
-  background-size: cover
+.intel-logo
+  position: relative
+  width: 100%
+  z-index: 50
+  margin-top: -110px
 
+
+
+// kv ==============================
 #slider-content
   overflow: hidden
   
   .slide-group
-    position: relative
-    padding-top: 32%
+  position: relative
+  padding-top: 32%
     min-height: 650px
 
     &:before
@@ -165,33 +196,20 @@ header
   p, h1
     text-shadow: 4px 4px 8px black
 
+.slide-bg-1
+  background: url(https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80)
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+
+
+
+// section 1 ==============================
 #intro-content
   padding-top: 50px
   padding-bottom: 60px
 
-.intel-logo
-  position: relative
-  width: 100%
-  z-index: 50
-  margin-top: -110px
-
-  
-
-.ar-name
-  position: absolute
-  top: 50px
-  left: 0
-  width: 200px
-
-.ar-tools
-  position: absolute
-  top: 20px
-  right: 0
-  width: 200px
-
-.slider_gradient
-  background-color: #e6e6e6
-
+// Slider show =====================
 
 .clip-img
   position: relative
@@ -204,91 +222,12 @@ header
     transform: translateX(-50%) translateY(-50%)
 
 
-
-#threed-show
-  padding-top: 100px
-
-#slider_gradient_1
-  position: static
-  background: url(../../images/slider_1_seamless-connectivity.jpg)
-  background-repeat: no-repeat
-  background-position: left center
-  background-size: contain
-
-.height-slider-grad
-  display: block
-  padding-top: 5em
-  margin-bottom: 15em
-
-.oswald
-  font-family: "Oswald", sans-serif
-
-.nunito
-  font-family: "Nunito", sans-serif
-
-.btn-text
-  font-size: 1.3em
-
-.btn-getac-alt
-  background-color: #e8e8e8 !important
-  color: #000
-
-.btn-gray
-  background-color: #e8e8e8 !important
-
-.black-shadow
-  text-shadow: 1px 1px 2px black
-
-.black-shadow-box
-  box-shadow: 1px 1px 2px black
-
-.gray-shadow-box
-  box-shadow: 1px 1px 2px #aaa
-
-.white-shadow
-  text-shadow: 1px 1px 2px white
-
 .orangeline
   display: block
   width: 10em
   height: 0.8em
   background-color: $orgColor
 
-.d-tabs
-  position: static
-  background: url(../../images/back-office_5.jpg)
-  background-repeat: no-repeat
-  background-position: center bottom
-  background-size: cover
-
-.whiteback
-  background-color: rgba(255, 255, 255, 0.5)
-
-.swiper-pagination-bullet-active
-  color: #d74b00
-  background-color: #d74b00
-
-#slogan
-  color: #137ad4
-  margin-top: 0px
-
-/* Set model-viewer wrapper for both embedded and standalone
-
-main.arWrapper
-  position: relative
-  width: 100%
-  height: 100%
-  background-color: transparent
-
-/* Remove top margin in embedded
-
-#modelcontainer main.arWrapper
-  margin-top: 0
-
-
-model-viewer
-  width: 100%
-  height: 500px
 
 .carousel-control-prev-icon
   height: 60px
@@ -317,51 +256,86 @@ model-viewer
 .carousel-control-prev-icon:after
   content: url(../../images/previous.png)
 
-.submit-button-style
-  padding: 7px 50px
-  border: 1px solid #979797
-  border-radius: 3px
-  background-color: $orgColor
-  color: $white
-  font-weight: 700
-  cursor: pointer
 
-.btn-orange
-  background-color: $orgColor
-  color: $white
-  border-radius: 50px
-  display: none
 
-.btn-submit
-  background-color: $orgColor
-  color: $white
-  border-radius: 5px
+// AR  ==============================
+#threed-show
+  padding-top: 100px
 
-.btn-stick
-  display: none
+.ar-name
+  position: absolute
+  top: 50px
+  left: 0
+  width: 200px
 
-.btn-block-head
-  display: unset
+.ar-tools
+  position: absolute
+  top: 80px
+  right: 0
+  width: 250px
+  
 
-.swiper-container
+model-viewer
   width: 100%
+  height: 500px
 
-  /*padding-top: 50px;
-  padding-bottom: 50px
-  height: 520px
+// tabs
+.slider_gradient
+  background-color: #e6e6e6
 
-.swiper-slide
-  background-position: center
+
+.btn-getac-alt
+  background-color: #e8e8e8 !important
+  color: #000
+
+.btn-gray
+  background-color: #e8e8e8 !important
+
+
+.d-tabs
+  position: static
+  background: url(../../images/back-office_5.jpg)
+  background-repeat: no-repeat
+  background-position: center bottom
   background-size: cover
-  width: 300px
-  height: 300px
 
-  img
-    display: block
-    width: 100%
 
-form label, .privacy p
+/* Set model-viewer wrapper for both embedded and standalone
+main.arWrapper
+  position: relative
+  width: 100%
+  height: 100%
+  background-color: transparent
+
+/* Remove top margin in embedded
+#modelcontainer main.arWrapper
+  margin-top: 0
+
+
+.privacy
+  width: 100%
+  height: 200px
+  border: 1px solid $white
+  overflow-y: scroll
+  overflow-x: hidden
+
+.marketing-rule
+  padding: 20px 0
+
+  a
+    color: $orgColor
+
+
+.LV_validation_message
   color: $white
+  padding: 0 10px
+  border-radius: 20px
+  display: inline-block
+  background: $orgColor
+
+
+
+// RWD ===============================
 
 @media (min-width: 320px) and (max-width: 374px)
   .menu .col-12

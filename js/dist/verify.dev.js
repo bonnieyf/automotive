@@ -1,27 +1,31 @@
+"use strict";
+
 var form = document.getElementById("form509");
 addChangeHandler(form.getElementsByTagName("input"));
 addChangeHandler(form.getElementsByTagName("select"));
 addChangeHandler(form.getElementsByTagName("textarea"));
 var nodes = document.querySelectorAll("#form509 input[data-subscription]");
+
 if (nodes) {
   for (var i = 0, len = nodes.length; i < len; i++) {
     console.log(nodes[i]);
-    var status = nodes[i].dataset
-      ? nodes[i].dataset.subscription
-      : nodes[i].getAttribute("data-subscription");
+    var status = nodes[i].dataset ? nodes[i].dataset.subscription : nodes[i].getAttribute("data-subscription");
+
     if (status === "true") {
       nodes[i].checked = true;
     }
   }
 }
+
 var nodes = document.querySelectorAll("#form509 select[data-value]");
+
 if (nodes) {
   console.log("hi");
+
   for (var i = 0; i < nodes.length; i++) {
     var node = nodes[i];
-    var selectedValue = node.dataset
-      ? node.dataset.value
-      : node.getAttribute("data-value");
+    var selectedValue = node.dataset ? node.dataset.value : node.getAttribute("data-value");
+
     if (selectedValue) {
       for (var j = 0; j < node.options.length; j++) {
         if (node.options[j].value === selectedValue) {
@@ -31,9 +35,7 @@ if (nodes) {
       }
     }
   }
-}
-
-// var dom0 = document.querySelector("#form509 #fe4203");
+} // var dom0 = document.querySelector("#form509 #fe4203");
 // var fe4203 = new LiveValidation(dom0, {
 //   validMessage: "",
 //   onlyOnBlur: false,
@@ -64,25 +66,21 @@ if (nodes) {
 // fe4205.add(Validate.Presence, {
 //   failureMessage: "This field is required",
 // });
-
 // var dom3 = document.querySelector("#form509 #fe4207");
 // var fe4207 = new LiveValidation(dom3, {
 //   validMessage: "",
 //   onlyOnBlur: false,
 //   wait: 300,
 // });
-
 // fe4207.add(Validate.Presence, {
 //   failureMessage: "This field is required",
 // });
-
 // fe4207.add(Validate.Length, {
 //   tooShortMessage: "Invalid length for field value",
 //   tooLongMessage: "Invalid length for field value",
 //   minimum: 0,
 //   maximum: 35,
 // });
-
 // fe4207.add(Validate.Custom, {
 //   against: function (value) {
 //     return !value.match(
@@ -91,7 +89,6 @@ if (nodes) {
 //   },
 //   failureMessage: "Value must not contain any URL's",
 // });
-
 // var dom4 = document.querySelector("#form509 #fe4209");
 // var fe4209 = new LiveValidation(dom4, {
 //   validMessage: "",
@@ -101,20 +98,19 @@ if (nodes) {
 // fe4209.add(Validate.Presence, {
 //   failureMessage: "This field is required",
 // });
-
 // var dom5 = document.querySelector("#form509 #fe4211");
 // var fe4211 = new LiveValidation(dom5, {
 //   validMessage: "",
 //   onlyOnBlur: false,
 //   wait: 300,
 // });
-
 // var dom6 = document.querySelector("#form509 #fe4212");
 // var fe4212 = new LiveValidation(dom6, {
 //   validMessage: "",
 //   onlyOnBlur: false,
 //   wait: 300,
 // });
+
 
 function handleFormSubmit(ele) {
   var submitButton = ele.querySelector("input[type=submit]");
@@ -125,12 +121,15 @@ function handleFormSubmit(ele) {
   submitButton.parentNode.appendChild(spinner);
   return true;
 }
+
 function resetSubmitButton(e) {
   var submitButtons = e.target.form.getElementsByClassName("submit-button");
+
   for (var i = 0; i < submitButtons.length; i++) {
     submitButtons[i].disabled = false;
   }
 }
+
 function addChangeHandler(elements) {
   for (var i = 0; i < elements.length; i++) {
     elements[i].addEventListener("change", resetSubmitButton);
@@ -145,16 +144,11 @@ function ReturnOptin() {
   var ms = dt.getMilliseconds();
   var SiteID = "179956068";
   var PPS = "50";
-  var lookupScript =
-    "https://secure.p06.eloqua.com/visitor/v200/svrGP?pps=50&siteid=179956068&DLKey=" +
-    DataLookupKey +
-    "&DLLookup=" +
-    DataLookupString +
-    "&ms=" +
-    ms;
+  var lookupScript = "https://secure.p06.eloqua.com/visitor/v200/svrGP?pps=50&siteid=179956068&DLKey=" + DataLookupKey + "&DLLookup=" + DataLookupString + "&ms=" + ms;
   $.getScript(lookupScript, function () {
     if (typeof GetElqContentPersonalizationValue != "undefined") {
       var lookup_optin = GetElqContentPersonalizationValue("C_Opt_In1");
+
       if (lookup_optin == "") {
         document.getElementById("fe4213").value = "0";
       } else {

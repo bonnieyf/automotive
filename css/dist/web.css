@@ -1,0 +1,418 @@
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+p {
+  color: #666666;
+}
+
+h1, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
+}
+
+h2 {
+  font-family: "Nunito", sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.title-xl {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+.title-m {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.txt-xl {
+  font-size: 20px;
+}
+
+.txt-m {
+  font-size: 18px;
+}
+
+#form {
+  width: 40%;
+  height: auto;
+  /*margin: 150px auto; */
+  position: relative;
+  top: 150px;
+  left: 50%;
+  background-color: white;
+  padding: 1.5em 3em 1.5em 1.5em;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
+  border-radius: 10px;
+  background-color: #fafafa;
+}
+
+#logo {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+
+.checkbox-label, .checkbox-label2 {
+  font-size: 0.7em;
+}
+
+input[type=date], input[type=email], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=url] {
+  margin: 0.7em 0;
+  color: #626262;
+  background-color: white;
+  border: solid 1px #ebebeb;
+  box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.02);
+  padding: 0.4em;
+}
+
+select, textarea, .woocommerce .quantity input.qty {
+  margin: 0.7em 0;
+  color: #626262;
+  background-color: white;
+  border: solid 1px #ebebeb;
+  box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.02);
+  padding: 0.4em;
+}
+
+.dark input[type=email], .dark input[type=password], .dark input[type=tel], .dark input[type=text] {
+  margin: 0.7em 0;
+  color: #626262;
+  background-color: white;
+  border: solid 1px #ebebeb;
+  box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.02);
+  padding: 0.4em;
+}
+.dark select, .dark textarea {
+  margin: 0.7em 0;
+  color: #626262;
+  background-color: white;
+  border: solid 1px #ebebeb;
+  box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.02);
+  padding: 0.4em;
+}
+
+.bg-getac {
+  background-color: #d54725;
+  color: white;
+}
+
+.bg-graygetac {
+  background-color: #f9f7f7;
+}
+
+.bg-black-getac {
+  background-color: #191a1a;
+}
+
+.text-getac {
+  color: #d54725;
+}
+
+.nav-link {
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 40px !important;
+}
+
+.nav-link.active {
+  background-color: #d54725 !important;
+}
+
+#navmenu {
+  font-family: "Oswald", sans-serif;
+}
+
+header {
+  position: sticky;
+  z-index: 100;
+}
+
+.slide-bg-1 {
+  background: url(https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+#slider-content {
+  overflow: hidden;
+}
+#slider-content .slide-group {
+  position: relative;
+  padding-top: 32%;
+  min-height: 650px;
+}
+#slider-content .slide-group:before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background-color: white;
+  clip-path: polygon(0 1%, 100% 100%, 0% 100%);
+  z-index: 1;
+}
+#slider-content .slider-txt {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+#slider-content .container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+#slider-content p, #slider-content h1 {
+  text-shadow: 4px 4px 8px black;
+}
+
+#intro-content {
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+.intel-logo {
+  position: relative;
+  width: 100%;
+  z-index: 50;
+  margin-top: -110px;
+}
+
+.ar-name {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 200px;
+}
+
+.ar-tools {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 200px;
+}
+
+.slider_gradient {
+  background-color: #e6e6e6;
+}
+
+.clip-img {
+  position: relative;
+  padding-top: 50%;
+}
+.clip-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#threed-show {
+  padding-top: 100px;
+}
+
+#slider_gradient_1 {
+  position: static;
+  background: url(../../images/slider_1_seamless-connectivity.jpg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+}
+
+.height-slider-grad {
+  display: block;
+  padding-top: 5em;
+  margin-bottom: 15em;
+}
+
+.oswald {
+  font-family: "Oswald", sans-serif;
+}
+
+.nunito {
+  font-family: "Nunito", sans-serif;
+}
+
+.btn-text {
+  font-size: 1.3em;
+}
+
+.btn-getac-alt {
+  background-color: #e8e8e8 !important;
+  color: #000;
+}
+
+.btn-gray {
+  background-color: #e8e8e8 !important;
+}
+
+.black-shadow {
+  text-shadow: 1px 1px 2px black;
+}
+
+.black-shadow-box {
+  box-shadow: 1px 1px 2px black;
+}
+
+.gray-shadow-box {
+  box-shadow: 1px 1px 2px #aaa;
+}
+
+.white-shadow {
+  text-shadow: 1px 1px 2px white;
+}
+
+.orangeline {
+  display: block;
+  width: 10em;
+  height: 0.8em;
+  background-color: #d54725;
+}
+
+.d-tabs {
+  position: static;
+  background: url(../../images/back-office_5.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.whiteback {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.swiper-pagination-bullet-active {
+  color: #d74b00;
+  background-color: #d74b00;
+}
+
+#slogan {
+  color: #137ad4;
+  margin-top: 0px;
+}
+
+/* Set model-viewer wrapper for both embedded and standalone */
+main.arWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+/* Remove top margin in embedded */
+#modelcontainer main.arWrapper {
+  margin-top: 0;
+}
+
+model-viewer {
+  width: 100%;
+  height: 500px;
+}
+
+.carousel-control-prev-icon {
+  height: 60px;
+  width: 60px;
+  outline: #d54725;
+  background-size: 100%, 100%;
+  border-radius: 10%;
+  border: 1px solid #d54725;
+  background-color: #d54725;
+}
+
+.carousel-control-next-icon {
+  height: 60px;
+  width: 60px;
+  outline: #d54725;
+  background-size: 100%, 100%;
+  border-radius: 10%;
+  border: 1px solid #d54725;
+  background-color: #d54725;
+}
+.carousel-control-next-icon:after {
+  /*content: '>';
+  * *font-size: 35px;
+  * *color: #666666; */
+  content: url(../../images/next.png);
+}
+
+.carousel-control-prev-icon:after {
+  content: url(../../images/previous.png);
+}
+
+.submit-button-style {
+  padding: 7px 50px;
+  border: 1px solid #979797;
+  border-radius: 3px;
+  background-color: #d54725;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-orange {
+  background-color: #d54725;
+  color: white;
+  border-radius: 50px;
+  display: none;
+}
+
+.btn-submit {
+  background-color: #d54725;
+  color: white;
+  border-radius: 5px;
+}
+
+.btn-stick {
+  display: none;
+}
+
+.btn-block-head {
+  display: unset;
+}
+
+.swiper-container {
+  width: 100%;
+  /*padding-top: 50px; */
+  padding-bottom: 50px;
+  height: 520px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+form label, .privacy p {
+  color: white;
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .menu .col-12 {
+    text-align: center !important;
+    padding: 10px 0px;
+  }
+}
+@media (min-width: 375px) and (max-width: 575px) {
+  .menu .col-12 {
+    text-align: center !important;
+    padding: 10px 0px;
+  }
+}

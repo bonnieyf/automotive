@@ -1,37 +1,39 @@
-var form = document.getElementById("form509");
-addChangeHandler(form.getElementsByTagName("input"));
-addChangeHandler(form.getElementsByTagName("select"));
-addChangeHandler(form.getElementsByTagName("textarea"));
-var nodes = document.querySelectorAll("#form509 input[data-subscription]");
-if (nodes) {
-  for (var i = 0, len = nodes.length; i < len; i++) {
-    console.log(nodes[i]);
-    var status = nodes[i].dataset
-      ? nodes[i].dataset.subscription
-      : nodes[i].getAttribute("data-subscription");
-    if (status === "true") {
-      nodes[i].checked = true;
+$(document).ready(function () {
+  $("input#fe4205").on("keyup", function () {
+    ReturnOptin();
+  });
+  $("input#fe4205").on("change", function () {
+    ReturnOptin();
+  });
+
+  $(window).scroll(function () {
+    let scrollY = $(window).scrollTop();
+
+    if (scrollY > 70) {
+      $("#btn-stick").addClass("btn-block-head");
+    } else {
+      $("#btn-stick").removeClass("btn-block-head");
     }
-  }
-}
-var nodes = document.querySelectorAll("#form509 select[data-value]");
-if (nodes) {
-  console.log("hi");
-  for (var i = 0; i < nodes.length; i++) {
-    var node = nodes[i];
-    var selectedValue = node.dataset
-      ? node.dataset.value
-      : node.getAttribute("data-value");
-    if (selectedValue) {
-      for (var j = 0; j < node.options.length; j++) {
-        if (node.options[j].value === selectedValue) {
-          node.options[j].selected = "selected";
-          break;
-        }
-      }
-    }
-  }
-}
+  });
+
+  $("#form509").validate({
+    debug: true,
+    rules: {
+      checkbox: {
+        required: false,
+      },
+    },
+    highlight: function (input) {
+      $(input).addClass("is-invalid");
+    },
+    unhighlight: function (input) {
+      $(input).removeClass("is-invalid");
+    },
+    errorPlacement: function (error, element) {
+      $(element).next().append(error);
+    },
+  });
+});
 
 // var dom0 = document.querySelector("#form509 #fe4203");
 // var fe4203 = new LiveValidation(dom0, {
@@ -116,61 +118,52 @@ if (nodes) {
 //   wait: 300,
 // });
 
-function handleFormSubmit(ele) {
-  var submitButton = ele.querySelector("input[type=submit]");
-  var spinner = document.createElement("span");
-  spinner.setAttribute("class", "loader");
-  submitButton.setAttribute("disabled", true);
-  submitButton.style.cursor = "wait";
-  submitButton.parentNode.appendChild(spinner);
-  return true;
-}
-function resetSubmitButton(e) {
-  var submitButtons = e.target.form.getElementsByClassName("submit-button");
-  for (var i = 0; i < submitButtons.length; i++) {
-    submitButtons[i].disabled = false;
-  }
-}
-function addChangeHandler(elements) {
-  for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("change", resetSubmitButton);
-  }
-}
+// function handleFormSubmit(ele) {
+//   var submitButton = ele.querySelector("input[type=submit]");
+//   var spinner = document.createElement("span");
+//   spinner.setAttribute("class", "loader");
+//   submitButton.setAttribute("disabled", true);
+//   submitButton.style.cursor = "wait";
+//   submitButton.parentNode.appendChild(spinner);
+//   return true;
+// }
+// function resetSubmitButton(e) {
+//   var submitButtons = e.target.form.getElementsByClassName("submit-button");
+//   for (var i = 0; i < submitButtons.length; i++) {
+//     submitButtons[i].disabled = false;
+//   }
+// }
+// function addChangeHandler(elements) {
+//   for (var i = 0; i < elements.length; i++) {
+//     elements[i].addEventListener("change", resetSubmitButton);
+//   }
+// }
 
-function ReturnOptin() {
-  var email_addr = document.getElementById("fe4205").value;
-  var DataLookupKey = escape("5518d6fdba414044a6a32c05d79894e8");
-  var DataLookupString = "<C_EmailAddress>" + email_addr + "</C_EmailAddress>";
-  var dt = new Date();
-  var ms = dt.getMilliseconds();
-  var SiteID = "179956068";
-  var PPS = "50";
-  var lookupScript =
-    "https://secure.p06.eloqua.com/visitor/v200/svrGP?pps=50&siteid=179956068&DLKey=" +
-    DataLookupKey +
-    "&DLLookup=" +
-    DataLookupString +
-    "&ms=" +
-    ms;
-  $.getScript(lookupScript, function () {
-    if (typeof GetElqContentPersonalizationValue != "undefined") {
-      var lookup_optin = GetElqContentPersonalizationValue("C_Opt_In1");
-      if (lookup_optin == "") {
-        document.getElementById("fe4213").value = "0";
-      } else {
-        document.getElementById("fe4213").value = lookup_optin;
-      }
-    } else {
-      document.getElementById("fe4213").value = "0";
-    }
-  });
-}
-
-$(document).ready(function () {
-  $("input#fe4205").on("keyup", function () {
-    ReturnOptin();
-  });
-  $("input#fe4205").on("change", function () {
-    ReturnOptin();
-  });
-});
+// function ReturnOptin() {
+//   var email_addr = document.getElementById("fe4205").value;
+//   var DataLookupKey = escape("5518d6fdba414044a6a32c05d79894e8");
+//   var DataLookupString = "<C_EmailAddress>" + email_addr + "</C_EmailAddress>";
+//   var dt = new Date();
+//   var ms = dt.getMilliseconds();
+//   var SiteID = "179956068";
+//   var PPS = "50";
+//   var lookupScript =
+//     "https://secure.p06.eloqua.com/visitor/v200/svrGP?pps=50&siteid=179956068&DLKey=" +
+//     DataLookupKey +
+//     "&DLLookup=" +
+//     DataLookupString +
+//     "&ms=" +
+//     ms;
+//   $.getScript(lookupScript, function () {
+//     if (typeof GetElqContentPersonalizationValue != "undefined") {
+//       var lookup_optin = GetElqContentPersonalizationValue("C_Opt_In1");
+//       if (lookup_optin == "") {
+//         document.getElementById("fe4213").value = "0";
+//       } else {
+//         document.getElementById("fe4213").value = lookup_optin;
+//       }
+//     } else {
+//       document.getElementById("fe4213").value = "0";
+//     }
+//   });
+// }

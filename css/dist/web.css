@@ -219,11 +219,11 @@ form label, .privacy p {
   box-shadow: 0 0 10px rgba(213, 71, 37, 0.5);
 }
 
-.btn-stick {
+#btn-stick {
   display: none;
 }
 
-.btn-block-head {
+#btn-stick.btn-block-head {
   display: unset;
 }
 
@@ -245,18 +245,22 @@ form label, .privacy p {
 
 .elq-item-input {
   display: block;
-  height: 40px;
+  height: 50px;
   margin-bottom: 10px;
 }
 
 .elq-item-select {
-  height: 40px;
+  height: 50px;
   padding-right: 40px;
 }
 
 .form-rule-layout {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.invalid-feedback label {
+  color: red;
 }
 
 .nav-link {
@@ -275,6 +279,7 @@ form label, .privacy p {
 
 header {
   position: sticky;
+  top: 0;
   z-index: 100;
 }
 
@@ -287,13 +292,11 @@ header {
 
 #slider-content {
   overflow: hidden;
-}
-#slider-content .slide-group {
   position: relative;
   padding-top: 32%;
   min-height: 650px;
 }
-#slider-content .slide-group:before {
+#slider-content:before {
   content: "";
   position: absolute;
   bottom: -1px;
@@ -321,10 +324,14 @@ header {
 }
 
 .slide-bg-1 {
-  background: url(https://images.unsplash.com/photo-1533106418989-88406c7cc8ca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80);
+  background: url(../../images/kv.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+
+model-viewer {
+  --poster-color: transparent;
 }
 
 #intro-content {
@@ -334,14 +341,14 @@ header {
 
 .clip-img {
   position: relative;
-  padding-top: 50%;
-}
-.clip-img img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  height: 600px;
   width: 100%;
-  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  background-position: center center;
+}
+
+.swiper-imgcover-card {
+  height: 600px;
 }
 
 .orangeline {
@@ -459,6 +466,14 @@ main.arWrapper {
   border-radius: 20px;
   display: inline-block;
   background: #d54725;
+}
+
+.swiper-experience-card .card-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  white-space: normal;
 }
 
 @media (min-width: 320px) and (max-width: 374px) {

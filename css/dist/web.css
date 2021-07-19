@@ -75,6 +75,10 @@ select, textarea, .woocommerce .quantity input.qty {
   font-size: 20px;
 }
 
+.txt-l {
+  font-size: 18px;
+}
+
 .txt-m {
   font-size: 18px;
 }
@@ -493,4 +497,39 @@ main.arWrapper {
 }
 .submit-button-style input[type=submit] {
   display: none;
+}
+
+.select-lang {
+  display: inline-block;
+}
+
+.select-lang--icon {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+#btn-stick {
+  display: inline-block;
+  margin-right: 20px;
+  box-shadow: none;
+}
+
+.custom-modal .modal-content {
+  background: none;
+}
+.custom-modal .modal-body {
+  padding: 0;
+}
+.custom-modal .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  width: 60px;
+  height: 60px;
+  background: white;
+}
+.custom-modal .close span {
+  color: black;
+  font-size: 20px;
 }

@@ -30,6 +30,9 @@ $(document).ready(function () {
         required: true,
         minlength: 2
       },
+      email: {
+        required: true
+      },
       country: {
         required: true
       }

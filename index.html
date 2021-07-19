@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Getac | Automotive Virtual Exhibition</title>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Oswald:wght@200;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./js.lib/bootstrap/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="./js.lib/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="./js.lib/fontawesome/all.css">
 	<link rel="stylesheet" href="./css/dist/web.css">
@@ -22,28 +22,21 @@
 <body>
   <!-- Header -->
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light gray-shadow-box py-3" data-toggle="sticky-onscroll">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light gray-shadow-box py-1" data-toggle="sticky-onscroll">
 			<div class="container menu">
-				<div class="col-lg-8 col-4">
+				<div class="col-lg-6 col-3">
 					<img src="./images/logo-getac.png" alt="" class="img-fluid" style="max-height: 30px;">
 				</div>
-				
-				<div class="col-lg-3 col-6 text-end">
-					<a class="btn btn-orange btn-sm" id="btn-stick" href="#contact">Unlock virtual exhibition</a>
-				</div>	
-				<div class="col-lg-1 col-2">
-
-					<div class="dropdown">
-					  <a class="btn btn-light btn-sm offset-md-4 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-					    <i class="fas fa-globe"></i>
-					  </a>
-
-					  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="dropdownMenuLink">
-					    <li><a class="dropdown-item" href="#">English</a></li>
-					    <li><a class="dropdown-item" href="#">Spanish</a></li>
-					    <li><a class="dropdown-item" href="#">Portuguese</a></li>
-					  </ul>
-					</div>
+				<div class="col-lg-6 col-9 text-end">
+          <a class="btn btn-orange btn-sm" id="btn-stick" href="#contact">Unlock virtual exhibition</a>
+					<div class="select-lang">
+            <span class="select-lang--icon"><i class="fas fa-globe"></i></span>
+              <select class="select-lang--select" aria-label="Default select example">
+                <option selected>English</option>
+                <option value="1">Spanish</option>
+                <option value="2">Portuguese</option>
+              </select>
+          </div>
 				</div>	
 
 			</div>
@@ -62,7 +55,7 @@
                   <p class="text-white font-weight-light ml-4 txt-xl">
                     Rugged in design, powerful in performance. Discover the convenience and reliability of Getac’s solutions in our innovative 3D experience.
                   </p>
-                  <a href="#contact" class="btn btn-text text-uppercase black-shadow-box"><img src="./images/360-icon-button.svg" height="30" alt="" class="m-1"> Unlock Virtual Exhibition</a>
+                  <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#modal-register" class="btn btn-text text-uppercase black-shadow-box"><img src="./images/360-icon-button.svg" height="30" alt="" class="m-1"> Unlock Virtual Exhibition</a>
                   </div>
                 </div>
               </div>
@@ -528,7 +521,7 @@
                                   <div class="row">
                                       <div class="col-xs-12">
                                           <div class="field-control-wrapper">
-                                              <input type="text" class="elq-item-input form-control" name="first_name" id="fe4203" value="aa" style="width:100%;" required>
+                                              <input type="text" class="elq-item-input form-control" name="first_name" id="fe4203" style="width:100%;" required>
                                               <div class="invalid-feedback">
                                                   
                                               </div>
@@ -550,7 +543,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="field-control-wrapper">
-                                                <input type="text" class="elq-item-input form-control" name="company" id="fe4207" value="aa" style="width:100%;" required>
+                                                <input type="text" class="elq-item-input form-control" name="company" id="fe4207" style="width:100%;" required>
                                                 <div class="invalid-feedback">
                                                   
                                                 </div>
@@ -575,7 +568,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="field-control-wrapper">
-                                                <input type="text" class="elq-item-input form-control" name="last_name" id="fe4204" value="aa" style="width:100%;" required>
+                                                <input type="text" class="elq-item-input form-control" name="last_name" id="fe4204" style="width:100%;" required>
                                                 <div id="validationLastName" class="invalid-feedback">
                                                   
                                                 </div>
@@ -598,7 +591,7 @@
                                                     <select class="elq-item-select form-select" id="fe4209" name="country" style="width:100%;" required>
                                                         <option value="">Please select
                                                         </option>
-                                                        <option selected value="Afghanistan">Afghanistan
+                                                        <option value="Afghanistan">Afghanistan
                                                         </option>
                                                         <option value="Aland Islands">Aland Islands
                                                         </option>
@@ -1268,15 +1261,799 @@
 				<p class="text-white mt-4">© 2021 GETAC. All Rights Reserved.</p>
 			</div>
 		</footer>
-	
+
+    <!-- Modal -->
+    <div class="custom-modal modal fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="modal-registerTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class=" modal-body">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <section class="container-fluid bg-black-getac" id="contact">
+              <div class="container">
+                <div class="row">
+                  <h3 class="text-white py-4 my-2 d-block mx-auto title-m">Please register to enter the virtual exhibition</h3>
+                  <p class="text-white d-block mx-auto txt-m">Discover Getac products and solutions for various applications and missions in our innovative 3D experience.</p>
+                </div>
+                <div class="row">
+                  <div class="brazil-form">
+                          <!-- Form config (Eloqua) -->
+                          <!-- Quote: form234 (id), GetacQuoteFormNew (name) -->
+                          <!-- Contact: form414 (id), brazil-lp-form-2020 (name) -->
+                          <form method="post" name="Transportation-Virtual-tradeshow-registration" action="https://s179956068.t.eloqua.com/e/f2" id="form509" class="elq-form" novalidate="novalidate">
+                              
+                            <!-- ✜ Form fields ✜ -->
+                            <div class="form form-layout">
+                                
+                              <input value="Transportation-Virtual-tradeshow-registration" type="hidden" name="elqFormName">
+                              <input value="179956068" type="hidden" name="elqSiteId">
+                              <input name="elqCampaignId" type="hidden">
+                              <input type="hidden" name="elqCustomerGUID" value="">
+                              <input type="hidden" name="elqCookieWrite" value="0">
+        
+                              <div class="row">
+                                
+                                <!-- ✜ Column 1 ✜ -->
+                                <div class="col-md-12 col-lg-4 column-1 form-column">
+                                    
+                                  <div id="formElement0" class="elq-field-style form-element-layout row">
+                                            <div style="text-align:left;" class="col-sm-12 col-xs-12">
+                                                <label class="elq-label " for="fe4203">First Name
+                                                    <span class="elq-required">*</span>
+                                                </label>
+                                            </div>
+                                      <div class="col-sm-12 col-xs-12">
+                                          <div class="row">
+                                              <div class="col-xs-12">
+                                                  <div class="field-control-wrapper">
+                                                      <input type="text" class="elq-item-input form-control" name="first_name" id="fe4203" style="width:100%;" required="" aria-invalid="false">
+                                                      <div class="invalid-feedback">
+                                                          
+                                                      <label id="fe4203-error" class="error" for="fe4203" style="display: none;"></label></div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+        
+                                   
+        
+                                    <div id="formElement3" class="elq-field-style form-element-layout row">
+                                        <div style="text-align:left;" class="col-sm-12 col-xs-12">
+                                            <label class="elq-label " for="fe4207">Company
+                                                <span class="elq-required">*</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-12 col-xs-12">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="field-control-wrapper">
+                                                        <input type="text" class="elq-item-input form-control" name="company" id="fe4207" style="width:100%;" required="" aria-invalid="false">
+                                                        <div class="invalid-feedback">
+                                                          
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+                                
+                                <!-- ✜ Column 2 ✜ -->
+                                <div class="col-md-12 col-lg-4 column-2 form-column-middle">
+        
+                                  <div id="formElement1" class="elq-field-style form-element-layout row">
+                                        <div style="text-align:left;" class="col-sm-12 col-xs-12">
+                                            <label class="elq-label " for="fe4204">Last Name
+                                                <span class="elq-required">*</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-12 col-xs-12">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="field-control-wrapper">
+                                                        <input type="text" class="elq-item-input form-control" name="last_name" id="fe4204" style="width:100%;" required="" aria-invalid="false">
+                                                        <div id="validationLastName" class="invalid-feedback">
+                                                          
+                                                        <label id="fe4204-error" class="error" for="fe4204" style="display: none;"></label></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div id="formElement4" class="elq-field-style form-element-layout row">
+                                            <div style="text-align:left;" class="col-sm-12 col-xs-12">
+                                                <label class="elq-label" for="fe4209">Country
+                                                    <span class="elq-required">*</span>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-12 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="field-control-wrapper">
+                                                            <select class="elq-item-select form-select" id="fe4209" name="country" style="width:100%;" required="" aria-invalid="false">
+                                                                <option value="">Please select
+                                                                </option>
+                                                                <option value="Afghanistan">Afghanistan
+                                                                </option>
+                                                                <option value="Aland Islands">Aland Islands
+                                                                </option>
+                                                                <option value="Albania">Albania
+                                                                </option>
+                                                                <option value="Algeria">Algeria
+                                                                </option>
+                                                                <option value="American Samoa">American Samoa
+                                                                </option>
+                                                                <option value="Andorra">Andorra
+                                                                </option>
+                                                                <option value="Angola">Angola
+                                                                </option>
+                                                                <option value="Anguilla">Anguilla
+                                                                </option>
+                                                                <option value="Antarctica">Antarctica
+                                                                </option>
+                                                                <option value="Antigua and Barbuda">Antigua and Barbuda
+                                                                </option>
+                                                                <option value="Argentina">Argentina
+                                                                </option>
+                                                                <option value="Armenia">Armenia
+                                                                </option>
+                                                                <option value="Aruba">Aruba
+                                                                </option>
+                                                                <option value="Australia">Australia
+                                                                </option>
+                                                                <option value="Austria">Austria
+                                                                </option>
+                                                                <option value="Azerbaijan">Azerbaijan
+                                                                </option>
+                                                                <option value="Bahamas">Bahamas
+                                                                </option>
+                                                                <option value="Bahrain">Bahrain
+                                                                </option>
+                                                                <option value="Bangladesh">Bangladesh
+                                                                </option>
+                                                                <option value="Barbados">Barbados
+                                                                </option>
+                                                                <option value="Belarus">Belarus
+                                                                </option>
+                                                                <option value="Belgium">Belgium
+                                                                </option>
+                                                                <option value="Belize">Belize
+                                                                </option>
+                                                                <option value="Benin">Benin
+                                                                </option>
+                                                                <option value="Bermuda">Bermuda
+                                                                </option>
+                                                                <option value="Bhutan">Bhutan
+                                                                </option>
+                                                                <option value="Bolivia">Bolivia
+                                                                </option>
+                                                                <option value="Bosnia and Herzegovina">Bosnia and Herzegovina
+                                                                </option>
+                                                                <option value="Botswana">Botswana
+                                                                </option>
+                                                                <option value="Bouvet Island">Bouvet Island
+                                                                </option>
+                                                                <option value="Brazil">Brazil
+                                                                </option>
+                                                                <option value="British Indian Ocean Territory">British Indian Ocean Territory
+                                                                </option>
+                                                                <option value="British Virgin Islands">British Virgin Islands
+                                                                </option>
+                                                                <option value="Brunei">Brunei
+                                                                </option>
+                                                                <option value="Bulgaria">Bulgaria
+                                                                </option>
+                                                                <option value="Burkina Faso">Burkina Faso
+                                                                </option>
+                                                                <option value="Burundi">Burundi
+                                                                </option>
+                                                                <option value="Cambodia">Cambodia
+                                                                </option>
+                                                                <option value="Cameroon">Cameroon
+                                                                </option>
+                                                                <option value="Canada">Canada
+                                                                </option>
+                                                                <option value="Cape Verde">Cape Verde
+                                                                </option>
+                                                                <option value="Cayman Islands">Cayman Islands
+                                                                </option>
+                                                                <option value="Central African Republic">Central African Republic
+                                                                </option>
+                                                                <option value="Chad">Chad
+                                                                </option>
+                                                                <option value="Chile">Chile
+                                                                </option>
+                                                                <option value="China">China
+                                                                </option>
+                                                                <option value="Christmas Island">Christmas Island
+                                                                </option>
+                                                                <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands
+                                                                </option>
+                                                                <option value="Colombia">Colombia
+                                                                </option>
+                                                                <option value="Comoros">Comoros
+                                                                </option>
+                                                                <option value="Congo">Congo
+                                                                </option>
+                                                                <option value="Cook Islands">Cook Islands
+                                                                </option>
+                                                                <option value="Costa Rica">Costa Rica
+                                                                </option>
+                                                                <option value="Cote Dlvoire">Cote Dlvoire
+                                                                </option>
+                                                                <option value="Croatia">Croatia
+                                                                </option>
+                                                                <option value="Cuba">Cuba
+                                                                </option>
+                                                                <option value="Cyprus">Cyprus
+                                                                </option>
+                                                                <option value="Czech Republic">Czech Republic
+                                                                </option>
+                                                                <option value="Democratic Republic of Congo">Democratic Republic of Congo
+                                                                </option>
+                                                                <option value="Denmark">Denmark
+                                                                </option>
+                                                                <option value="Djibouti">Djibouti
+                                                                </option>
+                                                                <option value="Dominica">Dominica
+                                                                </option>
+                                                                <option value="Dominican Republic">Dominican Republic
+                                                                </option>
+                                                                <option value="Ecuador">Ecuador
+                                                                </option>
+                                                                <option value="Egypt">Egypt
+                                                                </option>
+                                                                <option value="El Salvador">El Salvador
+                                                                </option>
+                                                                <option value="Equatorial Guinea">Equatorial Guinea
+                                                                </option>
+                                                                <option value="Eritrea">Eritrea
+                                                                </option>
+                                                                <option value="Estonia">Estonia
+                                                                </option>
+                                                                <option value="Ethiopia">Ethiopia
+                                                                </option>
+                                                                <option value="Falkland Islands">Falkland Islands
+                                                                </option>
+                                                                <option value="Faroe Islands">Faroe Islands
+                                                                </option>
+                                                                <option value="Federated States of Micronesia">Federated States of Micronesia
+                                                                </option>
+                                                                <option value="Fiji">Fiji
+                                                                </option>
+                                                                <option value="Finland">Finland
+                                                                </option>
+                                                                <option value="France">France
+                                                                </option>
+                                                                <option value="French Guiana">French Guiana
+                                                                </option>
+                                                                <option value="French Polynesia">French Polynesia
+                                                                </option>
+                                                                <option value="French Southern Territories">French Southern Territories
+                                                                </option>
+                                                                <option value="Gabon">Gabon
+                                                                </option>
+                                                                <option value="Gambia">Gambia
+                                                                </option>
+                                                                <option value="Georgia">Georgia
+                                                                </option>
+                                                                <option value="Germany">Germany
+                                                                </option>
+                                                                <option value="Ghana">Ghana
+                                                                </option>
+                                                                <option value="Gibraltar">Gibraltar
+                                                                </option>
+                                                                <option value="Greece">Greece
+                                                                </option>
+                                                                <option value="Greenland">Greenland
+                                                                </option>
+                                                                <option value="Grenada">Grenada
+                                                                </option>
+                                                                <option value="Guadeloupe">Guadeloupe
+                                                                </option>
+                                                                <option value="Guam">Guam
+                                                                </option>
+                                                                <option value="Guatemala">Guatemala
+                                                                </option>
+                                                                <option value="Guinea">Guinea
+                                                                </option>
+                                                                <option value="Guinea-Bissau">Guinea-Bissau
+                                                                </option>
+                                                                <option value="Guyana">Guyana
+                                                                </option>
+                                                                <option value="Haiti">Haiti
+                                                                </option>
+                                                                <option value="Heard Island and McDonald Islands">Heard Island and McDonald Islands
+                                                                </option>
+                                                                <option value="Holy See (Vatican City State)">Holy See (Vatican City State)
+                                                                </option>
+                                                                <option value="Honduras">Honduras
+                                                                </option>
+                                                                <option value="Hong Kong">Hong Kong
+                                                                </option>
+                                                                <option value="Hungary">Hungary
+                                                                </option>
+                                                                <option value="Iceland">Iceland
+                                                                </option>
+                                                                <option value="India">India
+                                                                </option>
+                                                                <option value="Indonesia">Indonesia
+                                                                </option>
+                                                                <option value="Iran">Iran
+                                                                </option>
+                                                                <option value="Iraq">Iraq
+                                                                </option>
+                                                                <option value="Ireland">Ireland
+                                                                </option>
+                                                                <option value="Israel">Israel
+                                                                </option>
+                                                                <option value="Italy">Italy
+                                                                </option>
+                                                                <option value="Ivory Coast">Ivory Coast
+                                                                </option>
+                                                                <option value="Jamaica">Jamaica
+                                                                </option>
+                                                                <option value="Japan">Japan
+                                                                </option>
+                                                                <option value="Jordan">Jordan
+                                                                </option>
+                                                                <option value="Kazakhstan">Kazakhstan
+                                                                </option>
+                                                                <option value="Kenya">Kenya
+                                                                </option>
+                                                                <option value="Kiribati">Kiribati
+                                                                </option>
+                                                                <option value="Kuwait">Kuwait
+                                                                </option>
+                                                                <option value="Kyrgyzstan">Kyrgyzstan
+                                                                </option>
+                                                                <option value="Laos">Laos
+                                                                </option>
+                                                                <option value="Latvia">Latvia
+                                                                </option>
+                                                                <option value="Lebanon">Lebanon
+                                                                </option>
+                                                                <option value="Lesotho">Lesotho
+                                                                </option>
+                                                                <option value="Liberia">Liberia
+                                                                </option>
+                                                                <option value="Libya">Libya
+                                                                </option>
+                                                                <option value="Liechtenstein">Liechtenstein
+                                                                </option>
+                                                                <option value="Lithuania">Lithuania
+                                                                </option>
+                                                                <option value="Luxembourg">Luxembourg
+                                                                </option>
+                                                                <option value="Macau">Macau
+                                                                </option>
+                                                                <option value="Macedonia">Macedonia
+                                                                </option>
+                                                                <option value="Madagascar">Madagascar
+                                                                </option>
+                                                                <option value="Malawi">Malawi
+                                                                </option>
+                                                                <option value="Malaysia">Malaysia
+                                                                </option>
+                                                                <option value="Maldives">Maldives
+                                                                </option>
+                                                                <option value="Mali">Mali
+                                                                </option>
+                                                                <option value="Malta">Malta
+                                                                </option>
+                                                                <option value="Marshall Islands">Marshall Islands
+                                                                </option>
+                                                                <option value="Martinique">Martinique
+                                                                </option>
+                                                                <option value="Mauritania">Mauritania
+                                                                </option>
+                                                                <option value="Mauritius">Mauritius
+                                                                </option>
+                                                                <option value="Mayotte">Mayotte
+                                                                </option>
+                                                                <option value="Mexico">Mexico
+                                                                </option>
+                                                                <option value="Micronesia">Micronesia
+                                                                </option>
+                                                                <option value="Moldova">Moldova
+                                                                </option>
+                                                                <option value="Monaco">Monaco
+                                                                </option>
+                                                                <option value="Mongolia">Mongolia
+                                                                </option>
+                                                                <option value="Montenegro">Montenegro
+                                                                </option>
+                                                                <option value="Montserrat">Montserrat
+                                                                </option>
+                                                                <option value="Morocco">Morocco
+                                                                </option>
+                                                                <option value="Mozambique">Mozambique
+                                                                </option>
+                                                                <option value="Myanmar">Myanmar
+                                                                </option>
+                                                                <option value="Namibia">Namibia
+                                                                </option>
+                                                                <option value="Nauru">Nauru
+                                                                </option>
+                                                                <option value="Nepal">Nepal
+                                                                </option>
+                                                                <option value="Netherlands">Netherlands
+                                                                </option>
+                                                                <option value="Netherlands Antilles">Netherlands Antilles
+                                                                </option>
+                                                                <option value="New Caledonia">New Caledonia
+                                                                </option>
+                                                                <option value="New Zealand">New Zealand
+                                                                </option>
+                                                                <option value="Nicaragua">Nicaragua
+                                                                </option>
+                                                                <option value="Niger">Niger
+                                                                </option>
+                                                                <option value="Nigeria">Nigeria
+                                                                </option>
+                                                                <option value="Niue">Niue
+                                                                </option>
+                                                                <option value="Norfolk Island">Norfolk Island
+                                                                </option>
+                                                                <option value="North Korea">North Korea
+                                                                </option>
+                                                                <option value="Northern Mariana Islands">Northern Mariana Islands
+                                                                </option>
+                                                                <option value="Norway">Norway
+                                                                </option>
+                                                                <option value="Oman">Oman
+                                                                </option>
+                                                                <option value="Pakistan">Pakistan
+                                                                </option>
+                                                                <option value="Palau">Palau
+                                                                </option>
+                                                                <option value="Palestinian Occupied Territories">Palestinian Occupied Territories
+                                                                </option>
+                                                                <option value="Panama">Panama
+                                                                </option>
+                                                                <option value="Papua New Guinea">Papua New Guinea
+                                                                </option>
+                                                                <option value="Paraguay">Paraguay
+                                                                </option>
+                                                                <option value="Peru">Peru
+                                                                </option>
+                                                                <option value="Philippines">Philippines
+                                                                </option>
+                                                                <option value="Pitcairn Islands">Pitcairn Islands
+                                                                </option>
+                                                                <option value="Poland">Poland
+                                                                </option>
+                                                                <option value="Portugal">Portugal
+                                                                </option>
+                                                                <option value="Puerto Rico">Puerto Rico
+                                                                </option>
+                                                                <option value="Qatar">Qatar
+                                                                </option>
+                                                                <option value="Reunion">Reunion
+                                                                </option>
+                                                                <option value="Romania">Romania
+                                                                </option>
+                                                                <option value="Russia">Russia
+                                                                </option>
+                                                                <option value="Rwanda">Rwanda
+                                                                </option>
+                                                                <option value="Saint Helena">Saint Helena
+                                                                </option>
+                                                                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis
+                                                                </option>
+                                                                <option value="Saint Lucia">Saint Lucia
+                                                                </option>
+                                                                <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon
+                                                                </option>
+                                                                <option value="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines
+                                                                </option>
+                                                                <option value="Samoa">Samoa
+                                                                </option>
+                                                                <option value="San Marino">San Marino
+                                                                </option>
+                                                                <option value="Sao Tome and Principe">Sao Tome and Principe
+                                                                </option>
+                                                                <option value="Saudi Arabia">Saudi Arabia
+                                                                </option>
+                                                                <option value="Senegal">Senegal
+                                                                </option>
+                                                                <option value="Serbia">Serbia
+                                                                </option>
+                                                                <option value="Seychelles">Seychelles
+                                                                </option>
+                                                                <option value="Sierra Leone">Sierra Leone
+                                                                </option>
+                                                                <option value="Singapore">Singapore
+                                                                </option>
+                                                                <option value="Slovakia">Slovakia
+                                                                </option>
+                                                                <option value="Slovenia">Slovenia
+                                                                </option>
+                                                                <option value="Solomon Islands">Solomon Islands
+                                                                </option>
+                                                                <option value="Somalia">Somalia
+                                                                </option>
+                                                                <option value="South Africa">South Africa
+                                                                </option>
+                                                                <option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands
+                                                                </option>
+                                                                <option value="South Korea">South Korea
+                                                                </option>
+                                                                <option value="Spain">Spain
+                                                                </option>
+                                                                <option value="Sri Lanka">Sri Lanka
+                                                                </option>
+                                                                <option value="Sudan">Sudan
+                                                                </option>
+                                                                <option value="Suriname">Suriname
+                                                                </option>
+                                                                <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen
+                                                                </option>
+                                                                <option value="Swaziland">Swaziland
+                                                                </option>
+                                                                <option value="Sweden">Sweden
+                                                                </option>
+                                                                <option value="Switzerland">Switzerland
+                                                                </option>
+                                                                <option value="Syrian Arab Republic">Syrian Arab Republic
+                                                                </option>
+                                                                <option value="Taiwan">Taiwan
+                                                                </option>
+                                                                <option value="Tajikistan">Tajikistan
+                                                                </option>
+                                                                <option value="Tanzania">Tanzania
+                                                                </option>
+                                                                <option value="Thailand">Thailand
+                                                                </option>
+                                                                <option value="Timor-Leste">Timor-Leste
+                                                                </option>
+                                                                <option value="Togo">Togo
+                                                                </option>
+                                                                <option value="Tokelau">Tokelau
+                                                                </option>
+                                                                <option value="Tonga">Tonga
+                                                                </option>
+                                                                <option value="Trinidad and Tobago">Trinidad and Tobago
+                                                                </option>
+                                                                <option value="Tunisia">Tunisia
+                                                                </option>
+                                                                <option value="Turkey">Turkey
+                                                                </option>
+                                                                <option value="Turkmenistan">Turkmenistan
+                                                                </option>
+                                                                <option value="Turks and Caicos Islands">Turks and Caicos Islands
+                                                                </option>
+                                                                <option value="Tuvalu">Tuvalu
+                                                                </option>
+                                                                <option value="Uganda">Uganda
+                                                                </option>
+                                                                <option value="Ukraine">Ukraine
+                                                                </option>
+                                                                <option value="United Arab Emirates">United Arab Emirates
+                                                                </option>
+                                                                <option value="United Kingdom">United Kingdom
+                                                                </option>
+                                                                <option value="United States">United States
+                                                                </option>
+                                                                <option value="United States Minor Outlying Islands">United States Minor Outlying Islands
+                                                                </option>
+                                                                <option value="Uruguay">Uruguay
+                                                                </option>
+                                                                <option value="US Virgin Islands">US Virgin Islands
+                                                                </option>
+                                                                <option value="Uzbekistan">Uzbekistan
+                                                                </option>
+                                                                <option value="Vanuatu">Vanuatu
+                                                                </option>
+                                                                <option value="Vatican City">Vatican City
+                                                                </option>
+                                                                <option value="Venezuela">Venezuela
+                                                                </option>
+                                                                <option value="Vietnam">Vietnam
+                                                                </option>
+                                                                <option value="Wallis and Futuna">Wallis and Futuna
+                                                                </option>
+                                                                <option value="Western Sahara">Western Sahara
+                                                                </option>
+                                                                <option value="Yemen">Yemen
+                                                                </option>
+                                                                <option value="Yugoslavia">Yugoslavia
+                                                                </option>
+                                                                <option value="Zambia">Zambia
+                                                                </option>
+                                                                <option value="Zimbabwe">Zimbabwe
+                                                                </option>
+                                                            </select>
+                                                            <div class="invalid-feedback">
+                                                          
+                                                            <label id="fe4209-error" class="error" for="fe4209" style="display: none;"></label></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                
+                                <!-- ✜ Column 3 ✜ -->
+                                <div class="col-md-12 col-lg-4 column-3 form-column">
+                                    <div id="formElement2" class="elq-field-style form-element-layout row">
+                                        <div style="text-align:left;" class="col-sm-12 col-xs-12">
+                                            <label class="elq-label " for="fe4205">Email
+                                                <span class="elq-required">*</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-sm-12 col-xs-12">
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div class="field-control-wrapper">
+                                                        <input type="text" class="elq-item-input form-control" name="emailAddress" data-rule-email="true" data-msg-email="Please enter a valid email address" id="fe4205" value="bonnie.wang@getac.com.tw" style="width:100%;" required="" aria-invalid="false">
+                                                        <div class="invalid-feedback">
+                                                          
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                              </div>
+                                
+                            </div>
+                            <hr class="form-divider">
+                            <div class="form-rule-layout form-layout">
+                              <div class="row">
+                                <div class="single-checkbox-row row mb-3">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="directmarketing" id="modal-fe4211">
+                                    <label class="form-check-label txt-m" for="modal-fe4211" >
+                                      I consent to direct marketing.
+                                    </label>
+                                    <a data-bs-toggle="collapse" href="#mkt-rule1" role="button" aria-expanded="false" aria-controls="mkt-rule1"><i class="fas fa-chevron-down"></i></a>
+                                </div>
+                                  <div class="marketing-rule collapse multi-collapse" id="mkt-rule1">
+                                    <label class="checkbox-label txt-s">
+                                        From time to time, Getac may wish to contact you by email, telemarketing, surveys, direct mail, Mobile SMS, Telephone and/or brochures to provide you with information about products and services that may be of interest to you. If you are happy to be contacted by Getac for these purposes, please click the check box above. Further information can be found in Getac’s <a href="https://www.getac.com/eu/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>. By clicking the checkbox, you consent to Getac contacting you in accordance with the provisions of this notice. You can revoke your consent at any time, free of charge, by sending an email to <a href="mailto:globalmarketing@getac.com">globalmarketing@getac.com</a>.
+                                    </label>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="single-checkbox-row row mb-3">
+        
+                                  <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="processdata" id="form-fe4212">
+                                  <label class="form-check-label txt-m" for="form-fe4212">
+                                    I have read and agree to the Getac’s Privacy Notice.
+                                  </label>
+                                </div>
+                              
+                                    <div class="privacy mt-3 txt-s">
+                                        <p>A. This Privacy Notice Getac Technology Corporation and its subsidiaries (Getac) is committed to safeguarding the privacy of personal and sensitive personal data and is bound to comply with the UK Data Protection Act 2018 and EU General Data Protection Regulation (GDPR), along with similar and applicable laws in other countries around the world. This Privacy Notice forms part of Getac’s obligation to be open and fair with all individuals whose personal and sensitive personal data Getac processes and to provide details around how it processes such personal data and what it does with it. Getac processes the personal data of its customers and partners such as names, contact details and email addresses, amongst other things. Processing of this data implies collecting, storing, using, disclosing or disposing of individuals’ personal data. Individuals’ of existing or prospective customers and partners who leverage Getac’s solutions and services, or use the Getac website, may be provided with further privacy notices which may be contained in a separate supplemental notice. These additional privacy notices shall supplement this Privacy Notice. This Privacy Notice relates to the processing of personal data by Getac. Unless otherwise stated, all references to “we” or “our” shall imply all Getac lines of business that process personal or sensitive personal data. This Privacy Notice is addressed to individuals outside our organisation with whom we interact, including consumers and visitors to our websites (together, “you”). Defined terms used in this Privacy Notice are explained in Section (Q) below. For the purposes of this Privacy Notice, Getac is the Data Controller. Contact details are provided in Section (N) below. This Privacy Notice may be amended or updated from time to time to reflect changes in our practices with respect to the Processing of Personal Data, or changes in applicable law. We encourage you to read this Privacy Notice carefully, and to regularly check this page to review any changes we might make in accordance with the terms of this Privacy Notice. None of the lists, or examples provided in this Privacy Notice, are intended to be exhaustive or fully representative of every individual. Scope The scope of this Privacy Notice covers customers (existing and prospective) and partners (existing and prospective) personal data in respect of the following:<br>
+                                            • Collecting Personal Data<br>
+                                            • Processing Personal Data<br>
+                                            • Using Personal Data<br>
+                                            • Disclosing Personal Data<br>
+                                            • International Data Transfers<br>
+                                            • Data Accuracy<br>
+                                            • Data Minimisation<br>
+                                            • Retaining Personal Data<br>
+                                            • Securing Personal Data<br>
+                                            • Data Subject Rights<br>
+                                            • Cookies<br>
+                                            • Contact Details<br>
+                                            • Complaints B. Collecting your Personal Data We may collect Personal Data about you, such as your name, address and contact details. Examples of sources from which we may collect Personal Data include the following: • Personal Data you provide to us (e.g. where you contact us via email or telephone, or by any other means).<br>
+                                            • Personal Data you provide to us in the ordinary course of our relationship with you (e.g., if you purchase a product or service from us).<br>
+                                            • Personal Data that you manifestly choose to make public, including via social media where you choose to make your profile publicly visible.<br>
+                                            • Personal Data that we receive from third parties (e.g., partners, credit reference agencies; law enforcement authorities; etc.).<br>
+                                            • Personal Data that we obtain from you when you visit any Getac website (a “Site”) or use any features or resources available on or through a Site. When you visit a Site, your device and browser will automatically disclose certain information</p>
+                                        <p>(such as device type, operating system, browser type, browser settings, IP address, language settings, dates and times of connecting to a Site and other technical communications information). We may also create Personal Data about you, such as records of your interactions with us, and details of your purchase history to cover:<br>
+                                            • Personal details: given name(s); preferred name; gender; date of birth / age; nationality; and photograph.<br>
+                                            • Contact details: shipping address; telephone number; email address; and social media profile details.<br>
+                                            • Payment details: billing address; bank account number or credit card number; cardholder or accountholder name; card or account security details; card ‘valid from’ date; card expiry date.<br>
+                                            • Views and opinions: any views and opinions that you choose to send to us, or publicly post about us on social media platforms. C. Processing your Personal Data We may use the following as the Lawful basis for Processing your Personal Data:<br>
+                                            • you have given us your prior express consent to the Processing which is only used in relation to Processing that is entirely voluntary; • the Processing is necessary in connection with any contract that you may enter into with us;<br>
+                                            • the Processing is required by applicable law; or<br>
+                                            • we have a legitimate interest in carrying out the Processing for the purpose of managing, operating or promoting our business, and if that legitimate interest is not overridden by your interests, fundamental rights, or freedoms. D. Using your Personal Data We may use your Personal Data for:<br>
+                                            • Operating and managing our Sites: providing content to you; displaying advertising and other information to you; and communicating and interacting with you via our Sites.<br>
+                                            • Provision of products and services to you: providing our Sites and other services to you; providing you with products that you have purchased; providing you with promotional items at your request; and communicating with you in relation to those products and services.<br>
+                                            • Marketing communications: communicating with you via any means (including via email, telephone, text message, social media, post or in person) news items and other information in which you may be interested, subject to ensuring that such communications are provided to you in compliance with applicable law.<br>
+                                            • Communications and IT operations: management of our communications systems; operation of IT security; and IT security audits.<br>
+                                            • Health and safety: health and safety assessments and record keeping; and compliance with related legal obligations.<br>
+                                            • Financial management: sales; finance; corporate audit; and vendor management.<br>
+                                            • Surveys: engaging with you for the purposes of obtaining your views on our products and services.<br>
+                                            • Improving our products and services: identifying issues with existing products and services; planning improvements to existing products and services; creating new products and services. E. Disclosing Personal Data We may disclose your Personal Data to other entities within the Getac group (including providing services to you and operating our Sites). In addition, we may disclose your Personal Data to:<br>
+                                            • legal and regulatory authorities, upon request, or for the purposes of reporting any actual or suspected breach of applicable law or regulation;<br>
+                                            • accountants, auditors, lawyers and other outside professional advisors to Getac, subject to binding contractual obligations of confidentiality;<br>
+                                            • third party Processors (such as payment services providers; shipping companies; etc.), located anywhere in the world, subject to the requirements noted below in this Section (E);<br>
+                                            • any relevant party, law enforcement agency or court, to the extent necessary for the establishment, exercise or defence of legal rights;<br>
+                                            • any relevant party for the purposes of prevention, investigation, detection or prosecution of criminal offences or the execution of criminal penalties, including the safeguarding against and the prevention of threats to public security;<br>
+                                            • any relevant third party acquirer(s), in the event that we sell or transfer all or any relevant portion of our business or assets (including in the event of a reorganization, dissolution or liquidation); and<br>
+                                            • Third party provider of social media platforms that are available on our Sites using third party plugins or content (e.g., LinkedIn, YouTube and Facebook).</p>
+                                        <p>Where we engage a third-party Processor to Process your Personal Data, the Processor will be subject to binding contractual obligations to: (i) only Process the Personal Data in accordance with our prior written instructions; and (ii) use measures to protect the confidentiality and security of the Personal Data; together with any additional requirements under applicable law. F. International transfer of Personal Data Because of the international nature of our business, we may need to transfer your Personal Data within the Getac group, and to third parties as noted in Section (D) above, in connection with the purposes set out in this Privacy Notice. For this reason, we may transfer your Personal Data to other countries that may have different laws and data protection compliance requirements to those that apply in the country in which you are located. This includes transferring, processing and storing Personal Data outside of the European Economic Area (EEA). Where we transfer your Personal Data to other countries, we do so on the basis of Standard Contractual Clauses. You may request a copy of our Standard Contractual Clauses using the contact details provided in Section (N) below. As part of providing our services to You, we use third party data processors outside of the EEA as outlined below:<br>
+                                            • Salesforce.com for customer, partner and contact management which is based in the USA.<br>
+                                            • FedEx Corporation for equipment delivery and service support which is based in the USA.<br>
+                                            • The Rocket Science Group (trading as Mailchimp) for marketing campaigns which is based in the USA.<br>
+                                            • PayPal Inc. for payment of services which is based in the USA.<br>
+                                            • Zift Solutions (formerly Relayware) for partner portal which is based in the USA.<br>
+                                            • Amazon Web Services, Inc. for cloud service which is based in the USA.<br>
+                                            • Microsoft Corporation (Microsoft Azure) for cloud service which is based in the USA. For further information on the third party data processors outside of the EEA and to obtain copies of our data protection agreement with them, please contact us by using the contact details provided in Section (N), below. G. Data Accuracy We take every reasonable step to ensure that:<br>
+                                            • your Personal Data are accurate and kept up to date with changes that you notify us with; and<br>
+                                            • we erase or rectify any Personal Data that you notify us is inaccurate. From time to time we may ask you to confirm the accuracy of your Personal Data. H. Data Minimisation We take every reasonable step to ensure that your Personal Data that we Process are limited to the Personal Data reasonably required in connection with the purposes set out in this Privacy Notice. I. Data Retention The criteria for determining the duration for which we will keep your Personal data are as follows:<br>
+                                            • we will retain copies of your Personal Data in a form that permits identification only for as long as is necessary in connection with the purposes for which we use it;<br>
+                                            • applicable law requires a longer retention period. In particular, we may retain your Personal Data for the duration of any period necessary to establish, exercise or defend any legal rights. J.</p>
+                                        <p>Securing Personal Data Where Getac acts as the controller of Personal Data, it will ensure that necessary and adequate safeguards are in place to prevent unauthorised access, loss, misuse or alteration of your Personal Data. We store all personal information on secure servers with relevant access and firewall controls. Any Personal Data sent to us, either in writing or email, may be insecure in transit and we cannot guarantee its delivery. Passwords must be kept confidential and not disclosed to a third party. Getac does not ask you for your password. K. Data Subject Rights Subject to applicable law based upon your nationality (e.g. EU Citizen) and domicile, you may have a number of rights regarding the Processing of your Personal Data, including:<br>
+                                            • the right to request access to, or copies of, your Personal Data that we Process or control;<br>
+                                            • the right to request rectification of any inaccuracies in your Personal Data that we Process or control;<br>
+                                            • erasure of your Personal Data that we Process or control; or<br>
+                                            • restriction of Processing of your Personal Data that we Process or control;<br>
+                                            • the right to object, on legitimate grounds, to the Processing of your Personal Data by us or on our behalf;<br>
+                                            • the right to have your Personal Data that we Process or control transferred to another Controller, to the extent applicable;<br>
+                                            • where we Process your Personal Data on the basis of your consent, the right to withdraw that consent; and<br>
+                                            • the right to lodge complaints with a Data Protection Authority regarding the Processing of your Personal Data by us or on our behalf.<br>
+                                            This does not affect your statutory rights. To exercise one or more of these rights, or to ask a question about these rights or any other provision of this Privacy Notice, or about our Processing of your Personal Data, please use the contact details provided in Section (N) below. L. Cookies A cookie is a small file that is placed on your device when you visit a website (including our Sites). It records information about your device, your browser and, in some cases, your preferences and browsing habits. We may Process your Personal Data through cookie technology, in accordance with our Cookie Policy. For further information on how we use Cookies please see our Cookie Policy. M. Terms of Use All use of our Sites is subject to our Terms of Use. N. Contact details If you have any comments, questions or concerns about any of the information in this Privacy Notice, or any other issues relating to the Processing of Personal Data by Getac, please contact: Legal Affairs Center, 5F., Building A, No. 209, Sec. 1, Nangang Rd., Nangang Dist., Taipei City, 11568, Taiwan, R.O.C. Attn：Data Protection Manager Email： dpm.LAC@getac.com.tw Telephone: +886 (0)2 2785 7888 O. Data Protection Registration We are registered as a data controller with the UK Information Commissioner’s Office and our data protection registration number is ZA467078. P. Complaints If you are a European Citizen and feel your rights have not been respected, or do not feel a situation was resolved satisfactorily, you have the right to raise a complaint with your local Supervisory Authority. The contacts details of the Supervisory Authorities with whom Getac has Data Protection registrations are: The UK Information Commissioner (United Kingdom). You can contact them as follows: – Web: https://ico.org.uk/concerns/ Telephone: +44 (0)303 123 1113 In Writing: Information Commissioner’s Office Wycliffe House Water Lane Wilmslow Cheshire SK9 5AF Q. Definitions ‘Data Controller’ means the entity that decides how and why Personal Data is Processed. In many jurisdictions, the Controller has primary responsibility for complying with applicable data protection laws. ‘Data Protection Authority’ means an independent public authority that is legally tasked with overseeing compliance with applicable data protection laws. ‘Personal Data’ means information that is about any individual, or from which any individual is identifiable. Examples of Personal Data that we may Process are provided in Section (B) above. ‘Process’, ‘Processing’ or ‘Processed’ means anything that is done with any Personal Data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction. ‘Data Processor’ means any person or entity that Processes Personal Data on behalf of the Controller (other than employees of the Controller).</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- ✜ Other Values (hidden form fields, submit button) ✜ -->
+                            <div class="form__row form__row--button column-6 form-column">
+                                      
+                              <!-- Populated by Javascript code below (checkoptin value) -->
+                              <input type="hidden" name="hiddenField" id="fe4219" value="Transportation">
+                              <input type="hidden" name="checkoptin" id="fe4213" value="">
+                              <input type="hidden" name="utm_campaign" id="fe4214" value="">
+                              <input type="hidden" name="utm_source" id="fe4215" value="">
+                              <input type="hidden" name="utm_medium" id="fe4216" value="">
+                              <input type="hidden" name="utm_content" id="fe4217" value="">
+                              <br>
+        
+                              
+                              <div id="formElement7" class="elq-field-style form-element-layout row mb-5">
+                                    <div class="col-sm-12 col-xs-12">
+                                      <label for="fe4218" class="submit-button-style btn-submit">
+                                        <input id="fe4218" type="submit" value="Submit">
+                                        <div class="spinner visually-hidden">
+                                          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                          <span class="spinner-text">Loading...</span>
+                                        </div>
+                                          
+                                          <span class="submit-text">Submit</span>
+                                      </label>
+                                      
+                                    </div>
+                              </div>
+        
+                            </div>
+                            
+                            
+                          
+                      
+                        </div></form>
+        
+                      </div>
+                    </div>
+        
+                  </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- button back top -->
     <button onclick="topFunction()" id="myBtn" title="Go to top" style="display: block;"><i class="fas fa-arrow-up"></i></button>
 </body>
 <script src="./js.lib/jquery-3.6.0.min.js"></script>
-<script src="./js.lib/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="./js.lib/popper.min.js"></script>
+<script src="./js.lib/bootstrap/bootstrap.min.js"></script>
 <script src="./js.lib/swiper/swiper-bundle.min.js"></script>
 <script src="./js.lib/webcomponents-loader.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.6/velocity.min.js"></script>
+<script src="./js.lib/jquery.validate.min.js"></script>
 <script src="./js.lib/livevalidation_standalone.compressed.js"></script>
 <script src="./js/validate.js"></script>
 <script src="./js/web.js"></script>

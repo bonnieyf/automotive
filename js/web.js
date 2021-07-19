@@ -19,3 +19,10 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+
+$(function () {
+  $(".modal").on("show.bs.modal", function (e) {
+    $(".modal-dialog").next().velocity("callout.bounce");
+  });
+});

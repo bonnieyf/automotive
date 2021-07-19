@@ -488,3 +488,9 @@ main.arWrapper {
     padding: 10px 0px;
   }
 }
+.submit-button-style {
+  text-align: center;
+}
+.submit-button-style input[type=submit] {
+  display: none;
+}

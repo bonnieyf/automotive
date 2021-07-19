@@ -1,12 +1,12 @@
 "use strict";
 
 $(document).ready(function () {
-  // $("input#fe4205").on("keyup", function () {
-  //   ReturnOptin();
-  // });
-  // $("input#fe4205").on("change", function () {
-  //   ReturnOptin();
-  // });
+  $("input#fe4205").on("keyup", function () {
+    ReturnOptin();
+  });
+  $("input#fe4205").on("change", function () {
+    ReturnOptin();
+  });
   $(window).scroll(function () {
     var scrollY = $(window).scrollTop();
 
@@ -45,9 +45,9 @@ $(document).ready(function () {
         minlength: "Must be at least 2 characters"
       }
     },
-    submitHandler: function submitHandler() {
-      $(".spinner-border").removeClass("visually-hidden");
-      $(".spinner-text").addClass("visually-hidden");
+    submitHandler: function submitHandler(form) {
+      $(".spinner").removeClass("visually-hidden");
+      $(".submit-text").addClass("visually-hidden");
       $("#fe4218").attr("disabled", true);
       console.log("valid form submitted !!");
       return true;

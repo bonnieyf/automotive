@@ -498,14 +498,11 @@
 									<!-- Form config (Eloqua) -->
 									<!-- Quote: form234 (id), GetacQuoteFormNew (name) -->
 									<!-- Contact: form414 (id), brazil-lp-form-2020 (name) -->
-									<!-- action="https://s179956068.t.eloqua.com/e/f2"  -->
 									<form method="post" 
 									name="Transportation-Virtual-tradeshow-registration" 
-									
-									onsubmit="return handleFormSubmit(this)" 
+									action="https://s179956068.t.eloqua.com/e/f2"
 									id="form509" 
-									class="elq-form needs-validation"
-                  novalidate>
+									class="elq-form">
 											
 										<!-- ✜ Form fields ✜ -->
 										<div class="form form-layout">
@@ -531,7 +528,7 @@
                                   <div class="row">
                                       <div class="col-xs-12">
                                           <div class="field-control-wrapper">
-                                              <input type="text" class="elq-item-input form-control" name="first_name" id="fe4203" value="" style="width:100%;" required>
+                                              <input type="text" class="elq-item-input form-control" name="first_name" id="fe4203" value="aa" style="width:100%;" required>
                                               <div class="invalid-feedback">
                                                   
                                               </div>
@@ -553,7 +550,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="field-control-wrapper">
-                                                <input type="text" class="elq-item-input form-control" name="company" id="fe4207" value="" style="width:100%;" required>
+                                                <input type="text" class="elq-item-input form-control" name="company" id="fe4207" value="aa" style="width:100%;" required>
                                                 <div class="invalid-feedback">
                                                   
                                                 </div>
@@ -578,7 +575,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="field-control-wrapper">
-                                                <input type="text" class="elq-item-input form-control" name="last_name" id="fe4204" value="" style="width:100%;" required>
+                                                <input type="text" class="elq-item-input form-control" name="last_name" id="fe4204" value="aa" style="width:100%;" required>
                                                 <div id="validationLastName" class="invalid-feedback">
                                                   
                                                 </div>
@@ -601,7 +598,7 @@
                                                     <select class="elq-item-select form-select" id="fe4209" name="country" style="width:100%;" required>
                                                         <option value="">Please select
                                                         </option>
-                                                        <option value="Afghanistan">Afghanistan
+                                                        <option selected value="Afghanistan">Afghanistan
                                                         </option>
                                                         <option value="Aland Islands">Aland Islands
                                                         </option>
@@ -1114,7 +1111,7 @@
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="field-control-wrapper">
-                                                <input type="text" class="elq-item-input form-control" name="emailAddress" data-rule-email="true" data-msg-email="Please enter a valid email address" id="fe4205" value="" style="width:100%;" required>
+                                                <input type="text" class="elq-item-input form-control" name="emailAddress" data-rule-email="true" data-msg-email="Please enter a valid email address" id="fe4205" value="bonnie.wang@getac.com.tw" style="width:100%;" required>
                                                 <div class="invalid-feedback">
                                                   
                                                 </div>
@@ -1127,7 +1124,6 @@
 											</div>
 												
 										</div>
-					                    
 					          <hr class="form-divider">
 					          <div class="form-rule-layout form-layout">
 					          	<div class="row">
@@ -1145,7 +1141,6 @@
                           </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="single-checkbox-row row mb-3">
 
@@ -1223,12 +1218,7 @@
                             </div>
                         </div>
                     </div>
-
-
-								
 										<br>
-											
-													
 										<!-- ✜ Other Values (hidden form fields, submit button) ✜ -->
 										<div class="form__row form__row--button column-6 form-column">
 															
@@ -1244,12 +1234,21 @@
 											
 											<div id="formElement7" class="elq-field-style form-element-layout row">
 	                          <div class="col-sm-12 col-xs-12">
-	                              <input type="Submit" class="submit-button-style btn-submit " value="Submit" id="fe4218">
-	                              </div>
-	                      </div>
+                              <label for="fe4218" class="submit-button-style btn-submit">
+                                <input id="fe4218" type="submit"  value="Submit">
+                                <div class="spinner visually-hidden">
+                                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                  <span class="spinner-text">Loading...</span>
+                                </div>
+                                  
+                                  <span class="submit-text">Submit</span>
+                              </label>
+                              
+	                          </div>
+	                    </div>
 
 										</div>
-									</div>	
+										
 										
 									</form>
 							
@@ -1257,6 +1256,7 @@
 
 							</div>
 						</div>
+
 					</div>
 					</div>
 				</div>
@@ -1278,7 +1278,7 @@
 <script src="./js.lib/webcomponents-loader.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
 <script src="./js.lib/livevalidation_standalone.compressed.js"></script>
-<script src="./js/verify.js"></script>
+<script src="./js/validate.js"></script>
 <script src="./js/web.js"></script>
 
 <script>
@@ -1314,7 +1314,7 @@
         autoplay: {
           delay: 8000,
           disableOnInteraction: false,
-         pauseOnMouseEnter:true,
+          pauseOnMouseEnter:true,
         },
         pagination: {
           el: ".swiper-imgcover-card .swiper-pagination",
@@ -1325,5 +1325,6 @@
         },
       });
 </script>
+
 
 </html>

@@ -1,14 +1,13 @@
-"use strict";
-
 $(document).ready(function () {
-  // $("input#fe4205").on("keyup", function () {
-  //   ReturnOptin();
-  // });
-  // $("input#fe4205").on("change", function () {
-  //   ReturnOptin();
-  // });
+  $("input#fe4205").on("keyup", function () {
+    ReturnOptin();
+  });
+  $("input#fe4205").on("change", function () {
+    ReturnOptin();
+  });
+
   $(window).scroll(function () {
-    var scrollY = $(window).scrollTop();
+    let scrollY = $(window).scrollTop();
 
     if (scrollY > 70) {
       $("#btn-stick").addClass("btn-block-head");
@@ -16,51 +15,52 @@ $(document).ready(function () {
       $("#btn-stick").removeClass("btn-block-head");
     }
   });
+
   $("#form509").validate({
     rules: {
       first_name: {
         required: true,
-        minlength: 2
+        minlength: 2,
       },
       last_name: {
         required: true,
-        minlength: 2
+        minlength: 2,
       },
       company: {
         required: true,
-        minlength: 2
+        minlength: 2,
       },
       country: {
-        required: true
-      }
+        required: true,
+      },
     },
     messages: {
       first_name: {
-        minlength: "Must be at least 2 characters"
+        minlength: "Must be at least 2 characters",
       },
       last_name: {
-        minlength: "Must be at least 2 characters"
+        minlength: "Must be at least 2 characters",
       },
       company: {
-        minlength: "Must be at least 2 characters"
-      }
+        minlength: "Must be at least 2 characters",
+      },
     },
-    submitHandler: function submitHandler() {
-      $(".spinner-border").removeClass("visually-hidden");
-      $(".spinner-text").addClass("visually-hidden");
+    submitHandler: function (form) {
+      $(".spinner").removeClass("visually-hidden");
+      $(".submit-text").addClass("visually-hidden");
       $("#fe4218").attr("disabled", true);
       console.log("valid form submitted !!");
       return true;
     },
-    highlight: function highlight(input) {
+    highlight: function (input) {
       $(input).addClass("is-invalid");
     },
-    unhighlight: function unhighlight(input) {
+    unhighlight: function (input) {
       $(input).removeClass("is-invalid");
     },
-    errorPlacement: function errorPlacement(error, element) {
+    errorPlacement: function (error, element) {
       $(element).next().append(error);
-    }
+    },
   });
 });
 
@@ -70,13 +70,18 @@ function ReturnOptin() {
   var DataLookupString = "<C_EmailAddress>" + email_addr + "</C_EmailAddress>";
   var dt = new Date();
   var ms = dt.getMilliseconds();
-  var lookupScript = "https://secure.p06.eloqua.com/visitor/v200/svrGP?pps=50&siteid=179956068&DLKey=" + DataLookupKey + "&DLLookup=" + DataLookupString + "&ms=" + ms;
-  $.getScript(lookupScript, function () {
-    var de4213 = document.getElementById("fe4213");
+  var lookupScript =
+    "https://secure.p06.eloqua.com/visitor/v200/svrGP?pps=50&siteid=179956068&DLKey=" +
+    DataLookupKey +
+    "&DLLookup=" +
+    DataLookupString +
+    "&ms=" +
+    ms;
 
+  $.getScript(lookupScript, function () {
+    let de4213 = document.getElementById("fe4213");
     if (typeof GetElqContentPersonalizationValue != "undefined") {
       var lookup_optin = GetElqContentPersonalizationValue("C_Opt_In1");
-
       if (lookup_optin == "") {
         de4213.value = "0";
       } else {

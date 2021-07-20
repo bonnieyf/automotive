@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Automotive</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/manufacturing_factory.json", {onProgress: UnityProgress});
+    </script>
+    <link rel="stylesheet" href="../web.css">
+  </head>
+  <script>
+    function MultiLanguage()
+    {
+			    unityInstance.SendMessage("Canvas", "SendToUnity", "es");
+   	}	
+  </script>
+  <body>
+    <div class="links">
+      <a href="../index.html">Home</a>
+      <a href="../aftersales_workshop/index.html">Aftersales Workshop</a>
+      <a href="../engineering_lab/index.html">Engineering Lab</a>
+      <a class="active" href="./index.html">Manufacturing Factory</a>
+      <a href="../warehouse/index.html">Warehouse</a>
+    </div>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 100vw; height: 100vh"></div>
+    </div>
+  </body>
+</html>

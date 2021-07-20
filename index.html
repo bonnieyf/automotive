@@ -375,7 +375,7 @@
                 </div>
 
                 <!-- Model -->
-                <model-viewer src="./ar/F110GS.glb" camera-controls ar-modes="webxr scene-viewer quick-look" environment-image="./ar/aircraft_workshop_01_1k.hdr" disable-zoom max-field-of-view="45deg" shadow-intensity="1">
+                <model-viewer disable-zoom src="./ar/F110GS.glb" camera-controls ar-modes="webxr scene-viewer quick-look" environment-image="./ar/aircraft_workshop_01_1k.hdr" max-field-of-view="45deg" shadow-intensity="1">
 
                 </model-viewer>
                 <!-- Tools -->
@@ -2099,6 +2099,15 @@
           nextEl: '.swiper-imgcover-card .swiper-button-next',
           prevEl: '.swiper-imgcover-card .swiper-button-prev',
         },
+      });
+      
+      
+      const model = document.querySelector('model-viewer#f110-model')
+
+      document.querySelector('#pills-f110-tab').addEventListener('click', () => {
+        console.log(model.scale)
+       model.scale = '5 5 5';
+       model.updateFraming();
       });
 </script>
 

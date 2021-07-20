@@ -23,7 +23,7 @@
             <div class="select-lang">
               <span class="select-lang--icon"><i class="fas fa-globe"></i></span>
                 <select class="select-lang--select" aria-label="Default select example">
-                  <option selected>English</option>
+                  <option value="0" selected>English</option>
                   <option value="1">Spanish</option>
                   <option value="2">Portuguese</option>
                 </select>
@@ -33,35 +33,18 @@
         </div>
       </nav>
     </header>
-
-    <!-- 3D map -->
     <div class="map">
-      <a class="room room-1" href="#unity-scene1"
+      <a class="room room-1" href="./aftersales_workshop/index.html"
         >Aftersales Workshop</a
       >
-      <a class="room room-2" href="#unity-scene2"
+      <a class="room room-2" href="./engineering_lab/index.html"
         >Engineering Lab</a
       >
-      <a class="room room-3" href="#unity-scene3"
+      <a class="room room-3" href="./manufacturing_factory/index.html"
         >Manufacturing Factory</a
       >
-      <a class="room room-4" href="#unity-scene1">Warehouse</a>
+      <a class="room room-4" href="./warehouse/index.html">Warehouse</a>
       <img src="./map.webp" alt="" />
     </div>
-
-    <!-- Unity Map -->
-    <div class="unity-iframe">
-      <iframe id="unity-scene1" class="unity-scene" src="aftersales_workshop/index.html" frameborder="0"></iframe>
-      <iframe id="unity-scene2" class="unity-scene" src="engineering_lab/index.html" frameborder="0"></iframe>
-      <iframe id="unity-scene3" class="unity-scene" src="manufacturing_factory/index.html" frameborder="0"></iframe>
-      <iframe id="unity-scene4" class="unity-scene" src="warehouse/index.html" frameborder="0"></iframe>
-    </div>
-
-    <script src="../js.lib/jquery-3.6.0.min.js"></script>
-    <script>
-      $(function(){
-
-      });
-    </script>
   </body>
 </html>

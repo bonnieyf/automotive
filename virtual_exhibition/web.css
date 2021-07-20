@@ -1,9 +1,9 @@
 
 /*Unity*/
-
-.webgl-content * {border: 0; margin: 0; padding: 0}
-.webgl-content {position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
-
+body,html{
+  margin: 0;
+  padding: 0;
+}
 .webgl-content .logo, .progress {position: absolute; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
 .webgl-content .logo {background: url('./unity.jslib/TemplateData/progressLogo.Light.png') no-repeat center / contain; width: 154px; height: 130px;}
 .webgl-content .progress {height: 18px; width: 141px; margin-top: 90px;}
@@ -24,7 +24,7 @@
 /* Unity UI */
 .links {
   position: absolute;
-  top: 10px;
+  top: 80px;
   left: 10px;
   right: 10px;
   display: flex;
@@ -32,11 +32,11 @@
 }
 .links a {
   flex: 25%;
-  height: 100px;
+  height: 60px;
   background-color: black;
   color: white;
-  font-size: 20px;
-  line-height: 100px;
+  font-size: 16px;
+  line-height: 60px;
   text-align: center;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
@@ -48,6 +48,19 @@
 #unityContainer {
   position: relative;
   z-index: 1;
+}
+
+#unityContainer{
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: 100%;
+  bottom: 0;
+}
+
+#unityContainer iframe{
+  height: 100%;
 }
 
 .map {
@@ -97,8 +110,4 @@
 .room-4 {
   top: 100px;
   left: 640px;
-}
-
-.unity-scene{
-  display: none;
 }

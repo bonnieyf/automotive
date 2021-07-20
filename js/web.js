@@ -22,6 +22,10 @@ function topFunction() {
 
 
 $(function () {
+  let isLang = "en";
+
+  localStorage.setItem("lang", isLang);
+  
   $(".modal").on("show.bs.modal", function (e) {
     $(".modal-dialog").next().velocity("callout.bounce");
   });

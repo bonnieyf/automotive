@@ -20,15 +20,12 @@ $(document).ready(function () {
     rules: {
       first_name: {
         required: true,
-        minlength: 2,
       },
       last_name: {
         required: true,
-        minlength: 2,
       },
       company: {
         required: true,
-        minlength: 2,
       },
       email: {
         required: true,

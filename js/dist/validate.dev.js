@@ -19,16 +19,13 @@ $(document).ready(function () {
   $("#form509").validate({
     rules: {
       first_name: {
-        required: true,
-        minlength: 2
+        required: true
       },
       last_name: {
-        required: true,
-        minlength: 2
+        required: true
       },
       company: {
-        required: true,
-        minlength: 2
+        required: true
       },
       email: {
         required: true

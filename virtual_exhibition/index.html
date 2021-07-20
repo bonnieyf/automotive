@@ -17,7 +17,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light gray-shadow-box py-1" data-toggle="sticky-onscroll">
         <div class="container menu">
           <div class="col-lg-6 col-3">
-            <img src="./../images/logo-getac.png" alt="" class="img-fluid" style="max-height: 30px;">
+            <a href="../index.html"><img src="./../images/logo-getac.png" alt="" class="img-fluid" style="max-height: 30px;"></a>
           </div>
           <div class="col-lg-6 col-9 text-end">
             <div class="select-lang">
@@ -33,18 +33,35 @@
         </div>
       </nav>
     </header>
+
+    <!-- 3D map -->
     <div class="map">
-      <a class="room room-1" href="./aftersales_workshop/index.html"
+      <a class="room room-1" href="#unity-scene1"
         >Aftersales Workshop</a
       >
-      <a class="room room-2" href="./engineering_lab/index.html"
+      <a class="room room-2" href="#unity-scene2"
         >Engineering Lab</a
       >
-      <a class="room room-3" href="./manufacturing_factory/index.html"
+      <a class="room room-3" href="#unity-scene3"
         >Manufacturing Factory</a
       >
-      <a class="room room-4" href="./warehouse/index.html">Warehouse</a>
+      <a class="room room-4" href="#unity-scene1">Warehouse</a>
       <img src="./map.webp" alt="" />
     </div>
+
+    <!-- Unity Map -->
+    <div class="unity-iframe">
+      <iframe id="unity-scene1" class="unity-scene" src="aftersales_workshop/index.html" frameborder="0"></iframe>
+      <iframe id="unity-scene2" class="unity-scene" src="engineering_lab/index.html" frameborder="0"></iframe>
+      <iframe id="unity-scene3" class="unity-scene" src="manufacturing_factory/index.html" frameborder="0"></iframe>
+      <iframe id="unity-scene4" class="unity-scene" src="warehouse/index.html" frameborder="0"></iframe>
+    </div>
+
+    <script src="../js.lib/jquery-3.6.0.min.js"></script>
+    <script>
+      $(function(){
+
+      });
+    </script>
   </body>
 </html>

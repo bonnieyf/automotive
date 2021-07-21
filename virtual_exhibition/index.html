@@ -46,5 +46,27 @@
       <a class="room room-4" href="./warehouse/index.html">Warehouse</a>
       <img src="./map.webp" alt="" />
     </div>
+
+    <!-- LazyLoad Iframe -->
+    <iframe data-src="aftersales_workshop/index.html" loading="lazy" class="unity-iframe"></iframe>
+    <iframe data-src="engineering_lab/index.html" loading="lazy" class="unity-iframe"></iframe>
+    <iframe data-src="manufacturing_factory/index.html" loading="lazy" class="unity-iframe"></iframe>
+    <iframe data-src="warehouse/index.html" loading="lazy" class="unity-iframe"></iframe>
+
+    <script>
+      if ('loading' in HTMLIFrameElement.prototype) {
+      const iframes = document.querySelectorAll('iframe[loading="lazy"]');
+
+      iframes.forEach(iframe => {
+        iframe.src = iframe.dataset.src;
+      });
+
+    } else {
+      const script = document.createElement('script');
+      script.src =
+        'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js';
+      document.body.appendChild(script);
+    }
+    </script>
   </body>
 </html>

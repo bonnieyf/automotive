@@ -23,9 +23,9 @@
             <div class="select-lang">
               <span class="select-lang--icon"><i class="fas fa-globe"></i></span>
                 <select class="select-lang--select" aria-label="Default select example">
-                  <option value="0" selected>English</option>
-                  <option value="1">Spanish</option>
-                  <option value="2">Portuguese</option>
+                  <option value="en" selected>English</option>
+                  <option value="es">Spanish</option>
+                  <option value="jp">Japan</option>
                 </select>
             </div>
           </div>	
@@ -54,6 +54,26 @@
     <iframe data-src="warehouse/index.html" loading="lazy" class="unity-iframe"></iframe>
 
     <script>
+
+    window.onload = function(){
+      let langSelect = document.querySelector(".select-lang--select");
+      let langOptions = langSelect.options;
+      let initLang = localStorage.getItem("lang") ? localStorage.getItem("lang") : localStorage.setItem("lang",'en');
+      
+      for(i = 0; i < langOptions.length; i++){
+        langOptions[i].selected = false;
+      }
+      langOptions[findLangIndex(initLang)].selected = true;
+      
+     
+      langSelect.addEventListener("change", function () {
+        let cur = this.value;
+        // unityInstance.SendMessage("Canvas", "SendToUnity", "es");
+        localStorage.setItem("lang", cur);
+        console.log("updated!!");
+      });
+    }
+
       if ('loading' in HTMLIFrameElement.prototype) {
       const iframes = document.querySelectorAll('iframe[loading="lazy"]');
 
@@ -67,6 +87,29 @@
         'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js';
       document.body.appendChild(script);
     }
+
+    window.addEventListener('message',function(e){
+      const data = e.data;
+      console.log('[ '+data+' ]page loaded!!!')
+    })
+
+    
+
+    function findLangIndex(str){
+      switch(str){
+        case 'en':
+          str = 0;
+          break;
+        case 'es':
+          str = 1;
+          break;
+        case 'jp':
+          str = 2;
+          break;
+      }
+      return str;
+    }
+    
     </script>
   </body>
 </html>

@@ -71,12 +71,8 @@ select, textarea, .woocommerce .quantity input.qty {
   font-weight: 600;
 }
 
-.txt-xl {
-  font-size: 20px;
-}
-
 .txt-l {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .txt-m {
@@ -430,7 +426,7 @@ model-viewer {
 
 .d-tabs {
   position: static;
-  background: url(../../images/back-office_5.jpg);
+  background: url(../../images/back-office_5.png);
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;

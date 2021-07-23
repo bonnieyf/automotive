@@ -97,10 +97,6 @@ function IsPC() {
     }
   }
 
-  unityInstance.SendMessage(
-    "RigidBodyFPSController",
-    "SendToUnity",
-    String(flag)
-  );
+  unityInstance.SendMessage("Man", "SendToUnity", String(flag));
   //unityInstance.SendMessage("BridgeX", "PL_check");
 }

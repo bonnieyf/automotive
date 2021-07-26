@@ -1,3 +1,32 @@
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+let isShowPopup = JSON.parse(localStorage.getItem("isShowPopup")) || false;
+let currentDevice;
+
+if (isMobile) {
+  currentDevice = "mobile";
+} else {
+  currentDevice = "desktop";
+}
+
+window.onload = function () {
+  IsPC();
+
+  // event listening
+  let currentLang = localStorage.getItem("lang");
+  MultiLanguage(currentLang);
+  console.log("currentLang:" + currentLang);
+
+  let langSelect = document.querySelector(".select-lang--select");
+  langSelect.addEventListener("change", function () {
+    let cur = this.value;
+    // unityInstance.SendMessage("Canvas", "SendToUnity", "es");
+    localStorage.setItem("lang", cur);
+    MultiLanguage(cur);
+    console.log("select", cur);
+    console.log("updated!!");
+  });
+};
+
 function UnityProgress(unityInstance, progress) {
   if (!unityInstance.Module) return;
   if (!unityInstance.bg) {
@@ -43,36 +72,20 @@ function UnityProgress(unityInstance, progress) {
 function handelTeachingPopup() {
   let content = document.querySelector(".unity-teaching");
   let closeBtn = content.querySelector(".close-popup");
+  let popupText = document.querySelector(".img-detect");
+  console.log("openPopup:" + isShowPopup);
+  if (!isShowPopup) {
+    console.log("false open");
+    isShowPopup = true;
+    localStorage.setItem("isShowPopup", isShowPopup);
+    content.style.display = "block";
+  }
 
-  content.style.display = "block";
+  popupText.innerText = currentDevice;
   closeBtn.addEventListener("click", function () {
     content.style.display = "none";
   });
 }
-
-/* iframe 的 parent 就是包它的頁面 */
-// window.addEventListener("load", () => {
-//   parent.postMessage(document.title, "http://127.0.0.1:5501/");
-// });
-
-window.onload = function () {
-  IsPC();
-
-  // event listening
-  let currentLang = localStorage.getItem("lang");
-  MultiLanguage(currentLang);
-  console.log("currentLang:" + currentLang);
-
-  let langSelect = document.querySelector(".select-lang--select");
-  langSelect.addEventListener("change", function () {
-    let cur = this.value;
-    // unityInstance.SendMessage("Canvas", "SendToUnity", "es");
-    localStorage.setItem("lang", cur);
-    MultiLanguage(cur);
-    console.log("select", cur);
-    console.log("updated!!");
-  });
-};
 
 function MultiLanguage(lang) {
   unityInstance.SendMessage("Canvas", "SendToUnity", lang);

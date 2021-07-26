@@ -63,27 +63,77 @@ function UnityProgress(unityInstance, progress) {
   unityInstance.progress.full.style.width = 100 * progress + "%";
 
   if (progress == 1) {
-    unityInstance.bg.style.display = "none";
-    unityInstance.progress.style.display = "none";
     handelTeachingPopup();
   }
+}
+
+function fadeOutEffect() {
+  var fadeTarget = document.getElementById("target");
+  var fadeEffect = setInterval(function () {
+    if (!fadeTarget.style.opacity) {
+      fadeTarget.style.opacity = 1;
+    }
+    if (fadeTarget.style.opacity > 0) {
+      fadeTarget.style.opacity -= 0.1;
+    } else {
+      clearInterval(fadeEffect);
+    }
+  }, 200);
 }
 
 function handelTeachingPopup() {
   let content = document.querySelector(".unity-teaching");
   let closeBtn = content.querySelector(".close-popup");
   let popupText = document.querySelector(".img-detect");
-  console.log("openPopup:" + isShowPopup);
+  let unityBg = document.querySelector(".unity-bg");
+  let unityProgress = document.querySelector(".unity-progress");
   if (!isShowPopup) {
-    console.log("false open");
     isShowPopup = true;
     localStorage.setItem("isShowPopup", isShowPopup);
-    content.style.display = "block";
+    gsap.to(unityProgress, {
+      duration: 1,
+      opacity: 0,
+      y: -10,
+      ease: "power2.out",
+    });
+    gsap.to(content, {
+      duration: 1,
+      opacity: 1,
+      display: "block",
+      ease: "power2.out",
+    });
+  } else {
+    setTimeout(function () {
+      gsap.to(unityProgress, {
+        duration: 1,
+        opacity: 0,
+        display: "none",
+        y: -10,
+        ease: "power2.out",
+      });
+      gsap.to(unityBg, {
+        duration: 1,
+        opacity: 0,
+        display: "none",
+        ease: "power2.out",
+      });
+    }, 2000);
   }
 
   popupText.innerText = currentDevice;
   closeBtn.addEventListener("click", function () {
-    content.style.display = "none";
+    gsap.to(content, {
+      duration: 1,
+      opacity: 0,
+      display: "none",
+      ease: "power2.out",
+    });
+    gsap.to(unityBg, {
+      duration: 1,
+      opacity: 0,
+      display: "none",
+      ease: "power2.out",
+    });
   });
 }
 

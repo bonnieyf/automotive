@@ -1,5 +1,5 @@
 .title-xl {
-  font-size: 60px;
+  font-size: 70px;
   font-weight: 600;
 }
 
@@ -8,14 +8,27 @@
   font-weight: 600;
 }
 
-.txt-l {
-  font-size: 20px;
+.title-m2 {
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.txt-xl {
+  font-size: 24px;
 }
 
 .txt-m {
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.txt-m2 {
+  font-size: 16px;
+}
+
+.txt-m3 {
+  font-size: 15px;
 }
 
 .txt-s {
-  font-size: 16px;
+  font-size: 14px;
 }

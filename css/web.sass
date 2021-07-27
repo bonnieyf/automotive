@@ -10,27 +10,42 @@
   top: 50px
 
 
+.custom-header
+  height: 90px
+  transition: height .5s ease
+  z-index: 1
+
+  &.sticky
+    background: #fff
+    box-shadow: 0 0 10px rgba(black,.4)
+    height: 60px
+    z-index: 200
+
+.select-lang
+  display: inline-block
+
+.select-lang--icon
+  display: inline-block
+  width: 42px
+  margin-right: 6px
+
+.select-lang--select
+  box-shadow: none
+  border: none
+  margin: 0
+  padding: 0
+  min-height: 40px
+
+@media (min-width: 1400px)
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl
+    max-width: 1260px
+
+
+
 // Plugin Setting ======================
 .swiper-pagination-bullet-active
   color: #d74b00
   background-color: #d74b00
-
-.swiper-container
-  width: 100%
-
-  /*padding-top: 50px;
-  padding-bottom: 50px
-  height: 520px
-
-.swiper-slide
-  background-position: center
-  background-size: cover
-  width: 300px
-  height: 300px
-
-  img
-    display: block
-    width: 100%
 
 .bg-getac
   background-color: $orgColor
@@ -67,19 +82,20 @@
   display: none
 
 .btn-text
-  border-radius: 40px
-  font-weight: 700
   color: $white
   background-color: $orgColor
   padding: 10px 30px
   letter-spacing: .5px
-  font-size: 16px
-  transition: all .5s ease
+  font-size: 22px
+  font-weight: 400
+  box-shadow: 0px 3px 6px #00000029
+  border-radius: 62px
+  .icon
+    margin-right: 12px
 
   &:hover
     color: $white
-    background: $black
-    letter-spacing: 1px
+    background: #EE5936
 
 .btn-submit
   background-color: $orgColor
@@ -141,11 +157,18 @@
 // navigation ============================
 .nav-link
   font-size: 20px
-  font-weight: 600
-  border-radius: 40px !important
+  line-height: 34px
+  font-weight: 400
+  border-radius: 50px !important
 
 .nav-link.active
   background-color: $orgColor !important
+
+  &:hover
+    background-color: $orgColor !important
+
+#pills-tab
+  margin-bottom: 25px
 
 #navmenu
   font-family: "Oswald", sans-serif
@@ -155,37 +178,29 @@ header
   top: 0
   z-index: 100
 
-.intel-logo
-  position: relative
-  width: 100%
-  z-index: 50
-  margin-top: -110px
-
-
 
 // kv ==============================
 #slider-content
-  overflow: hidden
+  background: url(../../images/kv.png)
+  background-repeat: no-repeat
+  background-position: center top
+  background-size: cover
+  border-bottom: 5px solid #D54725
   
-  .slide-group
-  position: relative
-  padding-top: 32%
-  min-height: 650px
+  .container
+    position: relative
 
-  &:before
-    content: ""
-    position: absolute
-    bottom: -1px
-    left: 0
-    width: 100%
-    height: 180px
-    background-color: $white 
-    clip-path: polygon(0 1%, 100% 100%, 0% 100%)
-    z-index: 1
+  .slide-group
+    position: relative
+    height: 656px
 
   .slider-txt
-    padding-top: 60px
-    padding-bottom: 60px
+    padding-top: 85px
+    display: flex
+    align-items: center
+  
+  .slider-txt--box
+    width: 50%
 
   .container
     position: absolute
@@ -195,34 +210,193 @@ header
     transform: translateX(-50%)
     z-index: 20
     
-  p, h1
-    text-shadow: 4px 4px 8px black
+  h1
+    text-shadow: 5px 5px 6px #2E2E2ECC
+    margin-bottom: 25px
+    font-weight: 400
 
-.slide-bg-1
-  background: url(../../images/kv.jpg)
-  background-repeat: no-repeat
-  background-position: center center
-  background-size: cover
+  p
+    text-shadow: 0px 3px 2px #000000
+    margin-bottom: 62px
+    font-weight: 400
+
+  .kv-scroll
+    position: absolute
+    bottom: 100px
+    left: 50%
+    width: 20px
+    margin-left: -10px
+
+
+.btn-3d-exhibition
+  box-shadow: 0px 3px 6px #00000029
+  border-radius: 62px
+  .icon
+    margin-right: 12px
+
+.kv-peo
+  position: absolute
+  bottom: 0
+  right: 0
+  width: 500px
+  z-index: 100
+
+  img
+    width: 100%
 
 model-viewer
   --poster-color: transparent
 
 // section 1 ==============================
 #intro-content
-  padding-top: 50px
-  padding-bottom: 60px
+  padding-top: 80px
+  padding-bottom: 110px
 
-// Slider show =====================
+  h2
+    color: black
+    margin-bottom: 30px
+
+  p
+    color: #666666
+
+  .d-flex
+    height: 100%
+
+
+// section 2 ======================
+#environment-carousel
+  position: relative
+  background: $orgColor
+  margin-bottom: 200px
+
+  .container
+    position: relative
+    z-index: 20
+
+  .title-box
+    h2
+      color: white
+      margin-bottom: 30px
+
+    p
+      color: white
+      margin-bottom: 60px
+
+.swiper-experience-card
+  margin-bottom: -230px
+  width: 380px
+
+.swiper-slide .card
+  background: #FFFFFF 0% 0% no-repeat padding-box
+  box-shadow: 0px 5px 10px rgba(black,.1 )
+  border-radius: 12px
+  margin: 10px
+  margin-top: 0
+  border: none
+  padding: 20px
+
+  img
+    border: none
+    margin-bottom: 10px
+    width: 100%
+
+  .title
+    font-weight: bold
+    font-family: Arial, sans-serif
+    overflow: hidden
+    display: -webkit-box
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical
+    white-space: normal
+
+  .txt-box
+    overflow: hidden
+    display: -webkit-box
+    -webkit-line-clamp: 7
+    -webkit-box-orient: vertical
+    white-space: normal
+    text-align: left
+    p
+      margin: 0
+
+  .txt
+    display: inline-block
+    line-height: 1.2
+    font-family: Arial, sans-serif
+
+.experience-card-top
+  width: 100%
+  height: 32px
+  background: url(../../images/card_top.png) no-repeat center 0
+  background-size: contain
+
+// section 3 =====================
+
+#imgcover-carousel
+  position: relative
+  background: #080405
+
+.imgcover-card
+  position: relative
+  z-index: 10
+  display: flex
+  align-items: center
+  
+  &--left
+    flex: 55%
+  &--right
+    flex: 45%
+    
+  .txt-box
+    padding: 38px 30px
+
+    .title
+      color: $white
+
+    .txt
+      color: $white
+
+.swiper-button-getac
+  color: $orgColor
+
+.swiper-pagination--white
+  position: relative
+  z-index: 20
+  margin-top: -44px
+  padding-left: 45px
+
+  .d-flex
+    &--left
+      flex: 55%
+    &--right
+      flex: 45%
+
+  .swiper-pagination-bullet
+    width: 60px
+    height: 4px
+    border-radius: 4px
+    background: $white
+    margin-right: 4px
+    margin-left: 4px
 
 .clip-img
-  position: relative
-  height: 600px
-  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  width: 55%
   background-size: cover
   background-position: center center
+  z-index: 1
 
 .swiper-imgcover-card
-  height: 600px
+  height: 500px
+
+  .swiper-button-prev
+    left: 30px
+
+  .swiper-button-next
+    right: 30px
 
 .orangeline
   display: block
@@ -258,28 +432,62 @@ model-viewer
 .carousel-control-prev-icon:after
   content: url(../../images/previous.png)
 
-
+@media (min-width: 1400px)
+  .container.custom-container-xs
+      max-width: 1100px
 
 // AR  ==============================
 #threed-show
-  padding-top: 100px
+  padding-top: 45px
+  padding-bottom: 48px
 
 .ar-name
   position: absolute
   top: 50px
   left: 0
-  width: 200px
+  width: 350px
+  height: 140px
+  background-color: rgba(white,.6 )
+  padding: 20px 30px
+  padding-left: 88px
+  box-sizing: border-box
+
+  
+
+  .icon
+    position: absolute
+    top: 30px
+    left: 30px
+    width: 34px
+
+  .title
+    margin-bottom: 5px
+
+  .txt
+    color: #2E2E2E
+    font-weight: regular
 
 .ar-tools
   position: absolute
   top: 80px
   right: 0
-  width: 250px
+  width: 280px
   
+.qrcode-link
+  display: block
+  width: 150px
+  margin-bottom: 10px
+  margin-left: 15px
+
+  img
+    max-width: 100%
+
+  .txt
+    font-weight: 600
 
 model-viewer
   width: 100%
-  height: 500px
+  height: 505px
 
 // tabs
 .slider_gradient
@@ -287,8 +495,13 @@ model-viewer
 
 
 .btn-getac-alt
-  background-color: #e8e8e8 !important
+  background-color: #E9ECEF !important
   color: #000
+  transition: all .5s ease
+
+  &:hover
+    background-color: #C7C6C6 !important
+    color: black
 
 .btn-gray
   background-color: #e8e8e8 !important
@@ -296,7 +509,7 @@ model-viewer
 
 .d-tabs
   position: static
-  background: url(../../images/back-office_5.png)
+  background: url(../../images/back-office.png)
   background-repeat: no-repeat
   background-position: center bottom
   background-size: cover
@@ -334,12 +547,19 @@ main.arWrapper
   border-radius: 20px
   display: inline-block
   background: $orgColor
-.swiper-experience-card .card-text
-  overflow: hidden
-  display: -webkit-box
-  -webkit-line-clamp: 3
-  -webkit-box-orient: vertical
-  white-space: normal
+
+
+.swiper-experience-card 
+  .card-text
+    overflow: hidden
+    display: -webkit-box
+    -webkit-line-clamp: 3
+    -webkit-box-orient: vertical
+    white-space: normal
+
+  .swiper-pagination
+    position: static
+    margin-top: 10px
 
   
 // RWD ===============================
@@ -360,15 +580,8 @@ main.arWrapper
   input[type="submit"]
     display: none
 
-.select-lang
-  display: inline-block
-
-.select-lang--icon
-  display: inline-block
-  margin-right: 10px
 
 #btn-stick
-  display: inline-block
   margin-right: 20px
   box-shadow: none
 

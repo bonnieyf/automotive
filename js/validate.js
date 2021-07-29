@@ -6,15 +6,15 @@ $(document).ready(function () {
     ReturnOptin();
   });
 
-  $(window).scroll(function () {
-    let scrollY = $(window).scrollTop();
+  // $(window).scroll(function () {
+  //   let scrollY = $(window).scrollTop();
 
-    if (scrollY > 70) {
-      $("#btn-stick").addClass("btn-block-head");
-    } else {
-      $("#btn-stick").removeClass("btn-block-head");
-    }
-  });
+  //   if (scrollY > 70) {
+  //     $("#btn-stick").addClass("btn-block-head");
+  //   } else {
+  //     $("#btn-stick").removeClass("btn-block-head");
+  //   }
+  // });
 
   jQuery.validator.addMethod(
     "domain",

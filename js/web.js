@@ -7,12 +7,21 @@ window.onscroll = function () {
 };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    // mybutton.style.display = "block";
-    document.querySelector(".header").classList.add("sticky");
+  let bodyScrollTop =
+    document.body.scrollTop || document.documentElement.scrollTop;
+
+  let introScrollTop = document.querySelector("#intro-content").offsetTop;
+  let header = document.querySelector(".header");
+  if (bodyScrollTop > 0) {
+    header.classList.add("sticky");
   } else {
-    // mybutton.style.display = "none";
-    document.querySelector(".header").classList.remove("sticky");
+    header.classList.remove("sticky");
+  }
+
+  if (bodyScrollTop > introScrollTop) {
+    header.classList.add("show-button");
+  } else {
+    header.classList.remove("show-button");
   }
 }
 
@@ -30,7 +39,6 @@ $(function () {
 
 var swiper = new Swiper(".swiper-experience-card", {
   effect: "fade",
-  grabCursor: true,
   loop: true,
   centeredSlides: true,
   slidesPerView: 1,
@@ -47,6 +55,7 @@ var swiper = new Swiper(".swiper-experience-card", {
   },
   pagination: {
     el: ".swiper-experience-card .swiper-pagination",
+    clickable: true,
   },
 });
 
@@ -63,6 +72,7 @@ var imgSwiper = new Swiper(".swiper-imgcover-card", {
   },
   pagination: {
     el: ".swiper-imgcover-card .swiper-pagination",
+    clickable: true,
   },
   navigation: {
     nextEl: ".swiper-imgcover-card .swiper-button-next",

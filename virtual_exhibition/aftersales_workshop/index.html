@@ -13,28 +13,25 @@
     </script>
     <link rel="stylesheet" href="./../../js.lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./../../js.lib/fontawesome/all.css">
-    <link rel="stylesheet" href="./../../css/dist/web.css">
+    <link rel="stylesheet" href="./../../css/web.css">
     <link rel="stylesheet" href="./../assets/web.css">
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light gray-shadow-box py-1" data-toggle="sticky-onscroll">
+    <header class="header">
+      <nav class="custom-header navbar navbar-expand-lg navbar-light py-1">
         <div class="container menu">
           <div class="col-lg-6 col-3">
-            <a href="../index.html"><img src="./../../images/logo-getac.png" alt="" class="img-fluid" style="max-height: 30px;"></a>
+            <a href="./../index.html"><img src="./../../images/logo_getac.svg" alt="Getac" class="logo-getac img-fluid" style="max-height: 30px;"></a>
           </div>
-          <div class="col-lg-6 col-9 text-end">
-
-            <div class="select-lang">
-              <span class="select-lang--icon"><i class="fas fa-globe"></i></span>
-                <select class="select-lang--select" aria-label="Default select example">
-                  <option value="en" selected>English</option>
-                  <option value="es">Spanish</option>
-                  <option value="jp">Japan</option>
+          <div class="col-lg-6 col-9 text-end"><div class="select-lang">
+              <span class="select-lang--icon"><img src="./../../images/icon_lang.svg" alt=""></span>
+                <select class="select-lang--select form-select" aria-label="Default select example">
+                  <option value="0" selected>English</option>
+                  <option value="1">Spanish</option>
+                  <option value="2">Portuguese</option>
                 </select>
             </div>
-          </div>	
-          
+          </div>
         </div>
       </nav>
     </header>

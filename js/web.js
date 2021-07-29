@@ -41,7 +41,7 @@ var swiper = new Swiper(".swiper-experience-card", {
     modifier: 1,
   },
   autoplay: {
-    delay: 5000,
+    delay: 2000,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
   },

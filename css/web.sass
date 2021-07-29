@@ -5,7 +5,7 @@
 
 @import _form
 
-html
+body
   overflow-x: hidden
 
 #logo
@@ -356,6 +356,9 @@ header
   background-position: center top
   background-size: cover
   border-bottom: 5px solid #D54725
+
+  +media('<=tablet')
+    background-image: url(../../images/m_kv.png)
   
   .container
     position: relative
@@ -492,7 +495,7 @@ model-viewer
   width: 60%
 
   +media(">=tablet")
-    max-width: 100%
+    max-width: 303px
     width: 100%
     margin: 0
   
@@ -955,7 +958,10 @@ model-viewer
   background: #FAFAF9 url(../../images/back-office.png)
   background-repeat: no-repeat
   background-position: center top
-  background-size: auto 60%
+  background-size: contain
+
+  +media('<=tablet')
+    background-image: url(../../images/m-back-office.png)
 
   +media('>desktop')
     background-size: auto
@@ -1035,7 +1041,7 @@ main.arWrapper
 .custom-modal
   box-shadow:  0px 3px 6px rgba(#000,.5)
 
-  @media screen and (min-width: 1400px)
+  @media screen and (min-width: 992px)
     .container
       max-width: 680px
 

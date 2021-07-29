@@ -638,6 +638,9 @@ model-viewer
     -webkit-box-orient: vertical
     white-space: normal
 
+    +media('<phone_L')
+      font-size: 18px
+
   .txt-box
     overflow: hidden
     display: -webkit-box
@@ -652,6 +655,8 @@ model-viewer
     display: inline-block
     line-height: 1.2
     font-family: Arial, sans-serif
+    +media('<phone_L')
+      font-size: 14.5px
 
 .experience-card-top
   width: 100%
@@ -786,8 +791,13 @@ model-viewer
   .swiper-button-prev
     left: 30px
 
+    +media('<=phone_L')
+      left: 15px
+
   .swiper-button-next
     right: 30px
+    +media('<=phone_L')
+      right: 15px
 
   .swiper-button-next, .swiper-button-prev
     +media('>=tablet')

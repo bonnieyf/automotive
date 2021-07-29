@@ -1,26 +1,96 @@
-.title-xl
-  font-size: 70px
-  font-weight: 600  
+@function vw($px-vw, $base-vw: 390px)    
+  @return ($px-vw * 100vw) / $base-vw
 
-.title-m
-  font-size: 40px
+.title-xl
+  font-size: vw(40px)
   font-weight: 600
 
+  +media('>=phone_M')
+    font-size: 50px
+
+  +media('>=phone_L')
+    font-size: 62px
+  
+  +media(">=tablet")
+    font-size: 66px
+
+  +media(">=desktop_S")
+    font-size: 70px
+
+  +media('<=phone')
+    font-size: vw(46px)
+
+.title-m
+  font-size: 32px
+  font-weight: 600
+
+  +media(">=tablet")
+    font-size: 38px
+
+  +media(">desktop_S")
+    font-size: 40px
+
 .title-m2
-  font-size: 38px
+  font-size: 30px
+  font-weight: bold
+  +media(">=tablet")
+    font-size: 32px
+
+  +media(">desktop_S")
+    font-size: 38px
+
+.title-m3
+  font-size: 28px
   font-weight: bold
 
+  +media(">=tablet")
+    font-size: 30px
+
+  +media(">desktop_S")
+    font-size: 32px
+
 .txt-xl
-  font-size: 24px
+  font-size: vw(14px)
+  +media('>=phone_M')
+    font-size: 18px
+
+  +media('>=phone_L')
+    font-size: 21px
   
+  +media(">=tablet")
+    font-size: 22px
+
+  +media(">=desktop_S")
+    font-size: 24px
+
+  +media('<=phone')
+    font-size: vw(15px)
+
+
+
 .txt-m
-  font-size: 20px
+  font-size: 16px
+  +media(">=tablet")
+    font-size: 18px
+
+  +media(">desktop_S")
+    font-size: 20px
 
 .txt-m2
-  font-size: 16px
+  font-size: 14px
+  +media(">=tablet")
+    font-size: 15px
+
+  +media(">desktop_S")
+    font-size: 16px
 
 .txt-m3
-  font-size: 15px
+  font-size: 14px
+
+  +media(">desktop_S")
+    font-size: 15px
 
 .txt-s
-  font-size: 14px
+  font-size: 13px
+  +media(">desktop_S")
+    font-size: 14px

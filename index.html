@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./js.lib/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="./js.lib/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="./js.lib/fontawesome/all.css">
-	<link rel="stylesheet" href="./css/dist/web.css">
+	<link rel="stylesheet" href="./css/web.css">
   <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
   <script
       type="module"
@@ -21,14 +21,14 @@
 </head>
 <body>
   <!-- HEADER -->
-	<header>
+	<header class="header">
 		<nav class="custom-header navbar navbar-expand-lg navbar-light py-1">
 			<div class="container menu">
 				<div class="col-lg-6 col-3">
-					<img src="./images/logo_getac.svg" alt="Getac" class="img-fluid" style="max-height: 30px;">
+					<img src="./images/logo_getac.svg" alt="Getac" class="logo-getac img-fluid" style="max-height: 30px;">
 				</div>
 				<div class="col-lg-6 col-9 text-end">
-          <a class="btn btn-orange btn-sm" id="btn-stick" href="./virtual_exhibition/index.html">Unlock virtual exhibition</a>
+          <a class="btn btn-orange" id="btn-stick" href="./virtual_exhibition/index.html">Enter the Virtual Exhibition</a>
 					<div class="select-lang">
             <span class="select-lang--icon"><img src="./images/icon_lang.svg" alt=""></span>
               <select class="select-lang--select" aria-label="Default select example">
@@ -57,7 +57,9 @@
               </div>
             </div>
             <div class="kv-peo"><img src="./images/kv_peo.png" alt=""></div>
-            <div class="kv-scroll"><img src="./images/icon_up.svg" alt=""></div>
+            <div class="kv-scroll">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22.121" height="29.182" viewBox="0 0 22.121 29.182"><defs><style>.a{fill:none;stroke:#fff;stroke-width:3px;opacity:0.61;}</style></defs><g transform="translate(-669.439 -605.379)"><path class="a" d="M-7170,2712l10,10-10,10" transform="translate(-2041.5 -6552.501) rotate(-90)"/><path class="a" d="M-7170,2712l10,10-10,10" transform="translate(-2041.5 -6536.501) rotate(-90)"/></g></svg>
+            </div>
           </div>
         </div>
       </div>
@@ -66,12 +68,12 @@
 		<!-- SECTION 1 -->
 		<section class="container" id="intro-content">
 				<div class="row">
-          <div class="col-md-4">
+          <div class="col-sm-12 col-md-4">
             <div class="d-flex align-items-end">
               <img src="./images/logo-Intel.png" class="intel-logo img-fluid" alt="">
             </div>
           </div>
-					<div class="col-md-8">
+					<div class="col-sm-12 col-md-8">
 						<h2 class="title-m">A Solution for Every Challenge in the Value-chain</h2>
 						<p class="txt-m">Getac Automotive have a range of solutions for across the automotive industry – from R&D laboratories to manufacturing plants and workshops looking to increase efficiency and digitize their processes. See how the Getac Automotive package brings them all together in our digital showroom.</p>
 					</div>
@@ -81,49 +83,59 @@
 
 		<!-- SECTION 2 -->
 		<section class="mt-4" id="environment-carousel">
-			<div class="container pt-4 mb-0">
-				<div class="row my-4 py-4">
-					<div class="col-md-6 title-box text-left">
-						<h2 class="title-m">See how Getac works smarter in your environment</h2>
-						<p class="txt-m">From the workshop floor to the factory, Getac’s ruggedized devices are already in use by leading OEM’s and independent Automotive organizations. With a wide range of solutions for every department where efficiency and productivity are demanded, see how Getac takes on the challenge in your workplace.</p>
-					</div>
-					<div class="col-md-6 text-center">
-						<div class="swiper-container swiper-experience-card">
-              <div class="experience-card-top"></div>
-					      <div class="swiper-wrapper">
-					        <div class="swiper-slide">
-                    <div class="card">
-                      <img src="https://fakeimg.pl/320x200/" class="card-img-top" alt="...">
-                      <h5 class="title txt-xl">Smarter Workshops. Optimized Aftersales.1</h5>
-                      <div class="txt-box">
-                        <p class="txt txt-s">Did you know that the average car on the road is getting older? Car parc average age is increasing across the world, from 9.8 years in Germany to 13 years in Russia. This presents a brand new aftersales opportunity for dealer networks and independent workshops who can increase revenue with added-value aftersales services.</p>
+      <div class="getac-bg">
+        <div class="container pt-4 mb-0">
+          <div class="row my-md-4 py-md-4">
+            <div class="col-md-6 title-box text-left">
+              <h2 class="title-m">See how Getac works smarter in your environment</h2>
+              <p class="txt-m">From the workshop floor to the factory, Getac’s ruggedized devices are already in use by leading OEM’s and independent Automotive organizations. With a wide range of solutions for every department where efficiency and productivity are demanded, see how Getac takes on the challenge in your workplace.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="experience-cards-box">
+        <div class="container pt-0 mb-0">
+          <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-6">
+              <div class="swiper-container swiper-experience-card">
+                <div class="experience-card-top"></div>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="card">
+                        <img src="./images/Card_01.png" class="card-img-top" alt="...">
+                        <h5 class="title txt-xl">Smarter Workshops. Optimized Aftersales.</h5>
+                        <div class="txt-box">
+                          <p class="txt txt-s">Did you know that the average car on the road is getting older? Car parc average age is increasing across the world, from 9.8 years in Germany to 13 years in Russia. This presents a brand new aftersales opportunity for dealer networks and independent workshops who can increase revenue with added-value aftersales services.</p>
+                        </div>
                       </div>
                     </div>
-								  </div>
-                  <div class="swiper-slide">
-                    <div class="card">
-                      <img src="https://fakeimg.pl/320x200/" class="card-img-top" alt="...">
-                      <h5 class="title txt-xl">Smarter Workshops. Optimized Aftersales.2</h5>
-                      <div class="txt-box">
-                        <p class="txt txt-s">Did you know that the average car on the road is getting older? Car parc average age is increasing across the world, from 9.8 years in Germany to 13 years in Russia. This presents a brand new aftersales opportunity for dealer networks and independent workshops who can increase revenue with added-value aftersales services.</p>
+                    <div class="swiper-slide">
+                      <div class="card">
+                        <img src="./images/Card_02.png" class="card-img-top" alt="...">
+                        <h5 class="title txt-xl">Tough Tablets. Tough Devices.</h5>
+                        <div class="txt-box">
+                          <p class="txt txt-s">R&D laboratory require a mix of rugged construction and precise processing power to capture the most meticulous of data. See how Getac’s devices stand up to laboratory conditions, field environments and are helping manufacturers getting the latest vehicles on the road.</p>
+                        </div>
                       </div>
                     </div>
-								  </div>
-                  <div class="swiper-slide">
-                    <div class="card">
-                      <img src="https://fakeimg.pl/320x200/" class="card-img-top" alt="...">
-                      <h5 class="title txt-xl">Smarter Workshops. Optimized Aftersales.3</h5>
-                      <div class="txt-box">
-                        <p class="txt txt-s">Did you know that the average car on the road is getting older? Car parc average age is increasing across the world, from 9.8 years in Germany to 13 years in Russia. This presents a brand new aftersales opportunity for dealer networks and independent workshops who can increase revenue with added-value aftersales services.</p>
+                    <div class="swiper-slide">
+                      <div class="card">
+                        <img src="./images/Card_03.png" class="card-img-top" alt="...">
+                        <h5 class="title txt-xl">Powerful Production. Intelligent Operations.</h5>
+                        <div class="txt-box">
+                          <p class="txt txt-s">The modern warehouse is an incredible mix of raw manufacturing power and incredible complex, intelligent digitized management systems. As automotive manufacturing steps into Industry 4.0, see how Getac’s devices are helping them to create paperless operations and seamlessly connected workflows.</p>
+                        </div>
                       </div>
                     </div>
-								  </div>
-					      </div>
-					      <div class="swiper-pagination"></div>
-					    </div>
-					</div>
-				</div>
-				<div class="clearfix"></div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
 			</div>
 		</section>
 
@@ -216,13 +228,13 @@
 				<div class="container custom-container-xs">
           <ul class="nav nav-pills nav-fill" id="pills-tab" role="tablist">
             <li class="nav-item px-1" role="presentation">
-              <button class="nav-link btn-sm btn-getac-alt" id="pills-s410-tab" data-bs-toggle="pill" data-bs-target="#pills-s410" type="button" role="tab" aria-controls="pills-s410" aria-selected="true">S410</button>
+              <button class="nav-link btn-sm btn-getac-alt active" id="pills-s410-tab" data-bs-toggle="pill" data-bs-target="#pills-s410" type="button" role="tab" aria-controls="pills-s410" aria-selected="true">S410</button>
             </li>
             <li class="nav-item px-1" role="presentation">
               <button class="nav-link btn-sm btn-getac-alt" id="pills-b360-tab" data-bs-toggle="pill" data-bs-target="#pills-b360" type="button" role="tab" aria-controls="pills-b360" aria-selected="false">B360</button>
             </li>
             <li class="nav-item px-1" role="presentation">
-              <button class="nav-link btn-sm btn-getac-alt active" id="pills-ux10-tab" data-bs-toggle="pill" data-bs-target="#pills-ux10" type="button" role="tab" aria-controls="pills-ux10" aria-selected="true">UX10</button>
+              <button class="nav-link btn-sm btn-getac-alt " id="pills-ux10-tab" data-bs-toggle="pill" data-bs-target="#pills-ux10" type="button" role="tab" aria-controls="pills-ux10" aria-selected="true">UX10</button>
             </li>
             <li class="nav-item px-1" role="presentation">
               <button class="nav-link btn-sm btn-getac-alt" id="pills-f110-tab" data-bs-toggle="pill" data-bs-target="#pills-f110" type="button" role="tab" aria-controls="pills-f110" aria-selected="false">F110</button>
@@ -235,7 +247,7 @@
 
         <!-- AR -->
 				<div class="tab-content" id="pills-tabContent">
-				  <div class="tab-pane fade show active" id="pills-ux10" role="tabpanel" aria-labelledby="pills-ux10-tab">
+				  <div class="tab-pane fade " id="pills-ux10" role="tabpanel" aria-labelledby="pills-ux10-tab">
             <div class="d-tabs">
 				  	  <div class="container">
 								<main class="arWrapper">
@@ -252,7 +264,7 @@
                   <!-- Tools -->
                     <div class="ar-tools">
                       <a href="#" class="qrcode-link" target="_blank"><img src="./images/qrcode_ux10.png" class="my-2" alt="UX10 QRCode"></a>
-                      <a href="#" class="btn bg-getac font-weight-normal btn-text mx-auto mb-3 d-block d-md-none">Enter to 3D experience</a>
+                      <a href="#" class="btn bg-getac font-weight-normal btn-text mx-auto mb-3 d-block d-md-none"><img src="images/icon_ar_white.svg" alt=""> Enter to 3D experience</a>
                       <ol class="txt text-dark d-none d-md-block txt-m3">
                         <li>Open up your phone camera app and scan the QR code in this box</li>
                         <li>Take your pick of Getac device to see how it stands up to your challenge</li>
@@ -282,7 +294,7 @@
                 <!-- Tools -->
                 <div class="ar-tools">
                   <a href="#" class="qrcode-link" target="_blank"><img src="./images/qrcode_f110.png" class="my-2" alt="F110 QRCode"></a>
-                  <a href="#" class="btn bg-getac font-weight-normal btn-text mx-auto mb-3 d-block d-md-none">Enter to 3D experience</a>
+                  <a href="#" class="btn bg-getac font-weight-normal btn-text mx-auto mb-3 d-block d-md-none"><img src="images/icon_ar_white.svg" alt=""> Enter to 3D experience</a>
                   <ol class="txt text-dark d-none d-md-block txt-m3">
                     <li>Open up your phone camera app and scan the QR code in this box</li>
                     <li>Take your pick of Getac device to see how it stands up to your challenge</li>
@@ -294,7 +306,7 @@
 						</div>
 					</div>
 				  </div>
-				  <div class="tab-pane fade" id="pills-s410" role="tabpanel" aria-labelledby="pills-s410-tab">
+				  <div class="tab-pane fade show active" id="pills-s410" role="tabpanel" aria-labelledby="pills-s410-tab">
             <div class="d-tabs">
               <div class="container"> <!-- d-tabs class for background -->
                 <main class="arWrapper">
@@ -311,7 +323,7 @@
                   <!-- Tools -->
                   <div class="ar-tools">
                     <a href="#" class="qrcode-link" target="_blank"><img src="./images/qrcode_s410.png" class="my-2" alt="S410 QRCode"></a>
-                    <a href="#" class="btn bg-getac font-weight-normal btn-text mx-auto mb-3 d-block d-md-none">Enter to 3D experience</a>
+                    <a href="#" class="btn bg-getac font-weight-normal btn-text mx-auto mb-3 d-block d-md-none"><img src="images/icon_ar_white.svg" alt=""> Enter to 3D experience</a>
                     <ol class="txt text-dark d-none d-md-block txt-m3">
                       <li>Open up your phone camera app and scan the QR code in this box</li>
                       <li>Take your pick of Getac device to see how it stands up to your challenge</li>
@@ -340,7 +352,7 @@
                   <!-- Tools -->
                   <div class="ar-tools">
                     <a href="#" class="qrcode-link" target="_blank"><img src="./images/qrcode_zx70.png" class="my-2" alt="ZX70 QRCode"></a>
-                    <a href="#" class="btn bg-getac font-weight-normal btn-text mx-auto mb-3 d-block d-md-none">Enter to 3D experience</a>
+                    <a href="#" class="btn bg-getac font-weight-normal btn-text mx-auto mb-3 d-block d-md-none"><img src="images/icon_ar_white.svg" alt=""> Enter to 3D experience</a>
                     <ol class="txt text-dark d-none d-md-block txt-m3">
                       <li>Open up your phone camera app and scan the QR code in this box</li>
                       <li>Take your pick of Getac device to see how it stands up to your challenge</li>
@@ -370,7 +382,7 @@
                   <!-- Tools -->
                   <div class="ar-tools">
                     <a href="#" class="qrcode-link" target="_blank"><img src="./images/qrcode_b360.png" class="my-2" alt="B360 QRCode"></a>
-                    <a href="#" class="btn bg-getac font-weight-normal btn-text mx-auto mb-3 d-block d-md-none">Enter to 3D experience</a>
+                    <a href="#" class="btn bg-getac font-weight-normal btn-text mx-auto mb-3 d-block d-md-none"><img src="images/icon_ar_white.svg" alt=""> Enter to 3D experience</a>
                     <ol class="txt text-dark d-none d-md-block txt-m3">
                       <li>Open up your phone camera app and scan the QR code in this box</li>
                       <li>Take your pick of Getac device to see how it stands up to your challenge</li>
@@ -386,117 +398,65 @@
 			
 		</section>
 
-		<footer class="container-fluid py-4 mt-0 bg-black-getac">
-			<div class="row d-block text-center">
-				<p class="text-white mt-4">© 2021 GETAC. All Rights Reserved.</p>
-			</div>
+		<footer id="footer">
+			<div class="container">
+        <div class="row d-block">
+          <p class="text-dark txt-s">© 2021 GETAC. All Rights Reserved.</p>
+        </div>
+      </div>
 		</footer>
 
     <!-- Modal -->
     <div class="custom-modal modal fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="modal-registerTitle" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <div class=" modal-body">
             <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <section class="container-fluid bg-black-getac" id="contact">
-              <div class="container">
+            <section class="container-fluid bg-black-getac px-0" id="contact">
+              <div class="container px-0">
                 <div class="row">
-                  <h3 class="text-white py-4 my-2 d-block mx-auto title-m">Please register to enter the virtual exhibition</h3>
-                  <p class="text-white d-block mx-auto txt-m">Discover Getac products and solutions for various applications and missions in our innovative 3D experience.</p>
+                  <h3 class="title text-white d-block mx-auto title-m3">Please register to enter the virtual exhibition</h3>
+                  <p class="txt text-white d-block mx-auto txt-m">Discover Getac products and solutions for various applications and missions in our innovative 3D experience.</p>
                 </div>
                 <div class="row">
                   <div class="brazil-form">
-                          <!-- Form config (Eloqua) -->
-                          <!-- Quote: form234 (id), GetacQuoteFormNew (name) -->
-                          <!-- Contact: form414 (id), brazil-lp-form-2020 (name) -->
-                          <form method="post" name="Transportation-Virtual-tradeshow-registration" action="https://s179956068.t.eloqua.com/e/f2" id="form509" class="elq-form" novalidate="novalidate">
-                              
-                            <!-- ✜ Form fields ✜ -->
-                            <div class="form form-layout">
-                                
-                              <input value="Transportation-Virtual-tradeshow-registration" type="hidden" name="elqFormName">
-                              <input value="179956068" type="hidden" name="elqSiteId">
-                              <input name="elqCampaignId" type="hidden">
-                              <input type="hidden" name="elqCustomerGUID" value="">
-                              <input type="hidden" name="elqCookieWrite" value="0">
-        
-                              <div class="row">
-                                
-                                <!-- ✜ Column 1 ✜ -->
-                                <div class="col-md-12 col-lg-4 column-1 form-column">
-                                    
+                      <!-- code from eu-manu-virtual-tradeshow-registration-form.html without <style> block -->
+                      <form method="post" name="automotive-virtual-tradeshow-registration" action="https://s179956068.t.eloqua.com/e/f2" id="form533" class="elq-form" novalidate="novalidate">
+                        <input value="automotive-virtual-tradeshow-registration" type="hidden" name="elqFormName">
+                        <input value="179956068" type="hidden" name="elqSiteId">
+                        <input name="elqCampaignId" type="hidden">
+                        <input type="hidden" name="elqCustomerGUID" value="">
+                        <input type="hidden" name="elqCookieWrite" value="0">
+                        <div class="layout container-fluid px-0">
+                            <div class="row">
+                                <div class="col-12">
                                   <div id="formElement0" class="elq-field-style form-element-layout row">
-                                            <div style="text-align:left;" class="col-sm-12 col-xs-12">
-                                                <label class="elq-label " for="fe4203">First Name
-                                                    <span class="elq-required">*</span>
-                                                </label>
+                                    <div style="text-align:left;" class="col-sm-12 col-xs-12">
+                                        <label class="elq-label " for="fe4203">First Name
+                                            <span class="elq-required">*</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-sm-12 col-xs-12">
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="field-control-wrapper">
+                                                    <input type="text" class="elq-item-input form-control" name="first_name" id="fe4203" value="" style="width:100%;" required>
+                                                    <div class="invalid-feedback"></div>
+                                                </div>
                                             </div>
-                                      <div class="col-sm-12 col-xs-12">
-                                          <div class="row">
-                                              <div class="col-xs-12">
-                                                  <div class="field-control-wrapper">
-                                                      <input type="text" class="elq-item-input form-control" name="first_name" id="fe4203" style="width:100%;" required="" aria-invalid="false">
-                                                      <div class="invalid-feedback">
-                                                          
-                                                      <label id="fe4203-error" class="error" for="fe4203" style="display: none;"></label></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
+                                        </div>
+                                    </div>
                                   </div>
-        
-                                   
-        
-                                    <div id="formElement3" class="elq-field-style form-element-layout row">
-                                        <div style="text-align:left;" class="col-sm-12 col-xs-12">
-                                            <label class="elq-label " for="fe4207">Company
-                                                <span class="elq-required">*</span>
-                                            </label>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-12">
-                                            <div class="row">
-                                                <div class="col-xs-12">
-                                                    <div class="field-control-wrapper">
-                                                        <input type="text" class="elq-item-input form-control" name="company" id="fe4207" style="width:100%;" required="" aria-invalid="false">
-                                                        <div class="invalid-feedback">
-                                                          
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                  
                                 </div>
-                                
-                                <!-- ✜ Column 2 ✜ -->
-                                <div class="col-md-12 col-lg-4 column-2 form-column-middle">
-        
-                                  <div id="formElement1" class="elq-field-style form-element-layout row">
-                                        <div style="text-align:left;" class="col-sm-12 col-xs-12">
-                                            <label class="elq-label " for="fe4204">Last Name
-                                                <span class="elq-required">*</span>
-                                            </label>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-12">
-                                            <div class="row">
-                                                <div class="col-xs-12">
-                                                    <div class="field-control-wrapper">
-                                                        <input type="text" class="elq-item-input form-control" name="last_name" id="fe4204" style="width:100%;" required="" aria-invalid="false">
-                                                        <div id="validationLastName" class="invalid-feedback">
-                                                          
-                                                        <label id="fe4204-error" class="error" for="fe4204" style="display: none;"></label></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-        
-                                    <div id="formElement4" class="elq-field-style form-element-layout row">
+                            </div>
+                            <div class="row">
+                                <div class="grid-layout-col">
+                                    <div class="layout-col col-sm-12 col-xs-12">
+                                        <div id="formElement1" class="elq-field-style form-element-layout row">
                                             <div style="text-align:left;" class="col-sm-12 col-xs-12">
-                                                <label class="elq-label" for="fe4209">Country
+                                                <label class="elq-label " for="fe4204">Last Name
                                                     <span class="elq-required">*</span>
                                                 </label>
                                             </div>
@@ -504,7 +464,76 @@
                                                 <div class="row">
                                                     <div class="col-xs-12">
                                                         <div class="field-control-wrapper">
-                                                            <select class="elq-item-select form-select" id="fe4209" name="country" style="width:100%;" required="" aria-invalid="false">
+                                                            <input type="text" class="elq-item-input form-control" name="last_name" id="fe4204" value="" style="width:100%;" required>
+                                                            <div class="invalid-feedback"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grid-layout-col">
+                                    <div class="layout-col col-sm-12 col-xs-12">
+                                        <div id="formElement2" class="elq-field-style form-element-layout row">
+                                            <div style="text-align:left;" class="col-sm-12 col-xs-12">
+                                                <label class="elq-label " for="fe4205">Email
+                                                    <span class="elq-required">*</span>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-12 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="field-control-wrapper">
+                                                            <input type="email" class="elq-item-input form-control" name="emailAddress" id="fe4205" value="" style="width:100%;" required>
+                                                            <div class="invalid-feedback"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grid-layout-col">
+                                    <div class="layout-col col-sm-12 col-xs-12">
+                                        <div id="formElement3" class="elq-field-style form-element-layout row">
+                                            <div style="text-align:left;" class="col-sm-12 col-xs-12">
+                                                <label class="elq-label " for="fe4207">Company
+                                                    <span class="elq-required">*</span>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-12 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="field-control-wrapper">
+                                                            <input type="text" class="elq-item-input form-control" name="company" id="fe4207" value="" style="width:100%;" required>
+                                                            <div class="invalid-feedback"></div>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grid-layout-col">
+                                    <div class="layout-col col-sm-12 col-xs-12">
+                                        <div id="formElement4" class="elq-field-style form-element-layout row">
+                                            <div style="text-align:left;" class="col-sm-12 col-xs-12">
+                                                <label class="elq-label " for="fe4209">Country
+                                                    <span class="elq-required">*</span>
+                                                </label>
+                                            </div>
+                                            <div class="col-sm-12 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-xs-12">
+                                                        <div class="field-control-wrapper">
+                                                            <select class="elq-item-select form-select" id="fe4209" name="country" style="width:100%;" required>
                                                                 <option value="">Please select
                                                                 </option>
                                                                 <option value="Afghanistan">Afghanistan
@@ -998,151 +1027,118 @@
                                                                 <option value="Zimbabwe">Zimbabwe
                                                                 </option>
                                                             </select>
-                                                            <div class="invalid-feedback">
-                                                          
-                                                            <label id="fe4209-error" class="error" for="fe4209" style="display: none;"></label></div>
+                                                            <div class="invalid-feedback"></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                 </div>
-                                
-                                <!-- ✜ Column 3 ✜ -->
-                                <div class="col-md-12 col-lg-4 column-3 form-column">
-                                    <div id="formElement2" class="elq-field-style form-element-layout row">
-                                        <div style="text-align:left;" class="col-sm-12 col-xs-12">
-                                            <label class="elq-label " for="fe4205">Email
-                                                <span class="elq-required">*</span>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                  <div id="formElement5" class="elq-field-style form-element-layout">
+                                    <div class="single-checkbox-row">
+                                      <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" name="directmarketing" id="fe4211">
+                                          <label class="form-check-label txt-m" for="fe4211">
+                                            I consent to direct marketing.
+                                          </label>
+                                          <a data-bs-toggle="collapse" href="#mkt-rule1" role="button" aria-expanded="false" aria-controls="mkt-rule1" class="collapsed collapsed-arrow"><i class="fas fa-chevron-down"></i></a>
+                                          <div class="marketing-rule collapse multi-collapse" id="mkt-rule1">
+                                            <label class="checkbox-label txt-s">
+                                                From time to time, Getac may wish to contact you by email, telemarketing, surveys, direct mail, Mobile SMS, Telephone and/or brochures to provide you with information about products and services that may be of interest to you. If you are happy to be contacted by Getac for these purposes, please click the check box above. Further information can be found in Getac’s <a href="https://www.getac.com/eu/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>. By clicking the checkbox, you consent to Getac contacting you in accordance with the provisions of this notice. You can revoke your consent at any time, free of charge, by sending an email to <a href="mailto:globalmarketing@getac.com">globalmarketing@getac.com</a>.
                                             </label>
-                                        </div>
-                                        <div class="col-sm-12 col-xs-12">
-                                            <div class="row">
-                                                <div class="col-xs-12">
-                                                    <div class="field-control-wrapper">
-                                                        <input type="text" class="elq-item-input form-control" name="emailAddress" data-rule-email="true" data-msg-email="Please enter a valid email address" id="fe4205" value="" style="width:100%;" required="" aria-invalid="false">
-                                                        <div class="invalid-feedback">
-                                                          
-                                                        </div>
-                                                      </div>
-                                                </div>
-                                            </div>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-12">
+                                  <div id="formElement6" class="elq-field-style form-element-layout">
+                                    <div class="single-checkbox-row">
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="processdata" id="fe4212">
+                                        <label class="form-check-label checkbox-aligned elq-item-label" for="fe4212" required>
+                                          I have read and agree to the Getac’s 
+                                          <a data-bs-toggle="collapse" href="#mkt-rule2" role="button" aria-expanded="false" aria-controls="mkt-rule2" class="collapsed collapsed-txt">Privacy Notice</a>.
+                                        </label>
+                                        <a data-bs-toggle="collapse" href="#mkt-rule2" role="button" aria-expanded="false" aria-controls="mkt-rule2" class="collapsed collapsed-arrow"><i class="fas fa-chevron-down"></i></a>
+                                      </div>
+                                        <div class="marketing-rule collapse multi-collapse" id="mkt-rule2">
+                                          <div class="hidden-scroll">
+                                            <p>A. This Privacy Notice Getac Technology Corporation and its subsidiaries (Getac) is committed to safeguarding the privacy of personal and sensitive personal data and is bound to comply with the UK Data Protection Act 2018 and EU General Data Protection Regulation (GDPR), along with similar and applicable laws in other countries around the world. This Privacy Notice forms part of Getac’s obligation to be open and fair with all individuals whose personal and sensitive personal data Getac processes and to provide details around how it processes such personal data and what it does with it. Getac processes the personal data of its customers and partners such as names, contact details and email addresses, amongst other things. Processing of this data implies collecting, storing, using, disclosing or disposing of individuals’ personal data. Individuals’ of existing or prospective customers and partners who leverage Getac’s solutions and services, or use the Getac website, may be provided with further privacy notices which may be contained in a separate supplemental notice. These additional privacy notices shall supplement this Privacy Notice. This Privacy Notice relates to the processing of personal data by Getac. Unless otherwise stated, all references to “we” or “our” shall imply all Getac lines of business that process personal or sensitive personal data. This Privacy Notice is addressed to individuals outside our organisation with whom we interact, including consumers and visitors to our websites (together, “you”). Defined terms used in this Privacy Notice are explained in Section (Q) below. For the purposes of this Privacy Notice, Getac is the Data Controller. Contact details are provided in Section (N) below. This Privacy Notice may be amended or updated from time to time to reflect changes in our practices with respect to the Processing of Personal Data, or changes in applicable law. We encourage you to read this Privacy Notice carefully, and to regularly check this page to review any changes we might make in accordance with the terms of this Privacy Notice. None of the lists, or examples provided in this Privacy Notice, are intended to be exhaustive or fully representative of every individual. Scope The scope of this Privacy Notice covers customers (existing and prospective) and partners (existing and prospective) personal data in respect of the following:<br>
+                                                • Collecting Personal Data<br>
+                                                • Processing Personal Data<br>
+                                                • Using Personal Data<br>
+                                                • Disclosing Personal Data<br>
+                                                • International Data Transfers<br>
+                                                • Data Accuracy<br>
+                                                • Data Minimisation<br>
+                                                • Retaining Personal Data<br>
+                                                • Securing Personal Data<br>
+                                                • Data Subject Rights<br>
+                                                • Cookies<br>
+                                                • Contact Details<br>
+                                                • Complaints B. Collecting your Personal Data We may collect Personal Data about you, such as your name, address and contact details. Examples of sources from which we may collect Personal Data include the following: • Personal Data you provide to us (e.g. where you contact us via email or telephone, or by any other means).<br>
+                                                • Personal Data you provide to us in the ordinary course of our relationship with you (e.g., if you purchase a product or service from us).<br>
+                                                • Personal Data that you manifestly choose to make public, including via social media where you choose to make your profile publicly visible.<br>
+                                                • Personal Data that we receive from third parties (e.g., partners, credit reference agencies; law enforcement authorities; etc.).<br>
+                                                • Personal Data that we obtain from you when you visit any Getac website (a “Site”) or use any features or resources available on or through a Site. When you visit a Site, your device and browser will automatically disclose certain information</p>
+                                            <p>(such as device type, operating system, browser type, browser settings, IP address, language settings, dates and times of connecting to a Site and other technical communications information). We may also create Personal Data about you, such as records of your interactions with us, and details of your purchase history to cover:<br>
+                                                • Personal details: given name(s); preferred name; gender; date of birth / age; nationality; and photograph.<br>
+                                                • Contact details: shipping address; telephone number; email address; and social media profile details.<br>
+                                                • Payment details: billing address; bank account number or credit card number; cardholder or accountholder name; card or account security details; card ‘valid from’ date; card expiry date.<br>
+                                                • Views and opinions: any views and opinions that you choose to send to us, or publicly post about us on social media platforms. C. Processing your Personal Data We may use the following as the Lawful basis for Processing your Personal Data:<br>
+                                                • you have given us your prior express consent to the Processing which is only used in relation to Processing that is entirely voluntary; • the Processing is necessary in connection with any contract that you may enter into with us;<br>
+                                                • the Processing is required by applicable law; or<br>
+                                                • we have a legitimate interest in carrying out the Processing for the purpose of managing, operating or promoting our business, and if that legitimate interest is not overridden by your interests, fundamental rights, or freedoms. D. Using your Personal Data We may use your Personal Data for:<br>
+                                                • Operating and managing our Sites: providing content to you; displaying advertising and other information to you; and communicating and interacting with you via our Sites.<br>
+                                                • Provision of products and services to you: providing our Sites and other services to you; providing you with products that you have purchased; providing you with promotional items at your request; and communicating with you in relation to those products and services.<br>
+                                                • Marketing communications: communicating with you via any means (including via email, telephone, text message, social media, post or in person) news items and other information in which you may be interested, subject to ensuring that such communications are provided to you in compliance with applicable law.<br>
+                                                • Communications and IT operations: management of our communications systems; operation of IT security; and IT security audits.<br>
+                                                • Health and safety: health and safety assessments and record keeping; and compliance with related legal obligations.<br>
+                                                • Financial management: sales; finance; corporate audit; and vendor management.<br>
+                                                • Surveys: engaging with you for the purposes of obtaining your views on our products and services.<br>
+                                                • Improving our products and services: identifying issues with existing products and services; planning improvements to existing products and services; creating new products and services. E. Disclosing Personal Data We may disclose your Personal Data to other entities within the Getac group (including providing services to you and operating our Sites). In addition, we may disclose your Personal Data to:<br>
+                                                • legal and regulatory authorities, upon request, or for the purposes of reporting any actual or suspected breach of applicable law or regulation;<br>
+                                                • accountants, auditors, lawyers and other outside professional advisors to Getac, subject to binding contractual obligations of confidentiality;<br>
+                                                • third party Processors (such as payment services providers; shipping companies; etc.), located anywhere in the world, subject to the requirements noted below in this Section (E);<br>
+                                                • any relevant party, law enforcement agency or court, to the extent necessary for the establishment, exercise or defence of legal rights;<br>
+                                                • any relevant party for the purposes of prevention, investigation, detection or prosecution of criminal offences or the execution of criminal penalties, including the safeguarding against and the prevention of threats to public security;<br>
+                                                • any relevant third party acquirer(s), in the event that we sell or transfer all or any relevant portion of our business or assets (including in the event of a reorganization, dissolution or liquidation); and<br>
+                                                • Third party provider of social media platforms that are available on our Sites using third party plugins or content (e.g., LinkedIn, YouTube and Facebook).</p>
+                                            <p>Where we engage a third-party Processor to Process your Personal Data, the Processor will be subject to binding contractual obligations to: (i) only Process the Personal Data in accordance with our prior written instructions; and (ii) use measures to protect the confidentiality and security of the Personal Data; together with any additional requirements under applicable law. F. International transfer of Personal Data Because of the international nature of our business, we may need to transfer your Personal Data within the Getac group, and to third parties as noted in Section (D) above, in connection with the purposes set out in this Privacy Notice. For this reason, we may transfer your Personal Data to other countries that may have different laws and data protection compliance requirements to those that apply in the country in which you are located. This includes transferring, processing and storing Personal Data outside of the European Economic Area (EEA). Where we transfer your Personal Data to other countries, we do so on the basis of Standard Contractual Clauses. You may request a copy of our Standard Contractual Clauses using the contact details provided in Section (N) below. As part of providing our services to You, we use third party data processors outside of the EEA as outlined below:<br>
+                                                • Salesforce.com for customer, partner and contact management which is based in the USA.<br>
+                                                • FedEx Corporation for equipment delivery and service support which is based in the USA.<br>
+                                                • The Rocket Science Group (trading as Mailchimp) for marketing campaigns which is based in the USA.<br>
+                                                • PayPal Inc. for payment of services which is based in the USA.<br>
+                                                • Zift Solutions (formerly Relayware) for partner portal which is based in the USA.<br>
+                                                • Amazon Web Services, Inc. for cloud service which is based in the USA.<br>
+                                                • Microsoft Corporation (Microsoft Azure) for cloud service which is based in the USA. For further information on the third party data processors outside of the EEA and to obtain copies of our data protection agreement with them, please contact us by using the contact details provided in Section (N), below. G. Data Accuracy We take every reasonable step to ensure that:<br>
+                                                • your Personal Data are accurate and kept up to date with changes that you notify us with; and<br>
+                                                • we erase or rectify any Personal Data that you notify us is inaccurate. From time to time we may ask you to confirm the accuracy of your Personal Data. H. Data Minimisation We take every reasonable step to ensure that your Personal Data that we Process are limited to the Personal Data reasonably required in connection with the purposes set out in this Privacy Notice. I. Data Retention The criteria for determining the duration for which we will keep your Personal data are as follows:<br>
+                                                • we will retain copies of your Personal Data in a form that permits identification only for as long as is necessary in connection with the purposes for which we use it;<br>
+                                                • applicable law requires a longer retention period. In particular, we may retain your Personal Data for the duration of any period necessary to establish, exercise or defend any legal rights. J.</p>
+                                            <p>Securing Personal Data Where Getac acts as the controller of Personal Data, it will ensure that necessary and adequate safeguards are in place to prevent unauthorised access, loss, misuse or alteration of your Personal Data. We store all personal information on secure servers with relevant access and firewall controls. Any Personal Data sent to us, either in writing or email, may be insecure in transit and we cannot guarantee its delivery. Passwords must be kept confidential and not disclosed to a third party. Getac does not ask you for your password. K. Data Subject Rights Subject to applicable law based upon your nationality (e.g. EU Citizen) and domicile, you may have a number of rights regarding the Processing of your Personal Data, including:<br>
+                                                • the right to request access to, or copies of, your Personal Data that we Process or control;<br>
+                                                • the right to request rectification of any inaccuracies in your Personal Data that we Process or control;<br>
+                                                • erasure of your Personal Data that we Process or control; or<br>
+                                                • restriction of Processing of your Personal Data that we Process or control;<br>
+                                                • the right to object, on legitimate grounds, to the Processing of your Personal Data by us or on our behalf;<br>
+                                                • the right to have your Personal Data that we Process or control transferred to another Controller, to the extent applicable;<br>
+                                                • where we Process your Personal Data on the basis of your consent, the right to withdraw that consent; and<br>
+                                                • the right to lodge complaints with a Data Protection Authority regarding the Processing of your Personal Data by us or on our behalf.<br>
+                                                This does not affect your statutory rights. To exercise one or more of these rights, or to ask a question about these rights or any other provision of this Privacy Notice, or about our Processing of your Personal Data, please use the contact details provided in Section (N) below. L. Cookies A cookie is a small file that is placed on your device when you visit a website (including our Sites). It records information about your device, your browser and, in some cases, your preferences and browsing habits. We may Process your Personal Data through cookie technology, in accordance with our Cookie Policy. For further information on how we use Cookies please see our Cookie Policy. M. Terms of Use All use of our Sites is subject to our Terms of Use. N. Contact details If you have any comments, questions or concerns about any of the information in this Privacy Notice, or any other issues relating to the Processing of Personal Data by Getac, please contact: Legal Affairs Center, 5F., Building A, No. 209, Sec. 1, Nangang Rd., Nangang Dist., Taipei City, 11568, Taiwan, R.O.C. Attn：Data Protection Manager Email： dpm.LAC@getac.com.tw Telephone: +886 (0)2 2785 7888 O. Data Protection Registration We are registered as a data controller with the UK Information Commissioner’s Office and our data protection registration number is ZA467078. P. Complaints If you are a European Citizen and feel your rights have not been respected, or do not feel a situation was resolved satisfactorily, you have the right to raise a complaint with your local Supervisory Authority. The contacts details of the Supervisory Authorities with whom Getac has Data Protection registrations are: The UK Information Commissioner (United Kingdom). You can contact them as follows: – Web: https://ico.org.uk/concerns/ Telephone: +44 (0)303 123 1113 In Writing: Information Commissioner’s Office Wycliffe House Water Lane Wilmslow Cheshire SK9 5AF Q. Definitions ‘Data Controller’ means the entity that decides how and why Personal Data is Processed. In many jurisdictions, the Controller has primary responsibility for complying with applicable data protection laws. ‘Data Protection Authority’ means an independent public authority that is legally tasked with overseeing compliance with applicable data protection laws. ‘Personal Data’ means information that is about any individual, or from which any individual is identifiable. Examples of Personal Data that we may Process are provided in Section (B) above. ‘Process’, ‘Processing’ or ‘Processed’ means anything that is done with any Personal Data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction. ‘Data Processor’ means any person or entity that Processes Personal Data on behalf of the Controller (other than employees of the Controller).</p>
                                         </div>
                                     </div>
-                                </div> 
-                              </div>
-                                
-                            </div>
-                            <hr class="form-divider">
-                            <div class="form-rule-layout form-layout">
-                              <div class="row">
-                                <div class="single-checkbox-row row mb-3">
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="directmarketing" id="modal-fe4211">
-                                    <label class="form-check-label txt-m" for="modal-fe4211" >
-                                      I consent to direct marketing.
-                                    </label>
-                                    <a data-bs-toggle="collapse" href="#mkt-rule1" role="button" aria-expanded="false" aria-controls="mkt-rule1"><i class="fas fa-chevron-down"></i></a>
-                                </div>
-                                  <div class="marketing-rule collapse multi-collapse" id="mkt-rule1">
-                                    <label class="checkbox-label txt-s">
-                                        From time to time, Getac may wish to contact you by email, telemarketing, surveys, direct mail, Mobile SMS, Telephone and/or brochures to provide you with information about products and services that may be of interest to you. If you are happy to be contacted by Getac for these purposes, please click the check box above. Further information can be found in Getac’s <a href="https://www.getac.com/eu/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>. By clicking the checkbox, you consent to Getac contacting you in accordance with the provisions of this notice. You can revoke your consent at any time, free of charge, by sending an email to <a href="mailto:globalmarketing@getac.com">globalmarketing@getac.com</a>.
-                                    </label>
                                   </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="single-checkbox-row row mb-3">
-        
-                                  <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" name="processdata" id="form-fe4212">
-                                  <label class="form-check-label txt-m" for="form-fe4212">
-                                    I have read and agree to the Getac’s Privacy Notice.
-                                  </label>
-                                </div>
-                              
-                                    <div class="privacy mt-3 txt-s">
-                                        <p>A. This Privacy Notice Getac Technology Corporation and its subsidiaries (Getac) is committed to safeguarding the privacy of personal and sensitive personal data and is bound to comply with the UK Data Protection Act 2018 and EU General Data Protection Regulation (GDPR), along with similar and applicable laws in other countries around the world. This Privacy Notice forms part of Getac’s obligation to be open and fair with all individuals whose personal and sensitive personal data Getac processes and to provide details around how it processes such personal data and what it does with it. Getac processes the personal data of its customers and partners such as names, contact details and email addresses, amongst other things. Processing of this data implies collecting, storing, using, disclosing or disposing of individuals’ personal data. Individuals’ of existing or prospective customers and partners who leverage Getac’s solutions and services, or use the Getac website, may be provided with further privacy notices which may be contained in a separate supplemental notice. These additional privacy notices shall supplement this Privacy Notice. This Privacy Notice relates to the processing of personal data by Getac. Unless otherwise stated, all references to “we” or “our” shall imply all Getac lines of business that process personal or sensitive personal data. This Privacy Notice is addressed to individuals outside our organisation with whom we interact, including consumers and visitors to our websites (together, “you”). Defined terms used in this Privacy Notice are explained in Section (Q) below. For the purposes of this Privacy Notice, Getac is the Data Controller. Contact details are provided in Section (N) below. This Privacy Notice may be amended or updated from time to time to reflect changes in our practices with respect to the Processing of Personal Data, or changes in applicable law. We encourage you to read this Privacy Notice carefully, and to regularly check this page to review any changes we might make in accordance with the terms of this Privacy Notice. None of the lists, or examples provided in this Privacy Notice, are intended to be exhaustive or fully representative of every individual. Scope The scope of this Privacy Notice covers customers (existing and prospective) and partners (existing and prospective) personal data in respect of the following:<br>
-                                            • Collecting Personal Data<br>
-                                            • Processing Personal Data<br>
-                                            • Using Personal Data<br>
-                                            • Disclosing Personal Data<br>
-                                            • International Data Transfers<br>
-                                            • Data Accuracy<br>
-                                            • Data Minimisation<br>
-                                            • Retaining Personal Data<br>
-                                            • Securing Personal Data<br>
-                                            • Data Subject Rights<br>
-                                            • Cookies<br>
-                                            • Contact Details<br>
-                                            • Complaints B. Collecting your Personal Data We may collect Personal Data about you, such as your name, address and contact details. Examples of sources from which we may collect Personal Data include the following: • Personal Data you provide to us (e.g. where you contact us via email or telephone, or by any other means).<br>
-                                            • Personal Data you provide to us in the ordinary course of our relationship with you (e.g., if you purchase a product or service from us).<br>
-                                            • Personal Data that you manifestly choose to make public, including via social media where you choose to make your profile publicly visible.<br>
-                                            • Personal Data that we receive from third parties (e.g., partners, credit reference agencies; law enforcement authorities; etc.).<br>
-                                            • Personal Data that we obtain from you when you visit any Getac website (a “Site”) or use any features or resources available on or through a Site. When you visit a Site, your device and browser will automatically disclose certain information</p>
-                                        <p>(such as device type, operating system, browser type, browser settings, IP address, language settings, dates and times of connecting to a Site and other technical communications information). We may also create Personal Data about you, such as records of your interactions with us, and details of your purchase history to cover:<br>
-                                            • Personal details: given name(s); preferred name; gender; date of birth / age; nationality; and photograph.<br>
-                                            • Contact details: shipping address; telephone number; email address; and social media profile details.<br>
-                                            • Payment details: billing address; bank account number or credit card number; cardholder or accountholder name; card or account security details; card ‘valid from’ date; card expiry date.<br>
-                                            • Views and opinions: any views and opinions that you choose to send to us, or publicly post about us on social media platforms. C. Processing your Personal Data We may use the following as the Lawful basis for Processing your Personal Data:<br>
-                                            • you have given us your prior express consent to the Processing which is only used in relation to Processing that is entirely voluntary; • the Processing is necessary in connection with any contract that you may enter into with us;<br>
-                                            • the Processing is required by applicable law; or<br>
-                                            • we have a legitimate interest in carrying out the Processing for the purpose of managing, operating or promoting our business, and if that legitimate interest is not overridden by your interests, fundamental rights, or freedoms. D. Using your Personal Data We may use your Personal Data for:<br>
-                                            • Operating and managing our Sites: providing content to you; displaying advertising and other information to you; and communicating and interacting with you via our Sites.<br>
-                                            • Provision of products and services to you: providing our Sites and other services to you; providing you with products that you have purchased; providing you with promotional items at your request; and communicating with you in relation to those products and services.<br>
-                                            • Marketing communications: communicating with you via any means (including via email, telephone, text message, social media, post or in person) news items and other information in which you may be interested, subject to ensuring that such communications are provided to you in compliance with applicable law.<br>
-                                            • Communications and IT operations: management of our communications systems; operation of IT security; and IT security audits.<br>
-                                            • Health and safety: health and safety assessments and record keeping; and compliance with related legal obligations.<br>
-                                            • Financial management: sales; finance; corporate audit; and vendor management.<br>
-                                            • Surveys: engaging with you for the purposes of obtaining your views on our products and services.<br>
-                                            • Improving our products and services: identifying issues with existing products and services; planning improvements to existing products and services; creating new products and services. E. Disclosing Personal Data We may disclose your Personal Data to other entities within the Getac group (including providing services to you and operating our Sites). In addition, we may disclose your Personal Data to:<br>
-                                            • legal and regulatory authorities, upon request, or for the purposes of reporting any actual or suspected breach of applicable law or regulation;<br>
-                                            • accountants, auditors, lawyers and other outside professional advisors to Getac, subject to binding contractual obligations of confidentiality;<br>
-                                            • third party Processors (such as payment services providers; shipping companies; etc.), located anywhere in the world, subject to the requirements noted below in this Section (E);<br>
-                                            • any relevant party, law enforcement agency or court, to the extent necessary for the establishment, exercise or defence of legal rights;<br>
-                                            • any relevant party for the purposes of prevention, investigation, detection or prosecution of criminal offences or the execution of criminal penalties, including the safeguarding against and the prevention of threats to public security;<br>
-                                            • any relevant third party acquirer(s), in the event that we sell or transfer all or any relevant portion of our business or assets (including in the event of a reorganization, dissolution or liquidation); and<br>
-                                            • Third party provider of social media platforms that are available on our Sites using third party plugins or content (e.g., LinkedIn, YouTube and Facebook).</p>
-                                        <p>Where we engage a third-party Processor to Process your Personal Data, the Processor will be subject to binding contractual obligations to: (i) only Process the Personal Data in accordance with our prior written instructions; and (ii) use measures to protect the confidentiality and security of the Personal Data; together with any additional requirements under applicable law. F. International transfer of Personal Data Because of the international nature of our business, we may need to transfer your Personal Data within the Getac group, and to third parties as noted in Section (D) above, in connection with the purposes set out in this Privacy Notice. For this reason, we may transfer your Personal Data to other countries that may have different laws and data protection compliance requirements to those that apply in the country in which you are located. This includes transferring, processing and storing Personal Data outside of the European Economic Area (EEA). Where we transfer your Personal Data to other countries, we do so on the basis of Standard Contractual Clauses. You may request a copy of our Standard Contractual Clauses using the contact details provided in Section (N) below. As part of providing our services to You, we use third party data processors outside of the EEA as outlined below:<br>
-                                            • Salesforce.com for customer, partner and contact management which is based in the USA.<br>
-                                            • FedEx Corporation for equipment delivery and service support which is based in the USA.<br>
-                                            • The Rocket Science Group (trading as Mailchimp) for marketing campaigns which is based in the USA.<br>
-                                            • PayPal Inc. for payment of services which is based in the USA.<br>
-                                            • Zift Solutions (formerly Relayware) for partner portal which is based in the USA.<br>
-                                            • Amazon Web Services, Inc. for cloud service which is based in the USA.<br>
-                                            • Microsoft Corporation (Microsoft Azure) for cloud service which is based in the USA. For further information on the third party data processors outside of the EEA and to obtain copies of our data protection agreement with them, please contact us by using the contact details provided in Section (N), below. G. Data Accuracy We take every reasonable step to ensure that:<br>
-                                            • your Personal Data are accurate and kept up to date with changes that you notify us with; and<br>
-                                            • we erase or rectify any Personal Data that you notify us is inaccurate. From time to time we may ask you to confirm the accuracy of your Personal Data. H. Data Minimisation We take every reasonable step to ensure that your Personal Data that we Process are limited to the Personal Data reasonably required in connection with the purposes set out in this Privacy Notice. I. Data Retention The criteria for determining the duration for which we will keep your Personal data are as follows:<br>
-                                            • we will retain copies of your Personal Data in a form that permits identification only for as long as is necessary in connection with the purposes for which we use it;<br>
-                                            • applicable law requires a longer retention period. In particular, we may retain your Personal Data for the duration of any period necessary to establish, exercise or defend any legal rights. J.</p>
-                                        <p>Securing Personal Data Where Getac acts as the controller of Personal Data, it will ensure that necessary and adequate safeguards are in place to prevent unauthorised access, loss, misuse or alteration of your Personal Data. We store all personal information on secure servers with relevant access and firewall controls. Any Personal Data sent to us, either in writing or email, may be insecure in transit and we cannot guarantee its delivery. Passwords must be kept confidential and not disclosed to a third party. Getac does not ask you for your password. K. Data Subject Rights Subject to applicable law based upon your nationality (e.g. EU Citizen) and domicile, you may have a number of rights regarding the Processing of your Personal Data, including:<br>
-                                            • the right to request access to, or copies of, your Personal Data that we Process or control;<br>
-                                            • the right to request rectification of any inaccuracies in your Personal Data that we Process or control;<br>
-                                            • erasure of your Personal Data that we Process or control; or<br>
-                                            • restriction of Processing of your Personal Data that we Process or control;<br>
-                                            • the right to object, on legitimate grounds, to the Processing of your Personal Data by us or on our behalf;<br>
-                                            • the right to have your Personal Data that we Process or control transferred to another Controller, to the extent applicable;<br>
-                                            • where we Process your Personal Data on the basis of your consent, the right to withdraw that consent; and<br>
-                                            • the right to lodge complaints with a Data Protection Authority regarding the Processing of your Personal Data by us or on our behalf.<br>
-                                            This does not affect your statutory rights. To exercise one or more of these rights, or to ask a question about these rights or any other provision of this Privacy Notice, or about our Processing of your Personal Data, please use the contact details provided in Section (N) below. L. Cookies A cookie is a small file that is placed on your device when you visit a website (including our Sites). It records information about your device, your browser and, in some cases, your preferences and browsing habits. We may Process your Personal Data through cookie technology, in accordance with our Cookie Policy. For further information on how we use Cookies please see our Cookie Policy. M. Terms of Use All use of our Sites is subject to our Terms of Use. N. Contact details If you have any comments, questions or concerns about any of the information in this Privacy Notice, or any other issues relating to the Processing of Personal Data by Getac, please contact: Legal Affairs Center, 5F., Building A, No. 209, Sec. 1, Nangang Rd., Nangang Dist., Taipei City, 11568, Taiwan, R.O.C. Attn：Data Protection Manager Email： dpm.LAC@getac.com.tw Telephone: +886 (0)2 2785 7888 O. Data Protection Registration We are registered as a data controller with the UK Information Commissioner’s Office and our data protection registration number is ZA467078. P. Complaints If you are a European Citizen and feel your rights have not been respected, or do not feel a situation was resolved satisfactorily, you have the right to raise a complaint with your local Supervisory Authority. The contacts details of the Supervisory Authorities with whom Getac has Data Protection registrations are: The UK Information Commissioner (United Kingdom). You can contact them as follows: – Web: https://ico.org.uk/concerns/ Telephone: +44 (0)303 123 1113 In Writing: Information Commissioner’s Office Wycliffe House Water Lane Wilmslow Cheshire SK9 5AF Q. Definitions ‘Data Controller’ means the entity that decides how and why Personal Data is Processed. In many jurisdictions, the Controller has primary responsibility for complying with applicable data protection laws. ‘Data Protection Authority’ means an independent public authority that is legally tasked with overseeing compliance with applicable data protection laws. ‘Personal Data’ means information that is about any individual, or from which any individual is identifiable. Examples of Personal Data that we may Process are provided in Section (B) above. ‘Process’, ‘Processing’ or ‘Processed’ means anything that is done with any Personal Data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction. ‘Data Processor’ means any person or entity that Processes Personal Data on behalf of the Controller (other than employees of the Controller).</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <!-- ✜ Other Values (hidden form fields, submit button) ✜ -->
-                            <div class="form__row form__row--button column-6 form-column">
-                                      
-                              <!-- Populated by Javascript code below (checkoptin value) -->
-                              <input type="hidden" name="hiddenField" id="fe4219" value="Transportation">
-                              <input type="hidden" name="checkoptin" id="fe4213" value="">
-                              <input type="hidden" name="utm_campaign" id="fe4214" value="">
-                              <input type="hidden" name="utm_source" id="fe4215" value="">
-                              <input type="hidden" name="utm_medium" id="fe4216" value="">
-                              <input type="hidden" name="utm_content" id="fe4217" value="">
-                              <br>
-        
-                              
-                              <div id="formElement7" class="elq-field-style form-element-layout row mb-5">
+                            <div class="row mt-5 mb-5">
+                                <div class="col-12">
+                                  <div id="formElement7" class="elq-field-style form-element-layout row">
                                     <div class="col-sm-12 col-xs-12">
                                       <label for="fe4218" class="submit-button-style btn-submit">
                                         <input id="fe4218" type="submit" value="Submit">
@@ -1153,16 +1149,19 @@
                                           
                                           <span class="submit-text">Submit</span>
                                       </label>
-                                      
                                     </div>
-                              </div>
-        
+                                  </div>
+                                </div>
                             </div>
-                            
-                            
-                          
-                      
-                        </div></form>
+                            <input type="hidden" name="hiddenField" id="fe4219" value="Automotive">
+                            <input type="hidden" name="checkoptin" id="fe4213" value="">
+                            <input type="hidden" name="utm_campaign" id="fe4214" value="">
+                            <input type="hidden" name="utm_source" id="fe4215" value="">
+                            <input type="hidden" name="utm_medium" id="fe4216" value="">
+                            <input type="hidden" name="utm_content" id="fe4217" value="">
+                        </div>
+                    </form>
+                    
         
                       </div>
                     </div>
@@ -1174,15 +1173,11 @@
       </div>
     </div>
 
-    <!-- button back top -->
-    <button onclick="topFunction()" id="myBtn" title="Go to top" style="display: block;"><i class="fas fa-arrow-up"></i></button>
-
     <script src="./js.lib/jquery-3.6.0.min.js"></script>
     <script src="./js.lib/popper.min.js"></script>
     <script src="./js.lib/bootstrap/bootstrap.min.js"></script>
     <script src="./js.lib/swiper/swiper-bundle.min.js"></script>
     <script src="./js.lib/webcomponents-loader.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.6/velocity.min.js"></script>
     <script src="./js.lib/jquery.validate.min.js"></script>
     <script src="./js.lib/livevalidation_standalone.compressed.js"></script>
     <script src="./js/validate.js"></script>

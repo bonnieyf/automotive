@@ -16,19 +16,27 @@ $(document).ready(function () {
       $("#btn-stick").removeClass("btn-block-head");
     }
   });
-  $("#form509").validate({
+  jQuery.validator.addMethod("domain", function (value, element) {
+    return !value.match(/(telnet|ftp|https?):\/\/(?:[a-z0-9][a-z0-9-]{0,61}[a-z0-9]\.|[a-z0-9]\.)+[a-z]{2,63}/i);
+  }, "Value must not contain any URL's");
+  $("#form533").validate({
     rules: {
       first_name: {
-        required: true
+        required: true,
+        maxlength: 35
       },
       last_name: {
-        required: true
+        required: true,
+        maxlength: 35
       },
       company: {
-        required: true
+        required: true,
+        maxlength: 35,
+        domain: true
       },
       email: {
-        required: true
+        required: true,
+        maxlength: 35
       },
       country: {
         required: true
@@ -36,13 +44,16 @@ $(document).ready(function () {
     },
     messages: {
       first_name: {
-        minlength: "Must be at least 2 characters"
+        minlength: "Invalid length for field value",
+        maxlength: "Invalid length for field value"
       },
       last_name: {
-        minlength: "Must be at least 2 characters"
+        minlength: "Invalid length for field value",
+        maxlength: "Invalid length for field value"
       },
       company: {
-        minlength: "Must be at least 2 characters"
+        minlength: "Invalid length for field value",
+        maxlength: "Invalid length for field value"
       }
     },
     submitHandler: function submitHandler(form) {
@@ -70,22 +81,20 @@ function ReturnOptin() {
   var DataLookupString = "<C_EmailAddress>" + email_addr + "</C_EmailAddress>";
   var dt = new Date();
   var ms = dt.getMilliseconds();
+  var SiteID = "179956068";
+  var PPS = "50";
   var lookupScript = "https://secure.p06.eloqua.com/visitor/v200/svrGP?pps=50&siteid=179956068&DLKey=" + DataLookupKey + "&DLLookup=" + DataLookupString + "&ms=" + ms;
   $.getScript(lookupScript, function () {
-    var de4213 = document.getElementById("fe4213");
-
     if (typeof GetElqContentPersonalizationValue != "undefined") {
       var lookup_optin = GetElqContentPersonalizationValue("C_Opt_In1");
 
       if (lookup_optin == "") {
-        de4213.value = "0";
+        document.getElementById("fe4213").value = "0";
       } else {
-        de4213.value = lookup_optin;
+        document.getElementById("fe4213").value = lookup_optin;
       }
     } else {
-      de4213.value = "0";
+      document.getElementById("fe4213").value = "0";
     }
-
-    console.log("get:", de4213.value);
   });
 }

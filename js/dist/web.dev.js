@@ -26,22 +26,18 @@ function topFunction() {
 $(function () {
   var isLang = "en";
   localStorage.setItem("lang", isLang);
-  $(".modal").on("show.bs.modal", function (e) {
-    $(".modal-dialog").next().velocity("callout.bounce");
-  });
 });
 var swiper = new Swiper(".swiper-experience-card", {
   effect: "fade",
   grabCursor: true,
   loop: true,
   centeredSlides: true,
-  slidesPerView: "auto",
+  slidesPerView: 1,
   coverflowEffect: {
     rotate: 50,
     stretch: 0,
     depth: 100,
-    modifier: 1,
-    slideShadows: true
+    modifier: 1
   },
   autoplay: {
     delay: 5000,

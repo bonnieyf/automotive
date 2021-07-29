@@ -1,5 +1,5 @@
 //Get the button
-var mybutton = document.getElementById("myBtn");
+// var mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function () {
@@ -8,11 +8,11 @@ window.onscroll = function () {
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-    document.querySelector(".custom-header").classList.add("sticky");
+    // mybutton.style.display = "block";
+    document.querySelector(".header").classList.add("sticky");
   } else {
-    mybutton.style.display = "none";
-    document.querySelector(".custom-header").classList.remove("sticky");
+    // mybutton.style.display = "none";
+    document.querySelector(".header").classList.remove("sticky");
   }
 }
 
@@ -26,10 +26,6 @@ $(function () {
   let isLang = "en";
 
   localStorage.setItem("lang", isLang);
-
-  $(".modal").on("show.bs.modal", function (e) {
-    $(".modal-dialog").next().velocity("callout.bounce");
-  });
 });
 
 var swiper = new Swiper(".swiper-experience-card", {
@@ -37,13 +33,12 @@ var swiper = new Swiper(".swiper-experience-card", {
   grabCursor: true,
   loop: true,
   centeredSlides: true,
-  slidesPerView: "auto",
+  slidesPerView: 1,
   coverflowEffect: {
     rotate: 50,
     stretch: 0,
     depth: 100,
     modifier: 1,
-    slideShadows: true,
   },
   autoplay: {
     delay: 5000,

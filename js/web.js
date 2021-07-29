@@ -6,6 +6,8 @@ window.onscroll = function () {
   scrollFunction();
 };
 
+scrollFunction();
+
 function scrollFunction() {
   let bodyScrollTop =
     document.body.scrollTop || document.documentElement.scrollTop;

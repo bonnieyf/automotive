@@ -5,7 +5,10 @@
 
 @import _form
 
-
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl
+  +media('<tablet')
+    padding-left: 30px
+    padding-right: 30px
 #logo
   position: absolute
   right: 50px
@@ -33,18 +36,14 @@
 .select-lang
   position: relative
   display: inline-block
-  
-
   @include media('>=desktop')
-    padding-left: 50px
-
-  .select-lang--icon
-    position: absolute
-    top: 0
-    left: 0
+    padding-left: 40px
 
 .select-lang--icon
   display: none
+  position: absolute
+  top: 0
+  left: 0
   width: 42px
 
   @include media('>=desktop')
@@ -55,7 +54,7 @@
   box-shadow: none
   border: none
   margin: 0
-  padding: 0
+  min-width: 80px
   min-height: 40px
   font-size: 16px
   color: #2E2E2E
@@ -177,6 +176,7 @@
 
   .icon
     margin-right: 12px
+    
 
   &:hover
     color: $white
@@ -335,8 +335,6 @@ header
   z-index: 100
   overflow: hidden
 
-  
-
 
   +media('>=phone_M')
     right: -30%
@@ -351,7 +349,7 @@ header
     right: -60%
   
   +media('<=phone_S')
-    right: -43%
+    right: -46%
     height: 102%
 
   +media('<=phone')
@@ -918,6 +916,8 @@ model-viewer
     display: none
 
   +media('>=tablet')
+    .btn-text .icon
+      width: 30px
 
     ol>li:nth-child(1)
         margin-top: 20px
@@ -929,16 +929,17 @@ model-viewer
     right: 0
     width: 280px
 
-    img
+    .qrcode-link img
       width: 140px
 
     ol>li:nth-child(1)
       margin-top: 0
 
+
   +media('<=desktop')
     .btn-text
       display: block
-      max-width: 360px
+      max-width: 380px
 
     .qr-code
       display: flex

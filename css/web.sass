@@ -329,14 +329,20 @@ header
 .kv-peo
   position: absolute
   bottom: 0
-  right: -60%
+  right: -30%
   width: auto
   height: 103%
   z-index: 100
   overflow: hidden
 
+  
+
+
   +media('>=phone_M')
-    right: -50%
+    right: -30%
+
+  +media('>=phone_L')
+    right: -55%
 
   +media('>tablet')
     right: -65%
@@ -345,11 +351,11 @@ header
     right: -60%
   
   +media('<=phone_S')
-    right: -76%
+    right: -43%
     height: 102%
 
   +media('<=phone')
-    right: -85%
+    right: -45%
 
   img
     object-fit: contain
@@ -887,7 +893,7 @@ model-viewer
     padding: 20px 30px
     padding-left: 88px
 
-  +media('<tablet')
+  +media('<=desktop')
     display: none
 
 
@@ -898,7 +904,6 @@ model-viewer
       width: 34px
 
 
-
   .title
     margin-bottom: 5px
 
@@ -907,12 +912,12 @@ model-viewer
     font-weight: regular
 
 .ar-tools
-  +media('>=tablet')
-    display: flex
-    position: relative
+  padding-bottom: 10px
 
-    img
-      width: 130px
+  .btn-text
+    display: none
+
+  +media('>=tablet')
 
     ol>li:nth-child(1)
         margin-top: 20px
@@ -930,12 +935,22 @@ model-viewer
     ol>li:nth-child(1)
       margin-top: 0
 
+  +media('<=desktop')
+    .btn-text
+      display: block
+      max-width: 360px
 
-  +media('<tablet')
+    .qr-code
+      display: flex
+      width: 100%
+      max-width: 800px
+      margin: 0 auto
+
+      .qrcode-link
+        flex: 180px
+
+  +media('<=tablet')
     padding-bottom: 20px
-    
-    .qrcode-link
-      display: none
 
     .btn-text
       max-width: 260px
@@ -945,6 +960,9 @@ model-viewer
         margin-right: 10px
         width: 25px
 
+  +media('<phone_L')
+    .qr-code
+      display: none
 
 .qrcode-link
   display: block
@@ -1006,7 +1024,7 @@ model-viewer
 
   +media('<=tablet')
     background-image: url(./../images/m-back-office.png)
-    background-size: 640px auto
+    background-size: 768px auto
 
   +media('>desktop')
     background-size: auto

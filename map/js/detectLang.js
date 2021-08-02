@@ -12,9 +12,8 @@ window.onload = function () {
 
   langSelect.addEventListener("change", function () {
     let cur = this.value;
-    // unityInstance.SendMessage("Canvas", "SendToUnity", "es");
     localStorage.setItem("lang", cur);
-    console.log("updated!!");
+    MultiLanguage();
   });
 };
 
@@ -38,4 +37,18 @@ function findLangIndex(str) {
       break;
   }
   return str;
+}
+
+function MultiLanguage() {
+  console.log(
+    "update!!!!!!: " + localStorage.getItem("lang")
+      ? localStorage.getItem("lang")
+      : "en"
+  );
+  unityInstance.SendMessage(
+    "Language_Manager",
+    "SendToUnity",
+    localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+  );
+  unityInstance.SendMessage("Language_Manager", "loadLanguage");
 }

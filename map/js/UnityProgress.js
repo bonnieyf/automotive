@@ -8,24 +8,6 @@ if (isMobile) {
   currentDevice = "desktop";
 }
 
-window.onload = function () {
-  IsPC();
-
-  // event listening
-  let currentLang = localStorage.getItem("lang");
-  MultiLanguage(currentLang);
-  console.log("currentLang:" + currentLang);
-
-  let langSelect = document.querySelector(".select-lang--select");
-  langSelect.addEventListener("change", function () {
-    let cur = this.value;
-    // unityInstance.SendMessage("Canvas", "SendToUnity", "es");
-    localStorage.setItem("lang", cur);
-    MultiLanguage(cur);
-    console.log("select", cur);
-    console.log("updated!!");
-  });
-};
 
 function UnityProgress(unityInstance, progress) {
   if (!unityInstance.Module) return;
@@ -139,11 +121,6 @@ function handelTeachingPopup() {
   });
 }
 
-function MultiLanguage(lang) {
-  unityInstance.SendMessage("Language_Manager", "SendToUnity", lang);
-  unityInstance.SendMessage("Language_Manager", "loadLanguage");
-}
-
 function IsPC() {
   var userAgentInfo = navigator.userAgent;
   var Agents = [
@@ -167,8 +144,11 @@ function IsPC() {
 }
 
 function handleClickDetail(content) {
+  console.log(content.replace(/^hotspot{1,}[0-9]+(_[0-9]|[0-9])?:<$/, ""));
   $("#modal-detail").modal("show");
   $("#modal-detail").on("shown.bs.modal", function (e) {
-    $("#modal-inner").html(content.replace(content.substr(0, 11), ""));
+    $("#modal-inner").html(
+      content.replace(/^hotspot{1,}[0-9]+(_[0-9]|[0-9])?:</, "<")
+    );
   });
 }

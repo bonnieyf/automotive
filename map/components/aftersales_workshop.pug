@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Aftersales Workshop
+
+    include ./_unity_head
+
+    script.
+      var unityInstance = UnityLoader.instantiate("unityContainer", "./Build/aftersales_workshop.json", {onProgress: UnityProgress});
+  body
+    include ./_header
+    .links 
+      a(href="../index.html") Home 
+      a(class="active" href="./index.html") Aftersales Workshop 
+      a(href="../engineering_lab/index.html") Engineering Lab 
+      a(href="../manufacturing_factory/index.html") Manufacturing Factory 
+      a(href="../warehouse/index.html") Warehouse
+    .webgl-content
+      #unityContainer(data-idx="1" data-name="Aftersales Workshop" style="width: 100vw; height: 100vh")
+
+    include ./_popup
+    include ./_unity_footer

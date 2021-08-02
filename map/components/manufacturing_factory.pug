@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Manufacturing Factory
+
+    include ./_unity_head
+
+    script.
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/manufacturing_factory.json", {onProgress: UnityProgress});
+  body
+    include ./_header
+    .links 
+      a(href="../index.html") Home 
+      a(href="../aftersales_workshop/index.html") Aftersales Workshop 
+      a(href="../engineering_lab/index.html") Engineering Lab 
+      a(class="active" href="./index.html") Manufacturing Factory 
+      a(href="../warehouse/index.html") Warehouse
+    .webgl-content
+      #unityContainer(data-idx="3" data-name="Manufacturing Factory" style="width: 100vw; height: 100vh")
+
+    include ./_popup
+    include ./_unity_footer

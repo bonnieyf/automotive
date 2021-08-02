@@ -5,6 +5,12 @@
 
 @import _form
 
+
+*:focus,.form-select:focus,.btn-check:focus+.btn, .btn:focus
+  outline: none !important
+  border: none !important
+  box-shadow: none
+   
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl
   +media('<tablet')
     padding-left: 30px
@@ -29,6 +35,8 @@
 
   @include media(">=tablet")
     height: 90px
+
+  
 
 
   
@@ -329,31 +337,29 @@ header
 .kv-peo
   position: absolute
   bottom: 0
-  right: -30%
-  width: auto
+  right: -50%
+  width: inherit
   height: 103%
   z-index: 100
   overflow: hidden
-
-
-  +media('>=phone_M')
-    right: -30%
-
-  +media('>=phone_L')
-    right: -55%
 
   +media('>tablet')
     right: -65%
 
   +media('>desktop')
     right: -60%
+
+  +media('<=phone_L')
+    right: -30vw
   
+  +media('<=phone_M')
+    right: -32vw
+
   +media('<=phone_S')
-    right: -46%
-    height: 102%
+    right: -46vw
 
   +media('<=phone')
-    right: -45%
+    right: -50vw
 
   img
     object-fit: contain
@@ -415,13 +421,17 @@ header
 
     @include media(">=desktop")
       padding-top: 85px
+
+    h1,p
+      position: relative
+      z-index: 250
   
   .slider-txt--box
-    width: 40%
+    width: 45%
 
     +media('>phone_S')
       width: 50%
-
+    
   .container
     position: absolute
     top: 0
@@ -472,10 +482,10 @@ header
 
   g path
     opacity: 0
-    animation: scrollTopAnimation2 1s ease infinite alternate
+    animation: scrollTopAnimation 1s ease infinite alternate
 
     &:nth-child(2)
-      animation: scrollTopAnimation 1s ease infinite alternate
+      animation: scrollTopAnimation2 1s ease infinite alternate
 
 @keyframes scrollTopAnimation
   0%
@@ -506,6 +516,7 @@ header
   +media('<=phone_S')
     width: 80%
     bottom: 5%
+    font-size: 14px
 
   .icon
     margin-right: 12px
@@ -518,6 +529,8 @@ header
     +media(">=desktop_L")
       width: 42px
 
+    +media("<=phone_S")
+      width: 25px
 
 
 model-viewer
@@ -637,6 +650,13 @@ model-viewer
   padding: 20px
   min-height: 430px
   cursor: grab
+  min-height: 450px
+
+  +media('<phone_L')
+    min-height: 450px
+
+  +media('<phone')
+    min-height: 460px
 
   img
     border: none
@@ -651,7 +671,6 @@ model-viewer
     -webkit-line-clamp: 2
     -webkit-box-orient: vertical
     white-space: normal
-
     +media('<phone_L')
       font-size: 18px
 
@@ -662,6 +681,7 @@ model-viewer
     -webkit-box-orient: vertical
     white-space: normal
     text-align: left
+    
     p
       margin: 0
 
@@ -700,6 +720,9 @@ model-viewer
     
   .txt-box
     padding: 38px 30px
+    +media('<tablet')
+      padding-left: 0
+      padding-right: 0
 
     .title
       color: $white

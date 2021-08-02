@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link test demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Oswald:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../js.lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./../js.lib/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./../js.lib/fontawesome/all.css">
+    <link rel="stylesheet" href="./../css/web.css" />
+    <link rel="stylesheet" href="./assets/unity_web.css" />
+  </head>
+  <body>
+    include _header
+    <div class="map">
+      <a class="room room-1" href="./aftersales_workshop/index.html">Aftersales Workshop</a>
+      <a class="room room-2" href="./engineering_lab/index.html">Engineering Lab</a>
+      <a class="room room-3" href="./manufacturing_factory/index.html">Manufacturing Factory</a>
+      <a class="room room-4" href="./warehouse/index.html">Warehouse</a>
+      <img src="./assets/map.webp" alt="" />
+    </div>
+
+    <iframe data-src="aftersales_workshop/index.html" loading="lazy" class="unity-iframe"></iframe>
+    <iframe data-src="engineering_lab/index.html" loading="lazy" class="unity-iframe"></iframe>
+    <iframe data-src="manufacturing_factory/index.html" loading="lazy" class="unity-iframe"></iframe>
+    <iframe data-src="warehouse/index.html" loading="lazy" class="unity-iframe"></iframe>
+    
+
+    script(src="./js/detectLang.js")
+    script.
+        if ('loading' in HTMLIFrameElement.prototype) {
+        const iframes = document.querySelectorAll('iframe[loading="lazy"]');
+
+        iframes.forEach(iframe => {
+          iframe.src = iframe.dataset.src;
+        });
+
+      } else {
+        const script = document.createElement('script');
+        script.src =
+          'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js';
+        document.body.appendChild(script);
+      }
+
+      window.addEventListener('message',function(e){
+        const data = e.data;
+        console.log('[ '+data+' ]page loaded!!!')
+      })
+
+      
+
+      
+  </body>
+</html>

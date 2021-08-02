@@ -6,7 +6,8 @@
 @import _form
 
 .modal-dialog
-  margin: 0 !important
+  +media('<=desktop_S')
+    margin: 0 auto!important
   
 *:focus,.form-select:focus,.btn-check:focus+.btn, .btn:focus
   outline: none !important
@@ -59,6 +60,7 @@
   @include media('>=desktop')
     display: inline-block
 
+  
 .select-lang--select
   display: inline-block
   box-shadow: none
@@ -69,6 +71,8 @@
   font-size: 16px
   color: #2E2E2E
   z-index: 1
+  cursor: pointer
+
 
 @media screen and (min-width: 1400px)
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl

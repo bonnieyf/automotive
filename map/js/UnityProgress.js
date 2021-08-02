@@ -144,7 +144,6 @@ function IsPC() {
 }
 
 function handleClickDetail(content) {
-  console.log(content.replace(/^hotspot{1,}[0-9]+(_[0-9]|[0-9])?:<$/, ""));
   $("#modal-detail").modal("show");
   $("#modal-detail").on("shown.bs.modal", function (e) {
     $("#modal-inner").html(

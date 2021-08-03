@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="module"  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  <style>
+    body,html{
+      margin: 0;
+      padding: 0;
+    }
+    model-viewer{
+      width: 100%;
+      height: 100vh;;
+    }
+  </style>
+  <script>
+    let url = location.href;
+
+    function getParameterByName(name, url = window.location.href) {
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    let parame = getParameterByName('device')
+    let data = [
+      {
+        id: 'UX10',
+        src: './UX10/UX10GS.glb',
+        iosSrc: './UX10/UX10GS.usdz'
+      },
+      {
+        id: 'B360',
+        src: './B360/B360.glb',
+        iosSrc: './B360/B360.usdz'
+      },
+      {
+        id: 'F110',
+        src: './F110/F110GS.glb',
+        iosSrc: './F110/F110GS.usdz'
+      },
+      {
+        id: 'S410',
+        src: './S410/S410.glb',
+        iosSrc: './S410/S410.usdz'
+      },
+      {
+        id: 'ZX70',
+        src: './ZX70/ZX70.glb',
+        iosSrc: './ZX70/ZX70.usdz'
+      }
+    ];
+    let result = data.filter(device => device.id === parame)[0];
+
+    window.onload = function(){
+      if(parame){
+        let modelViewer = document.getElementById('modelViewer');
+        modelViewer.src= result.src
+        modelViewer.iosSrc= result.iosSrc
+      }
+    }
+  </script>
+</head>
+<body>
+  <model-viewer id="modelViewer" src="" ios-src="" camera-orbit="0deg 75deg 200m" camera-controls ar-modes="webxr scene-viewer quick-look" environment-image="./env.hdr" max-field-of-view="45deg" shadow-intensity="1"></model-viewer>
+</body>
+</html>

@@ -1,1 +1,142 @@
-const isMobile=/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);let currentDevice,isShowPopup=JSON.parse(localStorage.getItem("isShowPopup"))||!1;function UnityProgress(e,t){e.Module&&(e.bg||(e.bg=document.createElement("div"),e.bg.className=`unity-bg unity-bg-${e.container.getAttribute("data-idx")}`,e.container.appendChild(e.bg)),e.progress||(e.progress=document.createElement("div"),e.progress.className="unity-progress",e.container.appendChild(e.progress),e.text=document.createElement("div"),e.text.className=`text text-${e.container.getAttribute("data-name")}`,e.progress.appendChild(e.text),e.text.innerText=e.container.getAttribute("data-name"),e.progress.bar=document.createElement("div"),e.progress.bar.className="bar",e.progress.appendChild(e.progress.bar),e.progress.full=document.createElement("div"),e.progress.full.className="full",e.progress.bar.appendChild(e.progress.full),e.container.appendChild(e.progress)),e.progress.full.style.width=100*t+"%",1==t&&handelTeachingPopup())}function fadeOutEffect(){var e=document.getElementById("target"),t=setInterval((function(){e.style.opacity||(e.style.opacity=1),e.style.opacity>0?e.style.opacity-=.1:clearInterval(t)}),200)}function handelTeachingPopup(){let e=document.querySelector(".unity-userguide"),t=e.querySelector(".close-popup"),o=(document.querySelector(".img-detect"),document.querySelector(".unity-bg")),n=document.querySelector(".unity-progress");isShowPopup?setTimeout((function(){gsap.to(n,{duration:1,opacity:0,display:"none",y:-10,ease:"power2.out"}),gsap.to(o,{duration:1,opacity:0,display:"none",ease:"power2.out"})}),2e3):(isShowPopup=!0,localStorage.setItem("isShowPopup",isShowPopup),gsap.to(n,{duration:1,opacity:0,y:-10,ease:"power2.out"}),gsap.to(e,{duration:1,opacity:1,display:"block",ease:"power2.out"}),setTimeout((function(){gsap.to(o,{duration:1,opacity:0,display:"none",ease:"power2.out"})}),2e3)),t.addEventListener("click",(function(){gsap.to(e,{duration:1,opacity:0,display:"none",ease:"power2.out"})}))}function IsPC(){for(var e=navigator.userAgent,t=["Android","iPhone","SymbianOS","Windows Phone","iPad","iPod"],o=!0,n=0;n<t.length;n++)if(e.indexOf(t[n])>0){o=!1;break}unityInstance.SendMessage("Man","SendToUnity",String(o))}function handleClickDetail(e){$("#modal-detail").modal("show"),$("#modal-detail").on("shown.bs.modal",(function(t){$("#modal-inner").html(e.replace(/^hotspot{1,}[0-9]+(_[0-9]|[0-9])?:</,"<"))}))}currentDevice=isMobile?"mobile":"desktop";
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+let isShowPopup = JSON.parse(localStorage.getItem("isShowPopup")) || false;
+let currentDevice;
+
+if (isMobile) {
+  currentDevice = "mobile";
+} else {
+  currentDevice = "desktop";
+}
+
+function UnityProgress(unityInstance, progress) {
+  if (!unityInstance.Module) return;
+  if (!unityInstance.bg) {
+    unityInstance.bg = document.createElement("div");
+    unityInstance.bg.className = `unity-bg unity-bg-${unityInstance.container.getAttribute(
+      "data-idx"
+    )}`;
+    unityInstance.container.appendChild(unityInstance.bg);
+  }
+
+  if (!unityInstance.progress) {
+    unityInstance.progress = document.createElement("div");
+    unityInstance.progress.className = "unity-progress";
+    unityInstance.container.appendChild(unityInstance.progress);
+
+    unityInstance.text = document.createElement("div");
+    unityInstance.text.className = `text text-${unityInstance.container.getAttribute(
+      "data-name"
+    )}`;
+    unityInstance.progress.appendChild(unityInstance.text);
+
+    unityInstance.text.innerText =
+      unityInstance.container.getAttribute("data-name");
+    unityInstance.progress.bar = document.createElement("div");
+    unityInstance.progress.bar.className = "bar";
+    unityInstance.progress.appendChild(unityInstance.progress.bar);
+
+    unityInstance.progress.full = document.createElement("div");
+    unityInstance.progress.full.className = "full";
+    unityInstance.progress.bar.appendChild(unityInstance.progress.full);
+    unityInstance.container.appendChild(unityInstance.progress);
+  }
+
+  unityInstance.progress.full.style.width = 100 * progress + "%";
+
+  if (progress == 1) {
+    handelTeachingPopup();
+  }
+}
+
+function fadeOutEffect() {
+  var fadeTarget = document.getElementById("target");
+  var fadeEffect = setInterval(function () {
+    if (!fadeTarget.style.opacity) {
+      fadeTarget.style.opacity = 1;
+    }
+    if (fadeTarget.style.opacity > 0) {
+      fadeTarget.style.opacity -= 0.1;
+    } else {
+      clearInterval(fadeEffect);
+    }
+  }, 200);
+}
+
+function handelTeachingPopup() {
+  let modalUserGuide = $("#modal-userguide");
+  let unityProgress = $(".unity-progress");
+  let unityBg = $(".unity-bg");
+
+  if (!isShowPopup) {
+    isShowPopup = true;
+    localStorage.setItem("isShowPopup", isShowPopup);
+    gsap.to(unityProgress, {
+      duration: 1,
+      opacity: 0,
+      y: -10,
+      ease: "power2.out",
+    });
+
+    modalUserGuide.modal("show");
+
+    setTimeout(function () {
+      gsap.to(unityBg, {
+        duration: 1,
+        opacity: 0,
+        display: "none",
+        ease: "power2.out",
+      });
+    }, 2000);
+  } else {
+    setTimeout(function () {
+      gsap.to(unityProgress, {
+        duration: 0.6,
+        opacity: 0,
+        display: "none",
+        y: -10,
+        ease: "power2.out",
+      });
+      gsap.to(unityBg, {
+        duration: 0.6,
+        opacity: 0,
+        display: "none",
+        ease: "power2.out",
+      });
+    }, 2000);
+  }
+}
+
+function IsPC() {
+  var userAgentInfo = navigator.userAgent;
+  var Agents = [
+    "Android",
+    "iPhone",
+    "SymbianOS",
+    "Windows Phone",
+    "iPad",
+    "iPod",
+  ];
+  var flag = true;
+  for (var v = 0; v < Agents.length; v++) {
+    if (userAgentInfo.indexOf(Agents[v]) > 0) {
+      flag = false;
+      break;
+    }
+  }
+
+  unityInstance.SendMessage("Man", "SendToUnity", String(flag));
+  //unityInstance.SendMessage("BridgeX", "PL_check");
+}
+
+function handleClickDetail(content) {
+  let modal = $("#modal-detail");
+  let modalContent = $(".modal-contentbox");
+  modal.modal("show");
+
+  modal.on("shown.bs.modal", function (e) {
+    modalContent.empty();
+    modalContent.append(
+      content.replace(/^hotspot{1,}[0-9]+(_[0-9]|[0-9])?:</, "<")
+    );
+  });
+}

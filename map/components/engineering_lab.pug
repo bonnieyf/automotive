@@ -1,3 +1,5 @@
+
+- var page = 'engineering_lab';
 doctype html
 html(lang="en")
   head
@@ -11,13 +13,8 @@ html(lang="en")
     script.
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/engineering_lab.json", {onProgress: UnityProgress});
   body
-    include ./_header
-    .links 
-      a(href="../index.html") Home 
-      a(href="../aftersales_workshop/index.html") Aftersales Workshop 
-      a(class="active" href="./index.html") Engineering Lab 
-      a(href="../manufacturing_factory/index.html") Manufacturing Factory 
-      a(href="../warehouse/index.html") Warehouse
+    include ./_unity_header
+    include ./_unity_menu
     .webgl-content
       #unityContainer(data-idx="2" data-name="Engineering Lab" style="width: 100vw; height: 100vh")
 

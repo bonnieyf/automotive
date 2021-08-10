@@ -1,3 +1,5 @@
+- var page = 'aftersales_workshop';
+
 doctype html
 html(lang="en")
   head
@@ -11,15 +13,10 @@ html(lang="en")
     script.
       var unityInstance = UnityLoader.instantiate("unityContainer", "./Build/aftersales_workshop.json", {onProgress: UnityProgress});
   body
-    include ./_header
-    .links 
-      a(href="../index.html") Home 
-      a(class="active" href="./index.html") Aftersales Workshop 
-      a(href="../engineering_lab/index.html") Engineering Lab 
-      a(href="../manufacturing_factory/index.html") Manufacturing Factory 
-      a(href="../warehouse/index.html") Warehouse
-    .webgl-content
-      #unityContainer(data-idx="1" data-name="Aftersales Workshop" style="width: 100vw; height: 100vh")
+    include ./_unity_header
+    include ./_unity_menu
+    //- .webgl-content
+    //-   #unityContainer(data-idx="1" data-name="Aftersales Workshop" style="width: 100vw; height: 100vh")
 
     include ./_popup
     include ./_unity_footer

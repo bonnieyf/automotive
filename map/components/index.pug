@@ -22,32 +22,19 @@
       <img src="./assets/map.webp" alt="" />
     </div>
 
-    <iframe data-src="aftersales_workshop/index.html" loading="lazy" class="unity-iframe"></iframe>
-    <iframe data-src="engineering_lab/index.html" loading="lazy" class="unity-iframe"></iframe>
-    <iframe data-src="manufacturing_factory/index.html" loading="lazy" class="unity-iframe"></iframe>
-    <iframe data-src="warehouse/index.html" loading="lazy" class="unity-iframe"></iframe>
+    <iframe src="aftersales_workshop/index.html" loading="lazy" class="unity-iframe"></iframe>
+    <iframe src="engineering_lab/index.html" loading="lazy" class="unity-iframe"></iframe>
+    <iframe src="manufacturing_factory/index.html" loading="lazy" class="unity-iframe"></iframe>
+    <iframe src="warehouse/index.html" loading="lazy" class="unity-iframe"></iframe>
     
 
     script(src="./js/detectLang.js")
-    script.
-        if ('loading' in HTMLIFrameElement.prototype) {
-        const iframes = document.querySelectorAll('iframe[loading="lazy"]');
+    //- script.
 
-        iframes.forEach(iframe => {
-          iframe.src = iframe.dataset.src;
-        });
-
-      } else {
-        const script = document.createElement('script');
-        script.src =
-          'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js';
-        document.body.appendChild(script);
-      }
-
-      window.addEventListener('message',function(e){
-        const data = e.data;
-        console.log('[ '+data+' ]page loaded!!!')
-      })
+      //- window.addEventListener('message',function(e){
+      //-   const data = e.data;
+      //-   console.log('[ '+data+' ]page loaded!!!')
+      //- })
 
       
 

@@ -64,11 +64,10 @@ function fadeOutEffect() {
 }
 
 function handelTeachingPopup() {
-  let content = document.querySelector(".unity-userguide");
-  let closeBtn = content.querySelector(".close-popup");
-  let popupText = document.querySelector(".img-detect");
-  let unityBg = document.querySelector(".unity-bg");
-  let unityProgress = document.querySelector(".unity-progress");
+  let modalUserGuide = $("#modal-userguide");
+  let unityProgress = $(".unity-progress");
+  let unityBg = $(".unity-bg");
+
   if (!isShowPopup) {
     isShowPopup = true;
     localStorage.setItem("isShowPopup", isShowPopup);
@@ -78,12 +77,9 @@ function handelTeachingPopup() {
       y: -10,
       ease: "power2.out",
     });
-    gsap.to(content, {
-      duration: 1,
-      opacity: 1,
-      display: "block",
-      ease: "power2.out",
-    });
+
+    modalUserGuide.modal("show");
+
     setTimeout(function () {
       gsap.to(unityBg, {
         duration: 1,
@@ -95,31 +91,22 @@ function handelTeachingPopup() {
   } else {
     setTimeout(function () {
       gsap.to(unityProgress, {
-        duration: 1,
+        duration: 0.6,
         opacity: 0,
         display: "none",
         y: -10,
         ease: "power2.out",
       });
       gsap.to(unityBg, {
-        duration: 1,
+        duration: 0.6,
         opacity: 0,
         display: "none",
         ease: "power2.out",
       });
     }, 2000);
   }
-
-  // popupText.innerText = currentDevice;
-  closeBtn.addEventListener("click", function () {
-    gsap.to(content, {
-      duration: 1,
-      opacity: 0,
-      display: "none",
-      ease: "power2.out",
-    });
-  });
 }
+
 
 function IsPC() {
   var userAgentInfo = navigator.userAgent;

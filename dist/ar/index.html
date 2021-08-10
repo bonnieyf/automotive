@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>AR Experience - 3D Model</title>
   <script type="module"  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
   <style>
@@ -14,8 +14,12 @@
       background: #ccc;
     }
     model-viewer{
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
       width: 100%;
-      height: 100vh;;
+      height: 100%;
     }
   </style>
   <script>
@@ -58,18 +62,26 @@
         iosSrc: './ZX70/ZX70.usdz'
       }
     ];
-    let result = data.filter(device => device.id === parame)[0];
+    let result = data.filter(device => device.id.toUpperCase() === parame.toUpperCase())[0];
 
     window.onload = function(){
       if(parame){
         let modelViewer = document.getElementById('modelViewer');
         modelViewer.src= result.src
         modelViewer.iosSrc= result.iosSrc
+        document.title = parame.toUpperCase();
       }
     }
   </script>
 </head>
 <body>
-  <model-viewer id="modelViewer" src="" ios-src="" camera-orbit="0deg 75deg 200m" camera-controls ar-modes="webxr scene-viewer quick-look" environment-image="./env.hdr" max-field-of-view="45deg" shadow-intensity="1"></model-viewer>
+  <model-viewer id="modelViewer" src="" ios-src=""
+  environment-image="env.hdr"
+  exposure="1.25"
+  auto-rotate
+  camera-controls
+  ar
+  ar-scale="fixed"
+  quick-look-browsers="safari chrome"></model-viewer>
 </body>
 </html>

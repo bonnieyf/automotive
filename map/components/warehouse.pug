@@ -1,3 +1,4 @@
+- var page = 'warehouse';
 doctype html
 html(lang="en")
   head
@@ -11,13 +12,8 @@ html(lang="en")
     script.
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/warehouse.json", {onProgress: UnityProgress});
   body
-    include ./_header
-    .links 
-      a(href="../index.html") Home 
-      a(href="../aftersales_workshop/index.html") Aftersales Workshop 
-      a(href="../engineering_lab/index.html") Engineering Lab 
-      a(href="../manufacturing_factory/index.html") Manufacturing Factory 
-      a(class="active" href="./index.html") Warehouse
+    include ./_unity_header
+    include ./_unity_menu
     .webgl-content
       #unityContainer(data-idx="4" data-name="Warehouse" style="width: 100vw; height: 100vh")
 

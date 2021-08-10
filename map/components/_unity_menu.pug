@@ -1,0 +1,86 @@
+
+if page === 'aftersales_workshop'
+  .unity-menu 
+    .menu-item(class="home")
+      a(href="../index.html")
+        span.icon
+          img(src="../assets/icon_menu_map.svg", alt="")
+        span Map
+    .menu-item
+      a(class='active' href='./')
+        span.icon
+          img(src="../assets/icon_menu_workshop.svg", alt="")
+        span Aftersales Workshop 
+    .menu-item
+      a(href="../engineering_lab/index.html")
+        span.icon
+          img(src="../assets/icon_menu_warehouse.svg", alt="")
+        span Engineering Lab
+    .menu-item
+      
+      a(href="../manufacturing_factory/index.html")
+        span.icon
+          img(src="../assets/icon_menu_manufacturing.svg", alt="")
+        span Manufacturing Factory 
+    .menu-item
+      a(href="../warehouse/index.html")
+       span.icon
+          img(src="../assets/icon_menu_warehouse.svg", alt="")
+      span Warehouse  
+
+if page === 'engineering_lab'
+  .unity-menu 
+    .menu-item
+      a(href="../index.html")
+      img(src="../assets/i", alt="") 
+    .menu-item
+      a(href="../aftersales_workshop/index.html")
+      span
+      span Aftersales Workshop 
+    .menu-item
+      a(class='active' href='./')
+      span Engineering Lab
+    .menu-item
+      a(href="../manufacturing_factory/index.html")
+      span Manufacturing Factory 
+    .menu-item
+      a(href="../warehouse/index.html")
+      span Warehouse
+
+
+if page === 'manufacturing_factory'
+  .unity-menu 
+    .menu-item
+      a(href="../index.html")
+      img(src="../assets/i", alt="") 
+    .menu-item
+      a(href="../aftersales_workshop/index.html")
+      span Aftersales Workshop 
+    .menu-item
+      a(href="../engineering_lab/index.html")
+      span Engineering Lab
+    .menu-item
+      a(class='active' href='./')
+      span Manufacturing Factory 
+    .menu-item
+      a(href="../warehouse/index.html")
+      span Warehouse
+
+
+if page === 'warehouse'
+  .unity-menu 
+    .menu-item
+      a(href="../index.html")
+      img(src="../assets/i", alt="") 
+    .menu-item
+      a(href="../aftersales_workshop/index.html")
+      span Aftersales Workshop 
+    .menu-item
+      a(href="../engineering_lab/index.html")
+      span Engineering Lab
+    .menu-item
+      a(href="../manufacturing_factory/index.html")
+      span Manufacturing Factory 
+    .menu-item
+      a(class='active' href='./')
+      span Warehouse

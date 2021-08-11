@@ -3,23 +3,25 @@
     <div class="custom-modal modal fade" id="modal-userguide" tabindex="-1" role="dialog" aria-labelledby="modal-registerTitle" aria-hidden="true">
       <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
         <div class="modal-content">
-          <div class=" modal-body">
-            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <section class="container-fluid bg-black-getac">
+          <div class="modal-body">
+            <section class="modal-content container-fluid">
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
               .row 
-                .col-6 
+                .col-12.col-md-6 
                   h2.color-title 
                     span Turn Around
 
                   .guide-img
-                    img(src="./../assets/guide_move.svg", alt="")
-                .col-6.border-left-md.border-top-sm
+                    img.d-none.d-md-block.d-sm-none(src="./../assets/guide_move.svg", alt="")
+                    img.d-block.d-sm-block.d-md-none(src="./../assets/guide_movie_m.svg", alt="")
+                .col-12.col-md-6.border-left-md.border-top-sm
                   h2.color-title 
                     span Move Forward
                   .guide-img
-                    img(src="./../assets/guide_turn_around.svg", alt="")
+                    img.d-none.d-md-block.d-sm-none(src="./../assets/guide_turn_around.svg", alt="")
+                    img.d-block.d-sm-block.d-md-none(src="./../assets/guide_turn_around_m.svg", alt="")
             </section>
           </div>
         </div>

@@ -1,10 +1,11 @@
 window.onload = function () {
   let langSelect = document.querySelector(".lang-dropdown");
-  let initLang = localStorage.getItem("lang")
-    ? localStorage.getItem("lang")
-    : localStorage.setItem("lang", "en");
+  let getHashLang = getParameterByName("lang") || "en";
+  localStorage.setItem("lang", getHashLang);
+  let initLang = localStorage.getItem("lang");
 
   let lanSelectOption = langSelect.querySelectorAll(".dropdown-item");
+
   for (i = 0; i < lanSelectOption.length; i++) {
     lanSelectOption[i].classList.remove = "active";
   }
@@ -23,8 +24,16 @@ window.onload = function () {
   btnSwitch.addEventListener("click", function () {
     sideMenu.classList.toggle("show");
   });
-    
 };
+
+function getParameterByName(name, url = window.location.href) {
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return "";
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
 
 function findLangIndex(str) {
   switch (str) {

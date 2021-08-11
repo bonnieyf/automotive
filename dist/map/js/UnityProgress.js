@@ -88,6 +88,9 @@ function handelTeachingPopup() {
         opacity: 0,
         display: "none",
         ease: "power2.out",
+        oncomplete: function () {
+          tools.addClass("initAnimation");
+        },
       });
     }, 2000);
   } else {

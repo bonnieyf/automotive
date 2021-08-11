@@ -7,17 +7,19 @@
             <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <section class="container-fluid bg-black-getac px-4 py-5">
+            <section class="container-fluid bg-black-getac">
               .row 
                 .col-6 
-                  h2.title 
+                  h2.color-title 
                     span Turn Around
-                .col-6
-                  h2.title 
+
+                  .guide-img
+                    img(src="./../assets/guide_move.svg", alt="")
+                .col-6.border-left-md.border-top-sm
+                  h2.color-title 
                     span Move Forward
-              .row 
-                .col-12
-                  img(src="./../../images/unity_user_guide.svg", alt="")
+                  .guide-img
+                    img(src="./../assets/guide_turn_around.svg", alt="")
             </section>
           </div>
         </div>

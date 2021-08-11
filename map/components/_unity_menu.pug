@@ -1,86 +1,122 @@
 
 if page === 'aftersales_workshop'
-  .unity-menu 
+  .unity-menu.unity-show-tools.show
+    .btn-switch-tab 
+    .menu-item(class="home")
+      a(href="../index.html")
+        span.icon
+          img(src="../assets/icon_menu_map.svg", alt="")
+        span Map
+    .menu-item(class='active')
+      a(href='./')
+        span.icon
+          img(src="../assets/icon_menu_workshop.svg", alt="")
+        span Workshop
+    .menu-item
+      a(href="../warehouse/index.html")
+        span.icon
+            img(src="../assets/icon_menu_warehouse.svg", alt="")
+        span Warehouse
+    .menu-item
+      a(href="../manufacturing_factory/index.html")
+        span.icon
+          img(src="../assets/icon_menu_manufacturing.svg", alt="")
+        span Automotive Manufacturing
+    .menu-item
+      a(href="../engineering_lab/index.html")
+        span.icon
+          img(src="../assets/icon_menu_rd.svg", alt="")
+        span R&D and Engineering
+    
+
+if page === 'engineering_lab'
+  .unity-menu.unity-show-tools.show
+    .btn-switch-tab 
     .menu-item(class="home")
       a(href="../index.html")
         span.icon
           img(src="../assets/icon_menu_map.svg", alt="")
         span Map
     .menu-item
-      a(class='active' href='./')
+      a(href="../aftersales_workshop/index.html")
         span.icon
           img(src="../assets/icon_menu_workshop.svg", alt="")
-        span Aftersales Workshop 
+        span Workshop
     .menu-item
-      a(href="../engineering_lab/index.html")
+      a(href="../warehouse/index.html")
         span.icon
-          img(src="../assets/icon_menu_warehouse.svg", alt="")
-        span Engineering Lab
+            img(src="../assets/icon_menu_warehouse.svg", alt="")
+        span Warehouse 
     .menu-item
-      
       a(href="../manufacturing_factory/index.html")
         span.icon
           img(src="../assets/icon_menu_manufacturing.svg", alt="")
-        span Manufacturing Factory 
-    .menu-item
-      a(href="../warehouse/index.html")
-       span.icon
-          img(src="../assets/icon_menu_warehouse.svg", alt="")
-      span Warehouse  
-
-if page === 'engineering_lab'
-  .unity-menu 
-    .menu-item
-      a(href="../index.html")
-      img(src="../assets/i", alt="") 
-    .menu-item
-      a(href="../aftersales_workshop/index.html")
-      span
-      span Aftersales Workshop 
-    .menu-item
-      a(class='active' href='./')
-      span Engineering Lab
-    .menu-item
-      a(href="../manufacturing_factory/index.html")
-      span Manufacturing Factory 
-    .menu-item
-      a(href="../warehouse/index.html")
-      span Warehouse
+        span Automotive Manufacturing
+    .menu-item(class='active')
+      a(href='./')
+        span.icon
+          img(src="../assets/icon_menu_rd.svg", alt="")
+        span R&D and Engineering
+    
+     
 
 
 if page === 'manufacturing_factory'
-  .unity-menu 
-    .menu-item
+  .unity-menu.unity-show-tools.show
+    .btn-switch-tab 
+    .menu-item(class="home")
       a(href="../index.html")
-      img(src="../assets/i", alt="") 
+        span.icon
+          img(src="../assets/icon_menu_map.svg", alt="")
+        span Map
     .menu-item
       a(href="../aftersales_workshop/index.html")
-      span Aftersales Workshop 
-    .menu-item
-      a(href="../engineering_lab/index.html")
-      span Engineering Lab
-    .menu-item
-      a(class='active' href='./')
-      span Manufacturing Factory 
+        span.icon
+          img(src="../assets/icon_menu_workshop.svg", alt="")
+        span Workshop
+
     .menu-item
       a(href="../warehouse/index.html")
-      span Warehouse
+        span.icon
+            img(src="../assets/icon_menu_warehouse.svg", alt="")
+        span Warehouse  
+    .menu-item(class='active')
+      a(href='./')
+        span.icon
+          img(src="../assets/icon_menu_manufacturing.svg", alt="")
+        span Automotive Manufacturing
+    .menu-item
+      a(href="../engineering_lab/index.html")
+        span.icon
+          img(src="../assets/icon_menu_rd.svg", alt="")
+        span R&D and Engineering
 
 
 if page === 'warehouse'
-  .unity-menu 
-    .menu-item
+  .unity-menu.unity-show-tools.show
+    .btn-switch-tab 
+    .menu-item(class="home")
       a(href="../index.html")
-      img(src="../assets/i", alt="") 
+        span.icon
+          img(src="../assets/icon_menu_map.svg", alt="")
+        span Map
     .menu-item
       a(href="../aftersales_workshop/index.html")
-      span Aftersales Workshop 
-    .menu-item
-      a(href="../engineering_lab/index.html")
-      span Engineering Lab
+        span.icon
+          img(src="../assets/icon_menu_workshop.svg", alt="")
+        span Workshop
+    .menu-item(class='active')
+      a(href='./')
+        span.icon
+            img(src="../assets/icon_menu_warehouse.svg", alt="")
+        span Warehouse 
     .menu-item
       a(href="../manufacturing_factory/index.html")
-      span Manufacturing Factory 
+        span.icon
+          img(src="../assets/icon_menu_manufacturing.svg", alt="")
+        span Automotive Manufacturing
     .menu-item
-      a(class='active' href='./')
-      span Warehouse
+      a(href="../engineering_lab/index.html")
+        span.icon
+          img(src="../assets/icon_menu_rd.svg", alt="")
+        span R&D and Engineering

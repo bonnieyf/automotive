@@ -66,7 +66,9 @@ function fadeOutEffect() {
 function handelTeachingPopup() {
   let modalUserGuide = $("#modal-userguide");
   let unityProgress = $(".unity-progress");
+  let tools = $(".unity-show-tools");
   let unityBg = $(".unity-bg");
+  let btnHelper = $("#modal-helper");
 
   if (!isShowPopup) {
     isShowPopup = true;
@@ -102,9 +104,16 @@ function handelTeachingPopup() {
         opacity: 0,
         display: "none",
         ease: "power2.out",
+        oncomplete: function () {
+          tools.addClass("initAnimation");
+        },
       });
     }, 2000);
   }
+
+  btnHelper.click(function () {
+    modalUserGuide.modal("show");
+  });
 }
 
 

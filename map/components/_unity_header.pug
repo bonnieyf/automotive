@@ -1,25 +1,17 @@
-.unity-right-tool
+.unity-right-tool.unity-show-tools
   .tool-item
-    span.icon(type="button" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false")
+   <div class="dropdown">
+    span.icon(id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false")
       img(src="./../assets/icon_lang.svg", alt="")
-    <ul class="dropdown-menu" aria-labelledby="langDropdown">
-      <li><a class="dropdown-item" data-value="en" href="#">English</a></li>
-      <li><a class="dropdown-item" data-value="es" href="#">Español</a></li>
-      <li><a class="dropdown-item" data-value="de" href="#">Deutsch</a></li>
-      <li><a class="dropdown-item" data-value="it" href="#">Italiano</a></li>
-      <li><a class="dropdown-item" data-value="fr" href="#">Français</a></li>
+    <ul class="lang-dropdown dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <li><a class="dropdown-item active" data-lang="en" href="#">English</a></li>
+      <li><a class="dropdown-item" data-lang="es" href="#">Español</a></li>
+      <li><a class="dropdown-item" data-lang="de" href="#">Deutsch</a></li>
+      <li><a class="dropdown-item" data-lang="it" href="#">Italiano</a></li>
+      <li><a class="dropdown-item" data-lang="fr" href="#">Français</a></li>
     </ul>
+  </div>
 
   .tool-item
-    span.icon
+    span.icon#modal-helper
       img(src="./../assets/icon_help.svg", alt="")
-
-
-
-<select class="select-lang--select form-select" aria-label="Default select example">
-  <option value="en" selected>English</option>
-  <option value="es"></option>
-  <option value="de"></option>
-  <option value="it"></option>
-  <option value="fr"></option>
-</select>

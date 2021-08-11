@@ -1,20 +1,29 @@
 window.onload = function () {
-  let langSelect = document.querySelector(".select-lang--select");
-  let langOptions = langSelect.options;
+  let langSelect = document.querySelector(".lang-dropdown");
   let initLang = localStorage.getItem("lang")
     ? localStorage.getItem("lang")
     : localStorage.setItem("lang", "en");
 
-  for (i = 0; i < langOptions.length; i++) {
-    langOptions[i].selected = false;
+  let lanSelectOption = langSelect.querySelectorAll(".dropdown-item");
+  for (i = 0; i < lanSelectOption.length; i++) {
+    lanSelectOption[i].classList.remove = "active";
   }
-  langOptions[findLangIndex(initLang)].selected = true;
+  lanSelectOption[findLangIndex(initLang)].classList.add = "active";
 
-  langSelect.addEventListener("change", function () {
-    let cur = this.value;
-    localStorage.setItem("lang", cur);
-    MultiLanguage();
+  lanSelectOption.forEach((item) => {
+    item.addEventListener("click", function () {
+      let cur = this.getAttribute("data-lang");
+      localStorage.setItem("lang", cur);
+      MultiLanguage();
+    });
   });
+
+  let btnSwitch = document.querySelector(".btn-switch-tab");
+  let sideMenu = document.querySelector(".unity-menu");
+  btnSwitch.addEventListener("click", function () {
+    sideMenu.classList.toggle("show");
+  });
+    
 };
 
 function findLangIndex(str) {

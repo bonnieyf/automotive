@@ -1,0 +1,1 @@
+window.onload=function(){let e=getParameterByName("lang")||localStorage.getItem("lang")||"en";localStorage.setItem("lang",e)};

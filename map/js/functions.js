@@ -1,3 +1,66 @@
+const mapData = [
+  {
+    lang: "en",
+    map: {
+      title: "AUTOMOTIVE VIRTUAL EXHIBITION",
+      desc: "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
+    },
+    unity: {
+      popup: {
+        userguideTitle: ["Turn Around", "Move Forward"],
+      },
+    },
+  },
+  {
+    lang: "es",
+    map: {
+      title: "ES AUTOMOTIVE VIRTUAL EXHIBITION",
+      desc: "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
+    },
+    unity: {
+      popup: {
+        userguideTitle: ["ES Turn Around", "Move Forward"],
+      },
+    },
+  },
+  {
+    lang: "de",
+    map: {
+      title: "DE AUTOMOTIVE VIRTUAL EXHIBITION",
+      desc: "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
+    },
+    unity: {
+      popup: {
+        userguideTitle: ["DE Turn Around", "Move Forward"],
+      },
+    },
+  },
+  {
+    lang: "it",
+    map: {
+      title: "IT AUTOMOTIVE VIRTUAL EXHIBITION",
+      desc: "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
+    },
+    unity: {
+      popup: {
+        userguideTitle: ["IT Turn Around", "Move Forward"],
+      },
+    },
+  },
+  {
+    lang: "fr",
+    map: {
+      title: "FR AUTOMOTIVE VIRTUAL EXHIBITION",
+      desc: "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
+    },
+    unity: {
+      popup: {
+        userguideTitle: ["FR Turn Around", "Move Forward"],
+      },
+    },
+  },
+];
+
 function getParameterByName(name, url = window.location.href) {
   name = name.replace(/[\[\]]/g, "\\$&");
   var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),

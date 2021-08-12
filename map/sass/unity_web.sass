@@ -1,5 +1,6 @@
 @import ./../../sass/_include-media
-  
+@function vw($px-vw, $base-vw: 1360px)    
+  @return ($px-vw * 100vw) / $base-vw
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap')
 
 /*Unity*/
@@ -483,3 +484,247 @@ header nav
   +media('<tablet')
     .border-top-sm
       margin-top: 50px
+
+
+.unity-map--logo
+  position: fixed
+  top: 2.3%
+  left: 3.6%
+  z-index: 200
+
+  .logo-getac
+    width: 101px
+
+.unity-map--lang
+  position: fixed
+  top: 2.3%
+  right: 3.6%
+  z-index: 200
+  select
+    background-color: transparent
+
+.unity-map-copyright
+  position: fixed
+  bottom: 2.3%
+  right: 3.6%
+  text-align: right
+  z-index: 100
+  p
+    color: #282828
+    font-size: 14pxs
+    font-family: Arial, Helvetica, sans-serif
+    line-height: 1.5
+
+// index
+.unity-map-container
+  position: fixed
+  top: 0
+  left: 0
+  width: 33%
+  bottom: 0
+  z-index: 100
+  background: #d54725
+  clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%)
+
+.unity-map-slogan
+  max-width: 80%
+  padding-top: 20%
+  margin-left: 10%
+  padding-right: 5%
+  .title
+    color: #FFFFFF
+    font-family: Oswald,Arial, Helvetica, sans-serif
+    font-weight: 400
+    font-size: 40px
+    line-height: 1.45
+    margin-bottom: 20px
+    text-shadow: 5px 5px 6px #2E2E2ECC
+
+    // +media('>=desktop')
+    //   font-size: 60px
+
+  .txt
+    font-size: 20px
+    font-weight: normal
+    color: white
+    text-shadow: 0px 3px 2px #000000B3
+
+    // +media('>=desktop')
+    //   font-size: 24px
+
+
+.unity-map-bg
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  width: 100%
+  z-index: 1
+
+  .base-bg
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: url(bg.jpg) no-repeat center center
+    background-size: cover
+    z-index: 1
+
+.unity-map--screen
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+  .bg
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+    z-index: 20
+
+  .light
+    opacity: 0
+    z-index: 20
+    transition: opacity .5s ease
+
+  &.active .light
+    opacity: 1
+
+  &.screen1
+    .light
+      background-image: url(aw_light.png)
+    .normal
+      background-image: url(aw.png)
+
+  &.screen2
+    .light
+      background-image: url(wm_light.png)
+    .normal
+      background-image: url(wm.png)
+
+  &.screen3
+    .light
+      background-image: url(am_light.png)
+    .normal
+      background-image: url(am.png)
+
+  &.screen4
+    .light
+      background-image: url(rd_light.png)
+    .normal
+      background-image: url(rd.png)
+
+
+.unity-map-hover
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 50
+  display: none
+
+.unity-map-hover-screen
+  display: block
+  position: absolute
+
+  &:hover .titlebox
+    opacity: 1
+    visibility: inherit
+    transform: translateX(0)
+
+
+  .titlebox
+    position: absolute
+    top: 0
+    width: 266px
+    height: 104px
+    background: url(map_block.svg) no-repeat 0 0
+    background-size: cover
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 0 30px
+    padding-bottom: 10px
+    box-sizing: border-box
+    opacity: 0
+    visibility: hidden
+    transition: all .4s ease
+    transform: translateX(-30px)
+
+
+    span
+      color: white
+      font-size: 16px
+      font-weight: bold
+      line-height: 1.2
+
+    span.title-icon
+      flex: 40%
+      max-width: 40%
+
+      img
+        width: 100%
+        max-width: 60px
+
+    span.title
+      flex: 60%
+      max-width: 60%
+    
+
+  &.screen1
+    top: 40%
+    left: 33%
+    width: 46%
+    height: 36%
+
+    .titlebox
+      top: 106%
+      left: -5%
+
+  &.screen2
+    top: 50%
+    left: 76%
+    width: 22%
+    height: 36%
+
+    .titlebox
+      top: 73%
+      left: -53%
+
+  &.screen3
+    top: 12%
+    left: 39%
+    width: 36%
+    height: 36%
+
+    .titlebox
+      top: -8%
+      left: 65%
+
+  &.screen4
+    top: 26%
+    left: 79%
+    width: 19%
+    height: 24%
+
+    .titlebox
+      top: -40%
+      left: -35%
+
+
+.unity-map-overlay
+  position: fixed
+  top: 0
+  right: 0
+  width: 100%
+  bottom: 0
+  background-color: #fff
+  z-index: 1000

@@ -11,7 +11,10 @@ body,html
 
 html.map-home,html.map-home body
   overflow-y: auto
-  background-color: #c7c7c8
+  
+  +media('<=phone_L')
+    background-color: #c7c7c8
+    
 /* Unity UI */
 .unity-menu
   position: absolute

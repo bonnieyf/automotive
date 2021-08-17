@@ -28,18 +28,47 @@ $(function () {
       duration: 1,
       scale: 1.01,
       ease: "power2.out",
+      onCompleted: function () {
+        $(".map-home").addClass("hasBg");
+      },
     })
     .to(".unity-map-hover", { display: "block" });
 
   let changeBg = $(".unity-map--screen");
-  let currentIndex = null;
   $(".unity-map-hover-screen")
-    .on("mouseover", function () {
+    .on("mouseover", function (e) {
       let _index = $(this).index();
+      changeBg.removeClass("active");
       changeBg.eq(_index).addClass("active");
     })
     .on("mouseleave", function () {
       let _index = $(this).index();
       changeBg.eq(_index).removeClass("active");
+    })
+    .on("click", function (e) {
+      let _this = $(this);
+      let openUrl = _this.attr("data-href");
+
+      if (isMobileDevice()) {
+        _this.find(".more").click(function () {
+          window.location.href = openUrl;
+        });
+      } else {
+        window.location.href = openUrl;
+      }
     });
 });
+
+function isMobileDevice() {
+  const mobileDevice = [
+    "Android",
+    "webOS",
+    "iPhone",
+    "iPad",
+    "iPod",
+    "BlackBerry",
+    "Windows Phone",
+  ];
+  let isMobileDevice = mobileDevice.some((e) => navigator.userAgent.match(e));
+  return isMobileDevice;
+}

@@ -1,6 +1,10 @@
 @import ./../../sass/_include-media
 @function vw($px-vw, $base-vw: 1360px)    
   @return ($px-vw * 100vw) / $base-vw
+
+@function vh($px-vh, $base-vh: 650px)    
+  @return ($px-vh * 100vh) / $base-vh
+
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap')
 
 /*Unity*/
@@ -12,6 +16,15 @@ body,html
 html.map-home,html.map-home body
   overflow-y: auto
   
+html.map-home body
+  background: #fff
+  transition: background 2s 1s ease
+
+  +media('<=phone_L')
+    min-height: 100vh
+
+   
+html.hasBg body 
   +media('<=phone_L')
     background-color: #c7c7c8
     
@@ -24,6 +37,7 @@ html.map-home,html.map-home body
   width: 100px
   z-index: 100
   transition: left,right .5s ease
+  user-select: none
 
   +media('<=tablet')
     display: flex
@@ -39,11 +53,10 @@ html.map-home,html.map-home body
     display: block
     width: 100%
     height: 16px
-    background: rgba(#2E2E2E, .9)
-    background: linear-gradient(135deg, transparent 12px, #2E2E2E 0) left
+    background: rgba(#2E2E2E, .8)
+    background: linear-gradient(135deg, transparent 12px, rgba(#2E2E2E,.8) 0) left
     background-size: 100% 100%
     background-repeat: no-repeat
-    margin-bottom: -1px
 
     +media('<=tablet')
       display: none
@@ -53,11 +66,10 @@ html.map-home,html.map-home body
     display: block
     width: 100%
     height: 16px
-    background: rgba(#2E2E2E, .9)
-    background: linear-gradient(45deg, transparent 12px, #2E2E2E 0) left
+    background: rgba(#2E2E2E, .8)
+    background: linear-gradient(45deg, transparent 12px, rgba(#2E2E2E,.8) 0) left
     background-size: 100% 100%
     background-repeat: no-repeat
-    margin-top: -1px
     +media('<=tablet')
       display: none
 
@@ -70,7 +82,7 @@ html.map-home,html.map-home body
     text-align: center
     box-sizing: border-box
     transition: all .5s ease
-    background: #2E2E2E
+    background: rgba(#2E2E2E,.8)
 
     +media('<=tablet')
       height: 80px
@@ -191,10 +203,10 @@ html.map-home,html.map-home body
           display: none
 
   .menu-item:hover
-    background: #000000
+    background: rgba(#000000,.8)
 
   .menu-item.active:after
-    opacity: 1
+    opacity: .9
 
   &.show
     right: 0
@@ -227,7 +239,7 @@ html.map-home,html.map-home body
     height: 100px
     margin-top: -50px
     cursor: pointer
-    background: rgba(#282828, .9)
+    background: rgba(#282828, .8)
     clip-path: polygon(100% 0, 100% 100%, 0% 90%, 0% 10%)
     transition: all .5s ease
 
@@ -242,10 +254,10 @@ html.map-home,html.map-home body
 
     @media (hover: hover)
       &:hover
-        background: #000000
+        background: rgba(#000000,.5)
 
       &:hover::before
-        color: #D54725
+        border-bottom-color: #D54725
         transform: rotate(-90deg)
         +media('<=tablet')
           transform: rotate(0)
@@ -300,8 +312,8 @@ html.map-home,html.map-home body
   right: 100px
   min-width: 100px
   height: 42px
-  background: rgba(#2E2E2E, .9)
-  background: linear-gradient(-45deg, transparent 7px, rgba(#2E2E2E, .9) 0) right ,linear-gradient(45deg, transparent 7px, rgba(#2E2E2E, .9) 0) left
+  background: rgba(#2E2E2E, .8)
+  background: linear-gradient(-45deg, transparent 7px, rgba(#2E2E2E, .8) 0) right ,linear-gradient(45deg, transparent 7px, rgba(#2E2E2E, .9) 0) left
   background-size: 50% 100%
   background-repeat: no-repeat
   z-index: 100
@@ -309,6 +321,7 @@ html.map-home,html.map-home body
   display: flex
   align-items: center
   justify-content: center
+  user-select: none
 
   +media('<=tablet')
     right: 15px
@@ -332,7 +345,7 @@ html.map-home,html.map-home body
 
     @media (hover: hover)
       &:hover span
-        background: #000000
+        background: rgba(#000000,.5)
     
     &:nth-child(2):before
       content: ""
@@ -454,8 +467,11 @@ header nav
   flex-flow: wrap
   align-items: center
   justify-content: center
-  transform: translateX(-50%) translateY(-50%)
+  transform: translateX(-50%) translateY(-70%)
   z-index: 20
+  user-select: none
+
+  
 
 .unity-progress .text
   flex: 100%
@@ -468,6 +484,9 @@ header nav
   font-family: 'Oswald', sans-serif
   padding-bottom: 15px
 
+  +media('<=tablet')
+    font-size: 26px
+
 
 .unity-progress .bar
   width: 100%
@@ -476,13 +495,17 @@ header nav
   padding: 2px
   border: 2px solid #3a3a3a
 
+  +media('<=tablet')
+    height: 18px
+
 
 .unity-progress .full
   width: 2%
   height: 12px
   background-color: #3a3a3a
   transition: all ease
-
+  +media('<=tablet')
+    height: 10px
 .overlay
   position: absolute
   top: 0
@@ -531,8 +554,10 @@ header nav
 
 #modal-detail
   color: white
+  user-select: none
   
 #modal-userguide
+  user-select: none
   .container-fluid
     padding: 50px 30px
 
@@ -602,58 +627,74 @@ header nav
     +media('<=tablet')
       margin: 10px auto!important
       max-width: 340px
+    +media('<=phone')
+      max-width: 300px
       
 
 .unity-map--logo
-  position: fixed
+  position: absolute
   top: 2.3%
   left: 3.6%
   z-index: 200
+  user-select: none
 
   +media('<=tablet')
     position: absolute
+    top: 20px
+    left: 16px
 
   .logo-getac
     width: 101px
 
+    +media('<=tablet')
+      width: 74px
+
 .unity-map--lang
-  position: fixed
+  position: absolute
   top: 2.3%
   right: 3.6%
   z-index: 200
+  user-select: none
   +media('<=tablet')
     position: absolute
+    top: 10px
+    right: 16px
     .select-lang--select
       color: white
       background-color: #d54725
       background-image: url(arrow.svg)
+      font-size: 14px
       option
         color: white
   select
     background-color: transparent
 
 .unity-map-copyright
-  position: fixed
+  position: absolute
   bottom: 2.3%
   right: 3.6%
   text-align: right
   z-index: 100
+  user-select: none
 
   +media('<=tablet')
-    position: absolute
+    position: relative
     text-align: center
-    bottom: 15px
-    right: 15px
-    left: 15px
+    bottom: 10px
+    right: 0
+    left: 0
   p
     color: #282828
     font-size: 14px
     font-family: Arial, Helvetica, sans-serif
     line-height: 1.5
 
+    +media('<=tablet')
+      font-size: 12px
+
 // index
 .unity-map-container
-  position: fixed
+  position: absolute
   top: 0
   left: 0
   width: 33%
@@ -661,6 +702,7 @@ header nav
   z-index: 100
   background: #d54725
   clip-path: polygon(0 0, 100% 0%, 80% 100%, 0% 100%)
+  user-select: none
 
   +media('<=tablet')
     position: relative
@@ -689,14 +731,17 @@ header nav
     font-family: Oswald,Arial, Helvetica, sans-serif
     font-weight: 400
     font-size: 40px
-    line-height: 1.45
+    line-height: 1.2
     margin-bottom: 0
     margin-bottom: 20px
     text-shadow: 5px 5px 6px #2E2E2ECC
     
 
     +media('<=phone_L')
-      font-size: vw(32px,390px)
+      font-size: vw(30px,390px)
+
+    +media('<=desktop')
+      font-size: 36px
 
     // +media('>=desktop')
     //   font-size: 60px
@@ -710,22 +755,26 @@ header nav
 
     +media('<=tablet')
       padding-bottom: 50px
+
+    +media('<=desktop')
+      font-size: 16px
       
     +media('<=phone_L')
-      font-size: vw(16px,390px)
+      font-size: vw(15px,390px)
       padding-bottom: vw(60px,390px)
     // +media('>=desktop')
     //   font-size: 24px
 
 
 .unity-map-bg
-  position: fixed
+  position: absolute
   top: 0
   left: 0
   bottom: 0
   width: 100%
-  overflow: hidden
+  height: 100%
   z-index: 1
+  
 
   +media('<=tablet')
     position: relative
@@ -745,13 +794,18 @@ header nav
     background: url(bg.jpg) no-repeat center center
     background-size: cover
     z-index: 1
+    
+    +media('<=phone_L')
+      background-position: center center
 
     +media('<=tablet')
       background-image: url(bg_m.png)
-      background-position: 60% center
-
-    +media('<=phone_L')
       background-position: center center
+
+    +media('<=desktop')
+      background-position: 70% center
+
+    
 
 .unity-map--screen
   position: absolute
@@ -770,6 +824,9 @@ header nav
     background-repeat: no-repeat
     background-position: center center
     z-index: 20
+
+    +media('<=desktop')
+      background-position: 70% center
 
   .light
     opacity: 0
@@ -825,8 +882,8 @@ header nav
   position: absolute
   top: 0
   left: 0
-  width: 100%
-  height: 100%
+  right: 0
+  bottom: 0
   z-index: 50
   display: none
   
@@ -834,15 +891,17 @@ header nav
 .unity-map-hover-screen
   display: block
   position: absolute
+  user-select: none
   // background: red
   // opacity: .5
+  cursor: pointer
 
-  @media (hover: hover)
-    &:hover .titlebox
-      opacity: 1
-      visibility: inherit
-      transform: translateX(0)
-
+  &:hover .titlebox,&.selected .titlebox
+    opacity: 1
+    visibility: inherit
+    transform: translateX(0)
+    z-index: 200
+ 
 
   .titlebox
     position: absolute
@@ -896,6 +955,7 @@ header nav
       max-width: 60%
 
     span.more
+      display: block
       padding: 5px
       color: #fff
       padding: 5px
@@ -912,9 +972,14 @@ header nav
 
   &.screen1
     top: 40%
-    left: 33%
-    width: 46%
-    height: 36%
+    left: 36%
+    width: 40%
+    height: 40%
+    z-index: 20
+
+    +media('<=desktop')
+      left: vw(350px,1200px)
+      width: vw(450px,1200px)
 
     +media('<=tablet')
       top: 39%
@@ -926,18 +991,29 @@ header nav
       top: 106%
       left: -5%
 
+      +media('<=desktop')
+        left: 0%
+        top: 70%
+
       +media('<=tablet')
         left: 12%
         top: -80px
 
   &.screen2
-    top: 50%
-    left: 76%
-    width: 22%
+    top: 52%
+    right: 0%
+    width: vw(450px,1920px)
     height: 36%
+    z-index: 10
+
+    +media('<=desktop')
+      right: vw(80px,1200px)
+      width: vw(320px,1200px)
+
     +media('<=tablet')
       top: 60%
       left: 39%
+      right: unset
       width: 33%
       height: 26%
 
@@ -945,16 +1021,26 @@ header nav
       top: 73%
       left: -53%
 
+      +media('<=desktop')
+        left: -80%
+        top: 50%
+
       +media('<=tablet')
         top: -42%
         left: -55%
+      
 
 
   &.screen3
     top: 12%
     left: 39%
-    width: 36%
+    width: 34%
     height: 36%
+
+    +media('<=desktop')
+      left: vw(380px,1200px)
+      width: vw(390px,1200px)
+      height: 25%
 
     +media('<=tablet')
       top: 18%
@@ -962,33 +1048,63 @@ header nav
       width: 46%
       height: 26%
 
+    
+
     .titlebox
       top: -8%
       left: 65%
 
+      +media('<=desktop')
+        left: 30%
+        top: -10%
+
       +media('<=tablet')
-        top: -13%
-        left: 40%
+        top: -30%
+        left: 30%
         background-image: url(map_block_l_m.svg)
+
+      +media('<=phone')
+        top: -50%
+        left: 0%
+
+      
 
   &.screen4
     top: 26%
-    left: 79%
-    width: 19%
+    right: 0%
+    width: vw(400px,1920px)
     height: 24%
 
+    +media('<=desktop')
+      right: vw(50px,1200px)
+      width: vw(300px,1200px)
+
+
     +media('<=tablet')
-      top: 40%
-      left: 69%
+      top: 33%
+      right: unset
+      left: 60%
       width: 25%
       height: 21%
 
+    
+
     .titlebox
-      top: -40%
-      left: -35%
+      top: -30%
+      left: -30%
+
+      +media('<=desktop')
+        left: -60%
+        top: -20%
+
       +media('<=tablet')
         top: -30%
         left: -100%
+
+      +media('<=phone')
+        top: -80%
+        left: -200%
+      
 
 
 .unity-map-overlay
@@ -1002,3 +1118,15 @@ header nav
 
 
 
+
+
+.map-wrap
+  position: fixed
+  top: 0
+  bottom: 0
+  width: 100%
+
+  +media('<=tablet')
+    position: relative
+    min-height: 500px
+  

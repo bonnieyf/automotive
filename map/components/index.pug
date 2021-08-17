@@ -13,63 +13,64 @@
     <link rel="stylesheet" href="./assets/unity_web.css" />
   </head>
   <body>
-    include _header
-    .unity-map-container
-      .unity-map-slogan
-        h2.title AUTOMOTIVE VIRTUAL EXHIBITION
-        p.txt Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.
-    
-    .unity-map-overlay
-    .unity-map-bg
-      .base-bg
-      .unity-map--screen.screen1
-        .bg.normal
-        .bg.light
-        
-      .unity-map--screen.screen2
-        .bg.normal
-        .bg.light
-        
-      .unity-map--screen.screen3
-        .bg.normal
-        .bg.light
-        
-      .unity-map--screen.screen4
-        .bg.normal
-        .bg.light
+    .map-wrap
+      include _header
+      .unity-map-container
+        .unity-map-slogan
+          h2.title AUTOMOTIVE VIRTUAL EXHIBITION
+          p.txt Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.
+      
+      .unity-map-overlay
+      .unity-map-bg
+        .base-bg
+        .unity-map--screen.screen1
+          .bg.normal
+          .bg.light
+          
+        .unity-map--screen.screen2
+          .bg.normal
+          .bg.light
+          
+        .unity-map--screen.screen3
+          .bg.normal
+          .bg.light
+          
+        .unity-map--screen.screen4
+          .bg.normal
+          .bg.light
 
-      .unity-map-hover
-        a.unity-map-hover-screen.screen1(href="./aftersales_workshop/")
-          .titlebox
-            span.title-icon
-              img(src="./assets/icon_menu_workshop.svg", alt="")
-            span.title Workshop
-            span.more Visit
-        a.unity-map-hover-screen.screen2(href="./warehouse/")
-          .titlebox
-            span.title-icon
-              img(src="./assets/icon_menu_warehouse.svg", alt="")
-            span.title Warehouse
-            span.more Visit
+        .unity-map-hover
+          div.unity-map-hover-screen.screen1(data-href="./aftersales_workshop/")
+            .titlebox
+              span.title-icon
+                img(src="./assets/icon_menu_workshop.svg", alt="")
+              span.title Workshop
+              span.more Visit
+          div.unity-map-hover-screen.screen2(data-href="./warehouse/")
+            .titlebox
+              span.title-icon
+                img(src="./assets/icon_menu_warehouse.svg", alt="")
+              span.title Warehouse
+              span.more Visit
 
-        a.unity-map-hover-screen.screen3(href="./manufacturing_factory/")
-          .titlebox
-            span.title-icon
-              img(src="./assets/icon_menu_manufacturing.svg", alt="")
-            span.title Automotive Manufacturing
-            span.more Visit
+          div.unity-map-hover-screen.screen3(data-href="./manufacturing_factory/")
+            .titlebox
+              span.title-icon
+                img(src="./assets/icon_menu_manufacturing.svg", alt="")
+              span.title Automotive Manufacturing
+              span.more Visit
 
-        a.unity-map-hover-screen.screen4(href="./engineering_lab/")
-          .titlebox
-            span.title-icon
-              img(src="./assets/icon_menu_rd.svg", alt="")
-            span.title R&D and Engineering
-            span.more Visit
-      .unity-map-copyright 
-        p © 2021 GETAC. All Rights Reserved.
-    
+          div.unity-map-hover-screen.screen4(data-href="./engineering_lab/")
+            .titlebox
+              span.title-icon
+                img(src="./assets/icon_menu_rd.svg", alt="")
+              span.title R&D and Engineering
+              span.more Visit
+        .unity-map-copyright 
+          p © 2021 GETAC. All Rights Reserved.
+      
 
-    
+      
     <iframe src="manufacturing_factory/index.html" loading="lazy" class="unity-iframe"></iframe>
     <iframe src="warehouse/index.html" loading="lazy" class="unity-iframe"></iframe>
     

@@ -4,3 +4,13 @@
 <script src="./../../js.lib/bootstrap/bootstrap.min.js"></script>
 <script src="./../js/functions.js"></script>
 <script src="./../js/detectLang.js"></script>
+script.
+    $(function(){
+        $('#modal-detail').modal('show')
+
+        $(".video-iframe a").click(function (e) {
+            e.preventDefault();
+            let src = $(this).data("youtube");
+            alert(src);
+        });
+    });

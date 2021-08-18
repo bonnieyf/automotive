@@ -197,7 +197,7 @@ html.hasBg body
       font-family: Arial, Helvetica, sans-serif
 
       +media('<=phone_L')
-        font-size: vw(12px)
+        font-size: vw(12px,390px)
       &.unit
         +media('<=phone')
           display: none
@@ -451,6 +451,7 @@ header nav
 .unity-show-tools
   opacity: 0
   visibility: hidden
+  transition: opacity .5s ease
   &.initAnimation
     opacity: 1
     visibility: inherit
@@ -1130,3 +1131,190 @@ header nav
     position: relative
     min-height: 500px
   
+#modal-detail
+  .modal-body
+    background-color: rgba(#000,.6)
+
+  .close
+    background: transparent
+
+.modal-navi
+  overflow: hidden
+  a
+    position: relative
+    display: inline-block
+    float: left
+    min-width: 170px
+    height: 50px
+    color: #888888
+    font-size: 20px
+    line-height: 50px
+    text-decoration: none
+    text-align: center
+    padding: 0 10px
+    box-sizing: border-box
+    z-index: 20
+
+    &:after
+      content: ""
+      position: absolute
+      top: 0
+      left: -13px
+      right: -5px
+      bottom: 0
+      background-color: rgba(#666666,.3)
+      clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%)
+      z-index: -1
+
+    &:before
+      display: block
+      content: ""
+      position: absolute
+      top: 50%
+      left: -5px
+      margin-top: -15px
+      width: 1px
+      height: 30px
+      background-color: rgba(#fff,.3)
+      transform: rotate(-20deg)
+      pointer-events: none
+
+    &:nth-child(1)
+      margin-left: 0
+      &:after
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%)
+        z-index: -1
+      &:before
+        display: none
+
+
+    &:hover
+      color: white
+
+    &.active
+      color: #D54725
+      &:after
+        background-color: rgba(#000000,.6)
+
+
+.modal-infor
+  padding: 50px 30px
+
+  .title
+    color: #D54725
+    font-size: 20px
+    font-weight: bold
+    margin: 0
+    margin-bottom: 20px
+
+  .txt
+    color: white
+    font-size: 16px
+    line-height: 1.5
+    margin-bottom: 20px
+
+  .list
+    list-style: none
+    padding-left: 0
+    margin-bottom: 20px
+    i
+      font-size: 14px
+      color: #D54725
+
+
+.video-iframe
+  margin-bottom: 30px
+  a
+    position: relative
+    display: block
+
+    &::before
+      display: block
+      content: ""
+      position: absolute
+      top: 50%
+      left: 50%
+      margin-top: -33px
+      margin-left: -50px
+      width: 66px
+      height: 66px
+      background: url(icon_play.svg) no-repeat center
+      transition: transform .5s ease
+    
+    &:hover::before
+      transform: scale(1.2)
+
+  img
+    display: block
+    margin-bottom: 10px
+
+  span
+    font-size: 14px
+
+
+.device-ar
+  img
+    width: 100%
+    max-width: 100%
+
+
+.device-ar-main
+  position: relative
+
+.device-ar-code
+  position: absolute
+  bottom: 0
+  left: 15px
+  max-width: 125px
+  img
+    max-width: 100%
+
+
+#modal-video
+  position: fixed
+  top: 100%
+  left: 0
+  width: 100%
+  bottom: 0
+  background-color: #000
+  z-index: 90000
+  
+
+  .close
+    position: absolute
+    top: 0
+    right: 0
+    width: 60px
+    height: 60px
+    border: none
+    appearance: none
+    background: transparent
+    color: white
+    font-size: 30px
+    line-height: 60px
+    transition: background .5s ease
+    text-decoration: none
+    text-align: center
+
+    &:hover
+      background: #D54725
+
+
+  .youtube-iframe
+    padding-top: 60%
+    position: relative
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      width: 100%
+      height: 100%
+
+
+  .title
+    color: white
+    font-size: 22px
+    font-weight: normal
+    margin-bottom: 20px

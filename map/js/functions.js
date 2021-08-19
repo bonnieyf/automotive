@@ -105,3 +105,18 @@ function MultiLanguage() {
   );
   unityInstance.SendMessage("Language_Manager", "loadLanguage");
 }
+
+
+function isMobileDevice() {
+  const mobileDevice = [
+    "Android",
+    "webOS",
+    "iPhone",
+    "iPad",
+    "iPod",
+    "BlackBerry",
+    "Windows Phone",
+  ];
+  let isMobileDevice = mobileDevice.some((e) => navigator.userAgent.match(e));
+  return isMobileDevice;
+}

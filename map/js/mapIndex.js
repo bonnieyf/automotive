@@ -50,7 +50,7 @@ $(function () {
       let openUrl = _this.attr("data-href");
 
       if (isMobileDevice()) {
-        _this.find(".more").click(function () {
+        _this.find(".more").click(function () {s
           window.location.href = openUrl;
         });
       } else {
@@ -59,16 +59,3 @@ $(function () {
     });
 });
 
-function isMobileDevice() {
-  const mobileDevice = [
-    "Android",
-    "webOS",
-    "iPhone",
-    "iPad",
-    "iPod",
-    "BlackBerry",
-    "Windows Phone",
-  ];
-  let isMobileDevice = mobileDevice.some((e) => navigator.userAgent.match(e));
-  return isMobileDevice;
-}

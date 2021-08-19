@@ -35,7 +35,6 @@ html.hasBg body
   right: -100px
   transform: translateY(-50%)
   width: 100px
-  z-index: 100
   transition: left,right .5s ease
   user-select: none
 
@@ -316,7 +315,6 @@ html.hasBg body
   background: linear-gradient(-45deg, transparent 7px, rgba(#2E2E2E, .8) 0) right ,linear-gradient(45deg, transparent 7px, rgba(#2E2E2E, .9) 0) left
   background-size: 50% 100%
   background-repeat: no-repeat
-  z-index: 100
   text-align: center
   display: flex
   align-items: center
@@ -455,6 +453,7 @@ header nav
   &.initAnimation
     opacity: 1
     visibility: inherit
+    z-index: 200
 
   
 
@@ -553,9 +552,7 @@ header nav
   height: 70px !important
 
 
-#modal-detail
-  color: white
-  user-select: none
+
   
 #modal-userguide
   user-select: none
@@ -1130,48 +1127,125 @@ header nav
   +media('<=tablet')
     position: relative
     min-height: 500px
-  
-#modal-detail
+
+#modal-swiper
+  +media('<=tablet')
+    padding-bottom: 15px
+
+  +media('>tablet')
+    .swiper-wrapper
+      display: block
+      transform: none !important
+
+.custom-modal-detail
+  color: white
+  user-select: none
+
+  .modal-content
+    +media('<=tablet')
+      min-height: 100vh
+
   .modal-body
-    background-color: rgba(#000,.6)
+    background-color: rgba(#000,.78)
+    box-shadow: 0px 3px 6px #000000A6
+    +media('<=tablet')
+      background-color: #000
+
+  
+  .swiper-pagination-bullet
+    background-color: #C7C6C6
+    opacity: 1
+
+    &.swiper-pagination-bullet-active
+      background-color: #D54725
 
   .close
-    background: transparent
+    background: transparent !important
+    color: white
+    font-size: 30px
+    &:hover
+      color: #D54725
+
+  img
+    max-width: 100%
+    width: 100%
 
 .modal-navi
-  overflow: hidden
+  padding-right: 70px
+
+  nav
+    display: inline-block
+    display: flex
+    align-items: center
+
   a
     position: relative
-    display: inline-block
-    float: left
-    min-width: 170px
+    max-width: 170px
+    min-width: 100px
+    flex: 25%
     height: 50px
     color: #888888
     font-size: 20px
-    line-height: 50px
+    line-height: 1.2
     text-decoration: none
-    text-align: center
     padding: 0 10px
     box-sizing: border-box
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
     z-index: 20
+
+    br.mobile
+      display: none
+      +media('<=phone_L')
+        display: block
+
+      +media('<=phone_S')
+        display: inline-block
+
+    +media('<=tablet')
+      min-width: vw(150px,768px)
+      font-size: 16px
+
+    +media('<=phone_L')
+      min-width: 50px
+      font-size: 15px
+
+    +media('<=phone_S')
+      min-width: 40px
+      word-break: break-all
+
+    +media('<=phone')
+      font-size: vw(8px,320px)
+      
 
     &:after
       content: ""
       position: absolute
       top: 0
-      left: -13px
-      right: -5px
+      left: -9px
+      right: -9px
       bottom: 0
       background-color: rgba(#666666,.3)
       clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%)
-      z-index: -1
+      z-index: 1
+
+      +media('<=phone_L')
+        left: -6px
+        right: -6px
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%)
+
+      +media('<=phone_S')
+        left: -4.5px
+        right: -4.5px
 
     &:before
       display: block
       content: ""
       position: absolute
       top: 50%
-      left: -5px
+      left: 0
       margin-top: -15px
       width: 1px
       height: 30px
@@ -1179,11 +1253,22 @@ header nav
       transform: rotate(-20deg)
       pointer-events: none
 
+      +media('<=phone_L')
+        left: 0
+        transform: rotate(-12deg)
+
+      +media('<=phone_S')
+        transform: rotate(-8deg)
+
     &:nth-child(1)
       margin-left: 0
       &:after
+        left: 0
         clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%)
         z-index: -1
+        +media('<=phone_L')
+          right: -4px
+          clip-path: polygon(0 0, 89% 0, 100% 100%, 0% 100%)
       &:before
         display: none
 
@@ -1194,11 +1279,14 @@ header nav
     &.active
       color: #D54725
       &:after
-        background-color: rgba(#000000,.6)
+        background-color: transparent
 
 
 .modal-infor
   padding: 50px 30px
+
+  +media('<=phone_L')
+    padding: 30px 20px
 
   .title
     color: #D54725
@@ -1217,13 +1305,22 @@ header nav
     list-style: none
     padding-left: 0
     margin-bottom: 20px
+
+    li
+      padding-left: 20px
+      position: relative
     i
+      position: absolute
+      top: 5px
+      left: 0
       font-size: 14px
       color: #D54725
 
 
 .video-iframe
   margin-bottom: 30px
+  img
+    width: 100%
   a
     position: relative
     display: block
@@ -1235,7 +1332,7 @@ header nav
       top: 50%
       left: 50%
       margin-top: -33px
-      margin-left: -50px
+      margin-left: -33px
       width: 66px
       height: 66px
       background: url(icon_play.svg) no-repeat center
@@ -1253,6 +1350,14 @@ header nav
 
 
 .device-ar
+  iframe
+    display: block
+    height: 340px
+    +media('<=tablet')
+      height: 240px
+
+  +media('<=tablet')
+    margin-bottom: 30px
   img
     width: 100%
     max-width: 100%
@@ -1266,6 +1371,11 @@ header nav
   bottom: 0
   left: 15px
   max-width: 125px
+
+  +media('<=tablet')
+    position: relative
+    bottom: unset
+    left: unset
   img
     max-width: 100%
 
@@ -1278,6 +1388,7 @@ header nav
   bottom: 0
   background-color: #000
   z-index: 90000
+  transition: top .5s ease
   
 
   .close
@@ -1318,3 +1429,36 @@ header nav
     font-size: 22px
     font-weight: normal
     margin-bottom: 20px
+
+
+
+.tab-content
+  display: none
+
+  &.show
+    display: block
+
+
+.overflow-scrollbar
+  height: 450px
+  overflow: hidden
+  overflow-y: auto
+
+  +media('<=tablet')
+    height: auto
+    overflow: inherit
+
+  &::-webkit-scrollbar
+    width: 8px
+  
+
+  &::-webkit-scrollbar-track
+    -webkit-box-shadow: none
+    background: rgba(255,255,255,0.1)
+    border-radius: 0
+  
+
+  &::-webkit-scrollbar-thumb
+    border-radius: 0
+    background-color: rgba(#fff,.4)
+  

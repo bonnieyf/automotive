@@ -9,6 +9,8 @@ if (isMobile) {
 }
 
 
+
+
 function UnityProgress(unityInstance, progress) {
   if (!unityInstance.Module) return;
   if (!unityInstance.bg) {
@@ -92,6 +94,7 @@ function handelTeachingPopup() {
           tools.addClass("initAnimation");
         },
       });
+      document.body.classList.add("menu-show");
     }, 2000);
   } else {
     setTimeout(function () {
@@ -111,6 +114,7 @@ function handelTeachingPopup() {
           tools.addClass("initAnimation");
         },
       });
+      document.body.classList.add("menu-show");
     }, 2000);
   }
 
@@ -118,7 +122,6 @@ function handelTeachingPopup() {
     modalUserGuide.modal("show");
   });
 }
-
 
 function IsPC() {
   var userAgentInfo = navigator.userAgent;
@@ -143,10 +146,19 @@ function IsPC() {
 }
 
 function handleClickDetail(content) {
-  $("#modal-detail").modal("show");
-  $("#modal-detail").on("shown.bs.modal", function (e) {
-    $("#modal-inner").html(
-      content.replace(/^hotspot{1,}[0-9]+(_[0-9]|[0-9])?:</, "<")
-    );
-  });
+  let newContent = content.replace(/^hotspot{1,}[0-9]+(_[0-9]|[0-9])?:</, "<");
+  handleModalLayout(newContent);
 }
+
+
+
+
+
+
+
+        
+
+        
+
+
+        

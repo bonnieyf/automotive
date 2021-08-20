@@ -12,6 +12,8 @@ html(lang="en")
 
     script.
       var unityInstance = UnityLoader.instantiate("unityContainer", "./Build/aftersales_workshop.json", {onProgress: UnityProgress});
+
+    
   body
     include ./_unity_header
     include ./_unity_menu
@@ -19,7 +21,7 @@ html(lang="en")
       #unityContainer(data-idx="1" data-name="Workshop" style="width: 100vw; height: 100vh")
 
     include ./_popup
-    
+    include ./_popup_detail_workshop
     include ./_unity_footer
 
     

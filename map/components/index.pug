@@ -35,7 +35,11 @@
       .unity-map-overlay
       .unity-map-bg
         .base-bg
-        .unity-map--screen.screen1
+        .unity-map--screen.screen3
+          .bg.normal
+          .bg.light
+
+        .unity-map--screen.screen4
           .bg.normal
           .bg.light
           
@@ -43,27 +47,13 @@
           .bg.normal
           .bg.light
           
-        .unity-map--screen.screen3
+        .unity-map--screen.screen1
           .bg.normal
           .bg.light
           
-        .unity-map--screen.screen4
-          .bg.normal
-          .bg.light
+        
 
         .unity-map-hover
-          div.unity-map-hover-screen.screen1(data-href="./aftersales_workshop/")
-            .titlebox
-              span.title-icon
-                img(src="./assets/icon_menu_workshop.svg", alt="")
-              span.title Workshop
-              span.more Visit
-          div.unity-map-hover-screen.screen2(data-href="./warehouse/")
-            .titlebox
-              span.title-icon
-                img(src="./assets/icon_menu_warehouse.svg", alt="")
-              span.title Warehouse
-              span.more Visit
 
           div.unity-map-hover-screen.screen3(data-href="./manufacturing_factory/")
             .titlebox
@@ -78,6 +68,23 @@
                 img(src="./assets/icon_menu_rd.svg", alt="")
               span.title R&D and Engineering
               span.more Visit
+
+          
+          div.unity-map-hover-screen.screen2(data-href="./warehouse/")
+            .titlebox
+              span.title-icon
+                img(src="./assets/icon_menu_warehouse.svg", alt="")
+              span.title Warehouse
+              span.more Visit
+
+          div.unity-map-hover-screen.screen1(data-href="./aftersales_workshop/")
+            .titlebox
+              span.title-icon
+                img(src="./assets/icon_menu_workshop.svg", alt="")
+              span.title Workshop
+              span.more Visit
+
+          
         .unity-map-copyright 
           p © 2021 GETAC. All Rights Reserved.
       

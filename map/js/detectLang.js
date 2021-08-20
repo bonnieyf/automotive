@@ -28,7 +28,7 @@ window.onload = function () {
   if (!sideMenu) return false;
   let btnSwitch = document.querySelector(".btn-switch-tab");
   btnSwitch.addEventListener("click", function () {
-    sideMenu.classList.toggle("show");
+    document.body.classList.toggle("menu-show");
   });
 };
 

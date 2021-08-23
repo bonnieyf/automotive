@@ -11,7 +11,7 @@ window.onload = function () {
   let lanSelectOption = langSelect.querySelectorAll(".dropdown-item");
 
   resetOption(lanSelectOption);
-  lanSelectOption[findLangIndex(initLang)].classList.add = "active";
+  lanSelectOption[findLangIndex(initLang)].classList.add("active");
   handleReplaceHTML(result);
 
   lanSelectOption.forEach((item) => {

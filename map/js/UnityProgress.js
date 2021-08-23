@@ -71,6 +71,7 @@ function handelTeachingPopup() {
   let tools = $(".unity-show-tools");
   let unityBg = $(".unity-bg");
   let btnHelper = $("#modal-helper");
+  let body = $("body");
 
   if (!isShowPopup) {
     isShowPopup = true;
@@ -92,9 +93,9 @@ function handelTeachingPopup() {
         ease: "power2.out",
         oncomplete: function () {
           tools.addClass("initAnimation");
+          body.addClass("menu-show");
         },
       });
-      document.body.classList.add("menu-show");
     }, 2000);
   } else {
     setTimeout(function () {
@@ -112,9 +113,9 @@ function handelTeachingPopup() {
         ease: "power2.out",
         oncomplete: function () {
           tools.addClass("initAnimation");
+          body.addClass("menu-show");
         },
       });
-      document.body.classList.add("menu-show");
     }, 2000);
   }
 

@@ -72,18 +72,18 @@ function getParameterByName(name, url = window.location.href) {
 
 function findLangIndex(str) {
   switch (str) {
-    case "es":
+    // case "es":
+    //   str = 1;
+    //   break;
+    case "de":
       str = 1;
       break;
-    case "de":
-      str = 2;
-      break;
-    case "it":
-      str = 3;
-      break;
-    case "fr":
-      str = 4;
-      break;
+    // case "it":
+    //   str = 3;
+    //   break;
+    // case "fr":
+    //   str = 4;
+    //   break;
 
     default:
       str = 0;

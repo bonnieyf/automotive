@@ -7,7 +7,7 @@ const mapData = [
     },
     unity: {
       popup: {
-        userguideTitle: ["Turn Around", "Move Forward"],
+        userguideTitle: ["Turn Around", "Move"],
       },
     },
   },
@@ -26,12 +26,12 @@ const mapData = [
   {
     lang: "de",
     map: {
-      title: "DE AUTOMOTIVE VIRTUAL EXHIBITION",
-      desc: "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
+      title: "VIRTUELLE AUTOMOBIL-MESSE",
+      desc: "Gehen Sie auf einen Rundgang durch unsere virtuelle Ausstellung und erfahren Sie, wie robuste mobile Lösungen einen intelligenteren Ansatz in der gesamten Wertschöpfungskette der Automobilbranche voranbringen können.",
     },
     unity: {
       popup: {
-        userguideTitle: ["DE Turn Around", "Move Forward"],
+        userguideTitle: ["Umdrehen", "Vorwärts gehen"],
       },
     },
   },

@@ -105,16 +105,29 @@ function handleModalLayout(content) {
 
       let parentElement = $(this).closest(".detail-content");
       let _idx = $(this).index();
-      console.log(parentElement);
       parentElement.find(".tab.active").removeClass("active");
       parentElement.find(".tab-content.show").removeClass("show");
       $(this).addClass("active");
-      parentElement.find(`#tab${_idx + 1}-content`).addClass("show");
+      parentElement.find(`.tab${_idx + 1}-content`).addClass("show");
 
       if (_idx === 2) {
         breakpointChecker();
       }
     });
+
+    // $("#modal-detail .close").on("click", function () {
+    //   let $this = $(this);
+    //   let $content = $this.find(".detail-content");
+    //   $content.find(".overflow-scrollbar").remove();
+    // });
+
+    $modal.on("hidden.bs.modal", function (e) {
+      console.log("hidden");
+      let $this = $(this);
+      let $content = $this.find(".detail-content");
+      $content.find(".overflow-scrollbar").remove();
+    });
+
 
     // click video to open full popup
     $(".video-iframe-link").on("click", function (e) {

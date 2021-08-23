@@ -1,100 +1,63 @@
-<!-- container -->
-.overflow-scrollbar
-    .modal-infor
-        .modal-infor--main
-            .tab-content.show.tab1-content
-                .row.mb-sm-5.mb-md-0
-                    .col-md-5
-                        .intro-img
-                            <img src="../assets/modal_detail/manufacturing/img_Delivery & Transport.png" class="mb-3 img-fluid">
+extends ../template/_modal_m_4.pug
+block se1
+    h2.title Delivery & Transport
+    p.txt The delivery and transportation of goods is subject to rigorous standards that must be met. Aside from these demands, a paper-based workflow can cause poor visibility across your supply chain. 
+
+block se2
+    h2.title Challenge
+    p.txt Transport and logistics has a unique set of challenges that must be overcome in order to keep customers satisfied, deliveries on track and efficient operations on the road. 
+
+    ol.list 
+        li <i class="fas fa-chevron-right"></i> Manual paperwork creates blind spots and potential for lost or damaged documents. 
+        li <i class="fas fa-chevron-right"></i> Delivery times are becoming tighter, with customers expecting goods in fast shipments. 
+        li <i class="fas fa-chevron-right"></i> Fraud and theft continues to be an issue, with disconnected systems creating opportunities for those with bad intentions.
 
 
-                    .col-md-7
-                        h2.title Delivery & Transport
-                        p.txt The delivery and transportation of goods is subject to rigorous standards that must be met. Aside from these demands, a paper-based workflow can cause poor visibility across your supply chain. 
-            .tab-content.tab2-content
-                .row.mb-sm-5.mb-md-3
-                    .col-md-5 <img src="../assets/modal_detail/img_26.png" class="mb-3 img-fluid">
-                        
-                    .col-md-7
-                        h2.title Challenge
-                        p.txt Transport and logistics has a unique set of challenges that must be overcome in order to keep customers satisfied, deliveries on track and efficient operations on the road. 
+block se3
+    h2.title Solution
+    p.txt Getac Automotive's seamlessly connected software solutions are delivered on our famed built-rugged devices, ensuring that there is no task too tough that can't be accomplished. 
 
-                        ol.list 
-                            li <i class="fas fa-chevron-right"></i> Manual paperwork creates blind spots and potential for lost or damaged documents. 
-                            li <i class="fas fa-chevron-right"></i> Delivery times are becoming tighter, with customers expecting goods in fast shipments. 
-                            li <i class="fas fa-chevron-right"></i> Fraud and theft continues to be an issue, with disconnected systems creating opportunities for those with bad intentions.
-
-                .row.mb-5.mb-sm-5.mb-md-3
-                    .col-md-5 <img src="../assets/modal_detail/img_27.png" class="mb-3 img-fluid">
-                        
-                    .col-md-7
-                        h2.title Solution
-                        p.txt Getac Automotive's seamlessly connected software solutions are delivered on our famed built-rugged devices, ensuring that there is no task too tough that can't be accomplished. 
-
-                        ol.list
-                            li <i class="fas fa-chevron-right"></i> Increase efficiency, identify opportunities for consolidation and cost reduction with our intelligent software. 
-                            li <i class="fas fa-chevron-right"></i> Optimize driver route planning. 
-                            li <i class="fas fa-chevron-right"></i> Get a single platform that connects with your existing systems for ease of operations and device familiarity across your workforce. 
-                            li <i class="fas fa-chevron-right"></i> Gather data in real-time and have it available across devices for multiple workers and touchpoints.
-
-                .row.mb-5.mb-sm-5.mb-md-3
-                    .col-md-5 <img src="../assets/modal_detail/img_28.png" class="mb-3 img-fluid">
-                        
-                    .col-md-7
-                        h2.title Benefits
-                        p.txt Leading industrial manufacturers trust Getac to provide quality devices that blend rugged hardware with optimized software for transport and delivery. 
-
-                        ol.list
-                            li <i class="fas fa-chevron-right"></i> Getac products are inherently rugged and built to survive in all weather conditions. 
-                            li <i class="fas fa-chevron-right"></i> We give you comprehensive field engineering support for areas including system integration and compatibility testing, development of docking solutions, software imaging, and aftersales support. 
-                            li <i class="fas fa-chevron-right"></i> Our products are trusted by leading global manufacturers. 
-                            li <i class="fas fa-chevron-right"></i> We give you the industry-best warranty for a minimum of three years, including accidental damage.
-            .tab-content.tab3-content
-                .row.mb-sm-5.mb-md-0
-                    .col-md-5
-                        #modal-swiper.swiper-container
-                            .swiper-wrapper
-                                .swiper-slide
-                                    include ../../video/_UX10
-                                .swiper-slide
-                                    include ../../video/_F110
-                                .swiper-slide
-                                    include ../../video/_GDMS
-                                .swiper-slide
-                                    include ../../video/_KeyWedge
-                                .video-iframe
-                                    include ../../video/_DrivingSafety
-                            .swiper-pagination
-
-                    .col-md-7
-                        h2.title Getac Device
-                        ol.list
-                            li <i class="fas fa-chevron-right"></i> ZX70
-                            li <i class="fas fa-chevron-right"></i> T800
-                            li <i class="fas fa-chevron-right"></i> UX10
-                            li <i class="fas fa-chevron-right"></i> F110
-
-                        br
-                        br
-                        
-                        h2.title Software
-                        ol.list
-                            li <i class="fas fa-chevron-right"></i> Getac Device Monitoring System
-                            li <i class="fas fa-chevron-right"></i> Getac KeyWedge Barcode Reader Utility
-                            li <i class="fas fa-chevron-right"></i> Getac Driving Safety Utility
-                            li <i class="fas fa-chevron-right"></i> Absolute
-                        br
-                        br
-
-                        h2.title Accessories
-                        ol.list
-                            li <i class="fas fa-chevron-right"></i> Carrying Solutions 
-                            li <i class="fas fa-chevron-right"></i> Docking Solutions 
-                            li <i class="fas fa-chevron-right"></i> Charging Solutions 
-                            li <i class="fas fa-chevron-right"></i> Keyboards
+    ol.list
+        li <i class="fas fa-chevron-right"></i> Increase efficiency, identify opportunities for consolidation and cost reduction with our intelligent software. 
+        li <i class="fas fa-chevron-right"></i> Optimize driver route planning. 
+        li <i class="fas fa-chevron-right"></i> Get a single platform that connects with your existing systems for ease of operations and device familiarity across your workforce. 
+        li <i class="fas fa-chevron-right"></i> Gather data in real-time and have it available across devices for multiple workers and touchpoints.
 
 
-            .tab-content.tab4-content
-                include ../../ar/en/_B360
-<!-- container end -->
+block se4
+    h2.title Benefits
+    p.txt Leading industrial manufacturers trust Getac to provide quality devices that blend rugged hardware with optimized software for transport and delivery. 
+
+    ol.list
+        li <i class="fas fa-chevron-right"></i> Getac products are inherently rugged and built to survive in all weather conditions. 
+        li <i class="fas fa-chevron-right"></i> We give you comprehensive field engineering support for areas including system integration and compatibility testing, development of docking solutions, software imaging, and aftersales support. 
+        li <i class="fas fa-chevron-right"></i> Our products are trusted by leading global manufacturers. 
+        li <i class="fas fa-chevron-right"></i> We give you the industry-best warranty for a minimum of three years, including accidental damage.
+
+
+block se5
+    h2.title Getac Device
+    ol.list
+        li <i class="fas fa-chevron-right"></i> ZX70
+        li <i class="fas fa-chevron-right"></i> T800
+        li <i class="fas fa-chevron-right"></i> UX10
+        li <i class="fas fa-chevron-right"></i> F110
+
+    br
+    br
+    
+    h2.title Software
+    ol.list
+        li <i class="fas fa-chevron-right"></i> Getac Device Monitoring System
+        li <i class="fas fa-chevron-right"></i> Getac KeyWedge Barcode Reader Utility
+        li <i class="fas fa-chevron-right"></i> Getac Driving Safety Utility
+        li <i class="fas fa-chevron-right"></i> Absolute
+    br
+    br
+
+    h2.title Accessories
+    ol.list
+        li <i class="fas fa-chevron-right"></i> Carrying Solutions 
+        li <i class="fas fa-chevron-right"></i> Docking Solutions 
+        li <i class="fas fa-chevron-right"></i> Charging Solutions 
+        li <i class="fas fa-chevron-right"></i> Keyboards

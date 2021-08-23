@@ -1,93 +1,55 @@
-<!-- container -->
-.overflow-scrollbar
-    .modal-infor
-        .modal-infor--main
-            .tab-content.show.tab1-content
-                .row.mb-sm-5.mb-md-0
-                    .col-md-5
-                        .intro-img
-                            <img src="../assets/modal_detail/workshop/img_EVHC_1.png" class="mb-3 img-fluid">
+extends ../template/_modal_work_2.pug
+block se1
+    h2.title EVHC (1)
+    p.txt Every Industry is digitalizing, from hailing a taxi to accessing healthcare provider information. Automotive is no different, with customer expectation and behavior driving the need for change. Electronic Vehicle Health Checks (EVHC) enable you to provide a paperless and transparent experience for both customers and service reception team - ensuring the handover and walk around inspection process is kept to a minimum for a better customer experience and a heightened opportunity for upselling wear & tear parts.
 
-                    .col-md-7
-                        h2.title EVHC (1)
-                        p.txt Every Industry is digitalizing, from hailing a taxi to accessing healthcare provider information. Automotive is no different, with customer expectation and behavior driving the need for change. Electronic Vehicle Health Checks (EVHC) enable you to provide a paperless and transparent experience for both customers and service reception team - ensuring the handover and walk around inspection process is kept to a minimum for a better customer experience and a heightened opportunity for upselling wear & tear parts.
+block se2
+    h2.title Challenge
+    p.txt Paper-based walk arounds take a long time to perform. Once the customer has signed, the service advisor will have to key the notes back into the DMS. This creates double the work and allows the Service Advisor to skip OEM or Dealer standard processes, potentially leaving the dealership exposed. On top of the extra work and risk of non-compliance, customers also have a worsened experience as they must spend time waiting as the Advisor refers back to the DMS for information. 
 
-
-
-            .tab-content.tab2-content
-                .row.mb-sm-5.mb-md-3
-                    .col-md-5 <img src="../assets/modal_detail/img_06.png" class="mb-3 img-fluid">
-                        
-                    .col-md-7
-                        h2.title Challenge
-                        p.txt Paper-based walk arounds take a long time to perform. Once the customer has signed, the service advisor will have to key the notes back into the DMS. This creates double the work and allows the Service Advisor to skip OEM or Dealer standard processes, potentially leaving the dealership exposed. On top of the extra work and risk of non-compliance, customers also have a worsened experience as they must spend time waiting as the Advisor refers back to the DMS for information. 
+block se3
+    h2.title Solution
+    p.txt Getac Automotive gives workshops the ability to perform easy, integrated and paperless EVHCs. 
+    ol.list
+        li <i class="fas fa-chevron-right"></i> 100% Vehicle Inspections – The Getac EVHC platform mandates that all checks are carried out in accordance with OEM standards, delivering customer peace of mind and more revenue opportunities for the dealer. 
+        li <i class="fas fa-chevron-right"></i> Quick Intuitive User Interface – Getac's EVHC platform streamlines the whole process, allowing time estimates and accurate handover times to be generated for a quick decisions. 
+        li <i class="fas fa-chevron-right"></i> Fits how you work – Our software is operating system agnostic, with a highly configurable and flexible Open API.
+        li <i class="fas fa-chevron-right"></i> See the full picture – Get a dashboard and management console to interrogate throughput, compliance and efficiency at a site, group, national or global level.
 
 
-                .row.mb-5.mb-sm-5.mb-md-3
-                    .col-md-5 <img src="../assets/modal_detail/img_07.png" class="mb-3 img-fluid">
-                        
-                    .col-md-7
-                        h2.title Solution
-                        p.txt Getac Automotive gives workshops the ability to perform easy, integrated and paperless EVHCs. 
-                        ol.list
-                            li <i class="fas fa-chevron-right"></i> 100% Vehicle Inspections – The Getac EVHC platform mandates that all checks are carried out in accordance with OEM standards, delivering customer peace of mind and more revenue opportunities for the dealer. 
-                            li <i class="fas fa-chevron-right"></i> Quick Intuitive User Interface – Getac's EVHC platform streamlines the whole process, allowing time estimates and accurate handover times to be generated for a quick decisions. 
-                            li <i class="fas fa-chevron-right"></i> Fits how you work – Our software is operating system agnostic, with a highly configurable and flexible Open API.
-                            li <i class="fas fa-chevron-right"></i> See the full picture – Get a dashboard and management console to interrogate throughput, compliance and efficiency at a site, group, national or global level.
+block se4
+    h2.title Benefits
+    p.txt Getac Automotive's combination of seamless software and rugged hardware come together to deliver a number of workshop benefits: 
 
 
-                .row.mb-5.mb-sm-5.mb-md-3
-                    .col-md-5 <img src="../assets/modal_detail/img_08.png" class="mb-3 img-fluid">
-                        
-                    .col-md-7
-                        h2.title Benefits
-                        p.txt Getac Automotive's combination of seamless software and rugged hardware come together to deliver a number of workshop benefits: 
+    ol.list 
+        li <i class="fas fa-chevron-right"></i> Move from slow paper processes to a fast, efficient tablet ecosystem.
+        li <i class="fas fa-chevron-right"></i> Control of health check process.
+        li <i class="fas fa-chevron-right"></i> Give your customers more visibility.
+        li <i class="fas fa-chevron-right"></i> Increase parts per repair order and labor hours sold.
+        li <i class="fas fa-chevron-right"></i> Business intelligence shows where improvements can be made.
 
 
-                        ol.list 
-                            li <i class="fas fa-chevron-right"></i> Move from slow paper processes to a fast, efficient tablet ecosystem.
-                            li <i class="fas fa-chevron-right"></i> Control of health check process.
-                            li <i class="fas fa-chevron-right"></i> Give your customers more visibility.
-                            li <i class="fas fa-chevron-right"></i> Increase parts per repair order and labor hours sold.
-                            li <i class="fas fa-chevron-right"></i> Business intelligence shows where improvements can be made.
+block se5
+    h2.title Getac Device
+    ol.list
+        li <i class="fas fa-chevron-right"></i> ZX70
+        li <i class="fas fa-chevron-right"></i> UX10
+        li <i class="fas fa-chevron-right"></i> F110
+    br
+    br
+    
+    h2.title Software
+    ol.list
+        li <i class="fas fa-chevron-right"></i> Getac Device Monitoring System 
+        li <i class="fas fa-chevron-right"></i> EVHC Software
+        li <i class="fas fa-chevron-right"></i> Absolute
 
-            .tab-content.tab3-content
-                .row.mb-sm-5.mb-md-0
-                    .col-md-5
-                        #modal-swiper.swiper-container
-                            .swiper-wrapper
-                                .swiper-slide
-                                    include ../../video/_UX10
-                                .swiper-slide
-                                    include ../../video/_F110
-                                .swiper-slide
-                                    include ../../video/_GDMS
-                            .swiper-pagination
+    br
+    br
 
-                    .col-md-7
-                        h2.title Getac Device
-                        ol.list
-                            li <i class="fas fa-chevron-right"></i> ZX70
-                            li <i class="fas fa-chevron-right"></i> UX10
-                            li <i class="fas fa-chevron-right"></i> F110
-                        br
-                        br
-                        
-                        h2.title Software
-                        ol.list
-                            li <i class="fas fa-chevron-right"></i> Getac Device Monitoring System 
-                            li <i class="fas fa-chevron-right"></i> EVHC Software
-                            li <i class="fas fa-chevron-right"></i> Absolute
+    h2.title Accessories
+    ol.list
+        li <i class="fas fa-chevron-right"></i> Carrying Solutions 
+        li <i class="fas fa-chevron-right"></i> Charging Solutions 
 
-                        br
-                        br
-
-                        h2.title Accessories
-                        ol.list
-                            li <i class="fas fa-chevron-right"></i> Carrying Solutions 
-                            li <i class="fas fa-chevron-right"></i> Charging Solutions 
-
-
-            .tab-content.tab4-content
-                include ../../ar/en/_UX10
-<!-- container end -->

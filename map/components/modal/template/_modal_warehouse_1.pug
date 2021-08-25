@@ -6,7 +6,7 @@
                 .row.mb-sm-5.mb-md-0
                     .col-md-5
                         .intro-img
-                            <img src="../assets/modal_detail/rd/img_Extreme Conditions.png" class="mb-3 img-fluid">
+                            <img src="../assets/modal_detail/warehouse/img_Warehouse.png" class="mb-3 img-fluid">
 
                     .col-md-7
                         block se1
@@ -48,5 +48,10 @@
                     block se5
 
         .tab-content.tab4-content
-            include ../../ar/en/_F110
+            block se6 
+            case lang
+                when 'de'
+                    include ../../ar/de/_F110
+                default
+                    include ../../ar/en/_F110
 <!-- container end -->

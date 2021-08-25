@@ -6,26 +6,32 @@
                 .row.mb-sm-5.mb-md-0
                     .col-md-5
                         .intro-img
-                            <img src="../assets/modal_detail/manufacturing/img_Shop Floor & Production.png" class="mb-3 img-fluid">
+                            <img src="../assets/modal_detail/manufacturing/img_Delivery & Transport.png" class="mb-3 img-fluid">
 
 
                     .col-md-7
                         block se1
+
             .tab-content.tab2-content
                 .row.mb-sm-5.mb-md-3
-                    .col-md-5 <img src="../assets/modal_detail/img_01.png" class="mb-3 img-fluid">
+                    .col-md-5 <img src="../assets/modal_detail/img_26.png" class="mb-3 img-fluid">
+                        
                     .col-md-7
                         block se2
-
+                        
                 .row.mb-5.mb-sm-5.mb-md-3
-                    .col-md-5 <img src="../assets/modal_detail/img_23.png" class="mb-3 img-fluid">
+                    .col-md-5 <img src="../assets/modal_detail/img_27.png" class="mb-3 img-fluid">
+                        
                     .col-md-7
-                        block se3 
+                       block se3
 
                 .row.mb-5.mb-sm-5.mb-md-3
-                    .col-md-5 <img src="../assets/modal_detail/img_25.png" class="mb-3 img-fluid">
+                    .col-md-5 <img src="../assets/modal_detail/img_28.png" class="mb-3 img-fluid">
+                        
                     .col-md-7
                         block se4
+
+
             .tab-content.tab3-content
                 .row.mb-sm-5.mb-md-0
                     .col-md-5
@@ -48,5 +54,10 @@
 
 
             .tab-content.tab4-content
-                include ../../ar/en/_F110
+                block se6 
+                case lang
+                    when 'de'
+                        include ../../ar/de/_F110
+                    default
+                        include ../../ar/en/_F110
 <!-- container end -->

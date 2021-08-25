@@ -52,5 +52,10 @@
 
 
         .tab-content.tab4-content
-            include ../../ar/en/_F110
+            block se6
+            case lang
+                when 'de'
+                    include ../../ar/de/_F110
+                default
+                    include ../../ar/en/_F110
 <!-- container end -->

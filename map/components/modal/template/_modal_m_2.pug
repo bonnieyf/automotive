@@ -49,5 +49,10 @@
 
 
             .tab-content.tab4-content
-                include ../../ar/en/_UX10
+                block se6 
+                case lang
+                    when 'de'
+                        include ../../ar/de/_UX10
+                    default
+                        include ../../ar/en/_UX10
 <!-- container end -->

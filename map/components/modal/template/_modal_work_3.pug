@@ -52,5 +52,10 @@
 
 
         .tab-content.tab4-content
-            include ../../ar/en/_ZX70
+            block se6 
+            case lang
+                when 'de'
+                    include ../../ar/de/_ZX70
+                default
+                    include ../../ar/en/_ZX70
 <!-- container end -->

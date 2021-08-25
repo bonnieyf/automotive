@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Getac | Automotive Virtual Exhibition - Map</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Oswald:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./../js.lib/bootstrap/bootstrap.min.css">
@@ -29,8 +29,8 @@
       include _header
       .unity-map-container
         .unity-map-slogan
-          h2.title AUTOMOTIVE VIRTUAL EXHIBITION
-          p.txt Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.
+          h2.title(data-i18n="mapTitle") AUTOMOTIVE VIRTUAL EXHIBITION
+          p.txt(data-i18n="mapDesc") Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.
       
       .unity-map-overlay
       .unity-map-bg
@@ -50,38 +50,36 @@
         .unity-map--screen.screen1
           .bg.normal
           .bg.light
-          
-        
 
         .unity-map-hover
 
-          div.unity-map-hover-screen.screen3(data-href="./manufacturing_factory/")
+          div.unity-map-hover-screen.screen3#menu-manufacturing(data-href="./manufacturing_factory/")
             .titlebox
               span.title-icon
                 img(src="./assets/icon_menu_manufacturing.svg", alt="")
-              span.title Automotive Manufacturing
+              span.title(data-i18n="ShowRoomScene4") Automotive Manufacturing
               span.more Visit
 
-          div.unity-map-hover-screen.screen4(data-href="./engineering_lab/")
+          div.unity-map-hover-screen.screen4#menu-rd(data-href="./engineering_lab/")
             .titlebox
               span.title-icon
                 img(src="./assets/icon_menu_rd.svg", alt="")
-              span.title R&D and Engineering
+              span.title(data-i18n="ShowRoomScene5") R&D and Engineering
               span.more Visit
 
           
-          div.unity-map-hover-screen.screen2(data-href="./warehouse/")
+          div.unity-map-hover-screen.screen2#menu-warehouse(data-href="./warehouse/")
             .titlebox
               span.title-icon
                 img(src="./assets/icon_menu_warehouse.svg", alt="")
-              span.title Warehouse
+              span.title(data-i18n="ShowRoomScene3") Warehouse
               span.more Visit
 
-          div.unity-map-hover-screen.screen1(data-href="./aftersales_workshop/")
+          div.unity-map-hover-screen.screen1#menu-workshop(data-href="./aftersales_workshop/")
             .titlebox
               span.title-icon
                 img(src="./assets/icon_menu_workshop.svg", alt="")
-              span.title Workshop
+              span.title(data-i18n="ShowRoomScene2") Workshop
               span.more Visit
 
           
@@ -93,6 +91,7 @@
     <script src="./../js.lib/jquery-3.6.0.min.js"></script>
     <script src="./../js.lib/popper.min.js"></script>
     <script src="./../js.lib/bootstrap/bootstrap.min.js"></script>
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/i18next/20.4.0/i18next.min.js") 
     <script src="./js/functions.js"></script>
     script(src="./js/indexDetectLang.js")
     script(src="./js/mapIndex.js")

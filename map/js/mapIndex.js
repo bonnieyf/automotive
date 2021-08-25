@@ -46,14 +46,18 @@ $(function () {
       changeBg.eq(_index).removeClass("active");
     })
     .on("click", function (e) {
+      e.preventDefault();
       let _this = $(this);
       let openUrl = _this.attr("data-href");
 
       if (isMobileDevice()) {
-        _this.find(".more").click(function () {s
+        console.log("mobile");
+        _this.find(".more").on("click", function (e) {
+          e.stopPropagation();
           window.location.href = openUrl;
         });
       } else {
+        console.log("desktop");
         window.location.href = openUrl;
       }
     });

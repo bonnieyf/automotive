@@ -49,5 +49,10 @@
                     block se5
 
         .tab-content.tab4-content
-            include ../../ar/en/_B360
+            block se6 
+            case lang
+                when 'de'
+                    include ../../ar/de/_B360
+                default
+                    include ../../ar/en/_B360
 <!-- container end -->

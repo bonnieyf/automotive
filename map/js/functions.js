@@ -1,65 +1,58 @@
-const mapData = [
-  {
-    lang: "en",
-    map: {
-      title: "AUTOMOTIVE VIRTUAL EXHIBITION",
-      desc: "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
-    },
-    unity: {
-      popup: {
-        userguideTitle: ["Turn Around", "Move"],
-      },
-    },
-  },
-  {
-    lang: "es",
-    map: {
-      title: "ES AUTOMOTIVE VIRTUAL EXHIBITION",
-      desc: "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
-    },
-    unity: {
-      popup: {
-        userguideTitle: ["ES Turn Around", "Move Forward"],
-      },
+const i18nLang = {
+  en: {
+    translation: {
+      mapTitle: "AUTOMOTIVE VIRTUAL EXHIBITION",
+      mapDesc:
+        "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
+
+      ShowRoomScene1: "Map",
+      ShowRoomScene2: "Workshop",
+      ShowRoomScene3: "Warehouse",
+      ShowRoomScene4: "Automotive Manufacturing",
+      ShowRoomScene5: "R&D and Engineering",
+      popupUserguideTitle1: "Turn Around",
+      popupUserguideTitle2: "Move",
+      popupTab1: "Intro",
+      popupTab2: "Why Getac",
+      popupTab3: "Getac Solution",
+      popupTab4: "Device in AR",
     },
   },
-  {
-    lang: "de",
-    map: {
-      title: "VIRTUELLE AUTOMOBIL-MESSE",
-      desc: "Gehen Sie auf einen Rundgang durch unsere virtuelle Ausstellung und erfahren Sie, wie robuste mobile Lösungen einen intelligenteren Ansatz in der gesamten Wertschöpfungskette der Automobilbranche voranbringen können.",
-    },
-    unity: {
-      popup: {
-        userguideTitle: ["Umdrehen", "Vorwärts gehen"],
-      },
-    },
-  },
-  {
-    lang: "it",
-    map: {
-      title: "IT AUTOMOTIVE VIRTUAL EXHIBITION",
-      desc: "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
-    },
-    unity: {
-      popup: {
-        userguideTitle: ["IT Turn Around", "Move Forward"],
-      },
+  de: {
+    translation: {
+      mapTitle: "VIRTUELLE AUTOMOBIL-MESSE",
+      mapDesc:
+        "Gehen Sie auf einen Rundgang durch unsere virtuelle Ausstellung und erfahren Sie, wie robuste mobile Lösungen einen intelligenteren Ansatz in der gesamten Wertschöpfungskette der Automobilbranche voranbringen können.",
+      ShowRoomScene1: "Hauptkarte",
+      ShowRoomScene2: "Werkstatt",
+      ShowRoomScene3: "Warehouse",
+      ShowRoomScene4: "Automobilfertigung",
+      ShowRoomScene5: "F&E und Technik",
+      popupUserguideTitle1: "Umdrehen",
+      popupUserguideTitle2: "Vorwärts gehen",
+      popupTab1: "Einleitung",
+      popupTab2: "Warum Getac",
+      popupTab3: "Getac-Lösungen",
+      popupTab4: "Gerät in AR",
     },
   },
-  {
-    lang: "fr",
-    map: {
-      title: "FR AUTOMOTIVE VIRTUAL EXHIBITION",
-      desc: "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
-    },
-    unity: {
-      popup: {
-        userguideTitle: ["FR Turn Around", "Move Forward"],
-      },
-    },
-  },
-];
+};
+
+function updateContent() {
+  console.log("update");
+  let elem = document.querySelectorAll("[data-i18n]");
+  elem.forEach((item) => {
+    item.innerHTML = i18next.t(item.dataset.i18n);
+  });
+}
+
+function changeLang(lng) {
+  i18next.changeLanguage(lng);
+}
+
+i18next.on("languageChanged", () => {
+  updateContent();
+});
 
 function getParameterByName(name, url = window.location.href) {
   name = name.replace(/[\[\]]/g, "\\$&");
@@ -105,7 +98,6 @@ function MultiLanguage() {
   );
   unityInstance.SendMessage("Language_Manager", "loadLanguage");
 }
-
 
 function isMobileDevice() {
   const mobileDevice = [

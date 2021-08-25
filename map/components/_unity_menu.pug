@@ -2,61 +2,61 @@
 if page === 'aftersales_workshop'
   .unity-menu.unity-show-tools
     .btn-switch-tab 
-    .menu-item(class="home")
+    .menu-item#menu-home(class="home")
       a(href="../")
         span.icon
           img(src="../assets/icon_menu_map.svg", alt="")
-        span.unit Map
-    .menu-item(class='active')
+        span.unit(data-i18n="ShowRoomScene1") Map
+    .menu-item#menu-workshop(class='active')
       a(href='./')
         span.icon
           img(src="../assets/icon_menu_workshop.svg", alt="")
-        span.unit Workshop
-    .menu-item
+        span.unit(data-i18n="ShowRoomScene2") Workshop
+    .menu-item#menu-warehouse
       a(href="../warehouse/")
         span.icon
             img(src="../assets/icon_menu_warehouse.svg", alt="")
-        span.unit Warehouse
-    .menu-item
+        span.unit(data-i18n="ShowRoomScene3") Warehouse
+    .menu-item#menu-manufacturing
       a(href="../manufacturing_factory/")
         span.icon
           img(src="../assets/icon_menu_manufacturing.svg", alt="")
-        span.unit Automotive Manufacturing
-    .menu-item
+        span.unit(data-i18n="ShowRoomScene4") Automotive Manufacturing
+    .menu-item#menu-rd
       a(href="../engineering_lab/")
         span.icon
           img(src="../assets/icon_menu_rd.svg", alt="")
-        span.unit R&D and Engineering
+        span.unit(data-i18n="ShowRoomScene5") R&D and Engineering
     
 
 if page === 'engineering_lab'
   .unity-menu.unity-show-tools
     .btn-switch-tab 
-    .menu-item(class="home")
+    .menu-item#menu-home(class="home")
       a(href="../")
         span.icon
           img(src="../assets/icon_menu_map.svg", alt="")
-        span.unit Map
-    .menu-item
+        span.unit(data-i18n="ShowRoomScene1") Map
+    .menu-item#menu-workshop
       a(href="../aftersales_workshop/")
         span.icon
           img(src="../assets/icon_menu_workshop.svg", alt="")
-        span.unit Workshop
-    .menu-item
+        span.unit(data-i18n="ShowRoomScene2") Workshop
+    .menu-item#menu-warehouse
       a(href="../warehouse/")
         span.icon
             img(src="../assets/icon_menu_warehouse.svg", alt="")
-        span.unit Warehouse 
-    .menu-item
+        span.unit(data-i18n="ShowRoomScene3") Warehouse 
+    .menu-item#menu-manufacturing
       a(href="../manufacturing_factory/")
         span.icon
           img(src="../assets/icon_menu_manufacturing.svg", alt="")
-        span.unit Automotive Manufacturing
-    .menu-item(class='active')
+        span.unit(data-i18n="ShowRoomScene4") Automotive Manufacturing
+    .menu-item#menu-rd(class='active')
       a(href='./')
         span.icon
           img(src="../assets/icon_menu_rd.svg", alt="")
-        span.unit R&D and Engineering
+        span.unit(data-i18n="ShowRoomScene5") R&D and Engineering
     
      
 
@@ -64,59 +64,59 @@ if page === 'engineering_lab'
 if page === 'manufacturing_factory'
   .unity-menu.unity-show-tools
     .btn-switch-tab 
-    .menu-item(class="home")
+    .menu-item#menu-home(class="home")
       a(href="../")
         span.icon
           img(src="../assets/icon_menu_map.svg", alt="")
-        span.unit Map
-    .menu-item
+        span.unit(data-i18n="ShowRoomScene1") Map
+    .menu-item#menu-workshop
       a(href="../aftersales_workshop/")
         span.icon
           img(src="../assets/icon_menu_workshop.svg", alt="")
-        span.unit Workshop
+        span.unit(data-i18n="ShowRoomScene2") Workshop#menu-warehouse
 
-    .menu-item
+    .menu-item#menu-warehouse
       a(href="../warehouse/")
         span.icon
             img(src="../assets/icon_menu_warehouse.svg", alt="")
-        span.unit Warehouse  
-    .menu-item(class='active')
+        span.unit(data-i18n="ShowRoomScene3") Warehouse  
+    .menu-item#menu-manufacturing(class='active')
       a(href='./')
         span.icon
-          img(src="../assets/icon_menu_manufacturing.svg", alt="")
-        span.unit Automotive Manufacturing
-    .menu-item
+          img(src="../assets/icon_menu_manufacturing.svg", a#menu-rdlt="")
+        span.unit(data-i18n="ShowRoomScene4") Automotive Manufacturing
+    .menu-item#menu-rd
       a(href="../engineering_lab/")
         span.icon
           img(src="../assets/icon_menu_rd.svg", alt="")
-        span.unit R&D and Engineering
+        span.unit(data-i18n="ShowRoomScene5") R&D and Engineering
 
 
 if page === 'warehouse'
   .unity-menu.unity-show-tools
     .btn-switch-tab 
-    .menu-item(class="home")
+    .menu-item#menu-home(class="home")
       a(href="../")
         span.icon
           img(src="../assets/icon_menu_map.svg", alt="")
-        span.unit Map
-    .menu-item
+        span.unit(data-i18n="ShowRoomScene1") Map
+    .menu-item#menu-workshop
       a(href="../aftersales_workshop/")
         span.icon
           img(src="../assets/icon_menu_workshop.svg", alt="")
-        span.unit Workshop
-    .menu-item(class='active')
+        span.unit(data-i18n="ShowRoomScene2") Workshop
+    .menu-item#menu-warehouse(class='active')
       a(href='./')
         span.icon
             img(src="../assets/icon_menu_warehouse.svg", alt="")
-        span.unit Warehouse 
-    .menu-item
+        span.unit(data-i18n="ShowRoomScene3") Warehouse 
+    .menu-item#menu-manufacturing
       a(href="../manufacturing_factory/")
         span.icon
           img(src="../assets/icon_menu_manufacturing.svg", alt="")
-        span.unit Automotive Manufacturing
-    .menu-item
+        span.unit(data-i18n="ShowRoomScene4") Automotive Manufacturing
+    .menu-item#menu-rd
       a(href="../engineering_lab/")
         span.icon
           img(src="../assets/icon_menu_rd.svg", alt="")
-        span.unit R&D and Engineering
+        span.unit(data-i18n="ShowRoomScene5") R&D and Engineering

@@ -855,6 +855,7 @@ model-viewer
       right: 15px
 
   .swiper-button-next, .swiper-button-prev
+    transition: color .5s ease
     +media('>=tablet')
       top: 32%
 
@@ -863,6 +864,11 @@ model-viewer
       
     +media('<tablet')
       top: 40vw
+
+    &:hover
+      color: white
+
+    
 
 .orangeline
   display: block
@@ -927,7 +933,7 @@ model-viewer
   +media('>=desktop')
     top: 50px
     left: -50px
-    width: 350px
+    width: 300px
     height: 140px
     padding: 20px 30px
     padding-left: 88px
@@ -966,9 +972,9 @@ model-viewer
   +media('>desktop')
     display: block
     position: absolute
-    top: 135px
+    top: 130px
     right: 0
-    width: 280px
+    width: 240px
 
     .qrcode-link img
       width: 140px
@@ -976,8 +982,14 @@ model-viewer
     ol>li:nth-child(1)
       margin-top: 0
 
+  +media('>desktop_L')
+    riight: -60px
+    width: 280px
+
 
   +media('<=desktop')
+    right: 0
+
     .btn-text
       display: block
       max-width: 380px
@@ -1191,9 +1203,15 @@ main.arWrapper
   
   .txt
     margin-bottom: 40px
-
+ 
 
 // lightbox
-@media (min-width: 1200px)
-.modal-xl
+@media (min-width: 901px)
+  .modal-xl
     max-width: 900px
+    margin: 10px auto !important
+
+@media (max-width: 900px)
+  .modal-xl
+    max-width: 100%
+    margin: 10px !important

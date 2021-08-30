@@ -124,6 +124,10 @@ function handelTeachingPopup() {
   });
 }
 
+function MouseIconChange(val) {
+  alert(val);
+}
+
 function IsPC() {
   var userAgentInfo = navigator.userAgent;
   var Agents = [

@@ -3,11 +3,11 @@ const breakpoint = window.matchMedia("(min-width:769px)");
 let mySwiper;
 const breakpointChecker = function () {
   if (breakpoint.matches === true) {
-    console.log("destroy");
-    if (mySwiper !== undefined) mySwiper.destroy(true, true);
+    if (mySwiper !== undefined) {
+      mySwiper.destroy(true, true);
+    }
     return;
   } else if (breakpoint.matches === false) {
-    console.log("enable");
     return enableSwiper();
   }
 };
@@ -26,6 +26,7 @@ const enableSwiper = function () {
 
 $(function () {
   $(window).resize(function () {
+    if (document.getElementById("modal-swiper") == null) return;
     breakpointChecker();
   });
 

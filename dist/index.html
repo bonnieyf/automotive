@@ -14,6 +14,7 @@
   <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
   <script type="module"  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.4.0/dist/lazyload.min.js"></script>
 </head>
 <body>
   <!-- HEADER -->
@@ -42,7 +43,7 @@
 
     <!-- KV -->
 		<section id="kv">
-      <div id="slider-content">
+      <div id="slider-content" class="lazy" data-bg="./images/kv.png" data-bg-hidpi="./images/m_kv.png">
         <div class="slide-group">
           <div class="container">
             <div class="slider-txt">
@@ -54,7 +55,7 @@
                 <a href="#" role="button" data-bs-toggle="modal" data-bs-target="#modal-register" class="btn btn-text btn-3d-exhibition"><img loading="lazy" src="./images/icon_virtual exhibition.svg" class="icon" alt="">Enter the Virtual Exhibition</a>
               </div>
             </div>
-            <div class="kv-peo"><img loading="lazy" src="./images/kv_peo.png" alt=""></div>
+            <div class="kv-peo"><img class="lazy" data-src="./images/kv_peo.png" alt=""></div>
             <div class="kv-scroll">
               <svg xmlns="http://www.w3.org/2000/svg" width="22.121" height="29.182" viewBox="0 0 22.121 29.182"><defs><style>.a{fill:none;stroke:#fff;stroke-width:3px;opacity:0.61;}</style></defs><g transform="translate(691.561 634.561) rotate(180)"><path class="a" d="M-7170,2712l10,10-10,10" transform="translate(-2041.5 -6552.501) rotate(-90)"/><path class="a" d="M-7170,2712l10,10-10,10" transform="translate(-2041.5 -6536.501) rotate(-90)"/></g></svg>
             </div>
@@ -68,7 +69,7 @@
 				<div class="row">
           <div class="col-sm-12 col-md-4">
             <div class="d-flex align-items-end">
-              <img loading="lazy" src="./images/logo-Intel.png" class="intel-logo img-fluid" alt="">
+              <img class="lazy" data-src="./images/logo-Intel.png" class="intel-logo img-fluid" alt="">
             </div>
           </div>
 					<div class="col-sm-12 col-md-8">
@@ -102,7 +103,7 @@
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <div class="card">
-                        <img loading="lazy" src="./images/Card_01.png" class="card-img-top" alt="...">
+                        <img data-src="./images/Card_01.png" class="lazy card-img-top" alt="...">
                         <h5 class="title txt-xl">Smarter Workshops. Optimized Aftersales.</h5>
                         <div class="txt-box">
                           <p class="txt txt-s">Did you know that the average car on the road is getting older? Car parc average age is increasing across the world, from 9.8 years in Germany to 13 years in Russia. This presents a brand new aftersales opportunity for dealer networks and independent workshops who can increase revenue with added-value aftersales services.</p>
@@ -111,7 +112,7 @@
                     </div>
                     <div class="swiper-slide">
                       <div class="card">
-                        <img loading="lazy" src="./images/Card_02.png" class="card-img-top" alt="...">
+                        <img data-src="./images/Card_02.png" class="lazy card-img-top" alt="...">
                         <h5 class="title txt-xl">Tough Tablets. Tough Devices.</h5>
                         <div class="txt-box">
                           <p class="txt txt-s">R&D laboratory require a mix of rugged construction and precise processing power to capture the most meticulous of data. See how Getac’s devices stand up to laboratory conditions, field environments and are helping manufacturers getting the latest vehicles on the road.</p>
@@ -120,7 +121,7 @@
                     </div>
                     <div class="swiper-slide">
                       <div class="card">
-                        <img loading="lazy" src="./images/Card_03.png" class="card-img-top" alt="...">
+                        <img data-src="./images/Card_03.png" class="lazy card-img-top" alt="...">
                         <h5 class="title txt-xl">Powerful Production. Intelligent Operations.</h5>
                         <div class="txt-box">
                           <p class="txt txt-s">The modern warehouse is an incredible mix of raw manufacturing power and incredible complex, intelligent digitized management systems. As automotive manufacturing steps into Industry 4.0, see how Getac’s devices are helping them to create paperless operations and seamlessly connected workflows.</p>
@@ -145,7 +146,7 @@
         <div class="swiper-wrapper">
           <!-- Slides -->
           <div class="swiper-slide">
-            <div class="clip-img" style="background-image: url(./images/slide_01.png)"></div>
+            <div class="clip-img lazy" data-bg="./images/slide_01.png"></div>
             <div class="container">
               <div class="imgcover-card">
                 <div class="imgcover-card--left"></div>
@@ -159,7 +160,7 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="clip-img" style="background-image: url(./images/slide_02.png)"></div>
+            <div class="clip-img lazy" data-bg="./images/slide_02.png"></div>
             <div class="container">
               <div class="imgcover-card">
                 <div class="imgcover-card--left"></div>
@@ -173,7 +174,7 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="clip-img" style="background-image: url(./images/slide_03.png)"></div>
+            <div class="clip-img lazy" data-bg="./images/slide_03.png"></div>
             <div class="container">
               <div class="imgcover-card">
                 <div class="imgcover-card--left"></div>
@@ -1193,6 +1194,10 @@
     <script src="./js.lib/livevalidation_standalone.compressed.js"></script>
     <script src="./js/validate.js"></script>
     <script src="./js/web.js"></script>
+    <script>
+      var lazyLoadInstance = new LazyLoad();
+      lazyLoadInstance.update();
+    </script>
 </body>
 
 </html>

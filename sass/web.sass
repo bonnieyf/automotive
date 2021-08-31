@@ -399,14 +399,13 @@ header
     height: auto
   
 #slider-content
-  background: url(./../images/kv.png)
   background-repeat: no-repeat
   background-position: center top
   background-size: cover
   border-bottom: 5px solid #D54725
 
-  +media('<=tablet')
-    background-image: url(./../images/m_kv.png)
+  // +media('<=tablet')
+  //   background-image: url(./../images/m_kv.png)
   
   .container
     position: relative
@@ -1206,6 +1205,22 @@ main.arWrapper
  
 body.mouse-hover canvas
   cursor: pointer !important
+
+img.lazy
+  opacity: 0
+
+img:not(.initial)
+  transition: opacity 1s
+
+img.initial,
+img.loaded,
+img.error
+  opacity: 1
+
+
+img:not([src])
+  visibility: hidden
+
   
 // lightbox
 @media (min-width: 901px)

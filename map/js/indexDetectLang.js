@@ -1,3 +1,4 @@
+
 let getHashLang =
   getParameterByName("lang") || localStorage.getItem("lang") || "en";
 localStorage.setItem("lang", getHashLang);

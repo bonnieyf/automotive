@@ -125,7 +125,14 @@ function handelTeachingPopup() {
 }
 
 function MouseIconChange(val) {
-  alert(val);
+  let body = document.body;
+  if (val === "false") {
+    body.classList.remove("mouse-hover");
+  } else {
+    body.classList.add("mouse-hover");
+  }
+
+  
 }
 
 function IsPC() {

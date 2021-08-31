@@ -135,6 +135,8 @@ function MouseIconChange(val) {
   
 }
 
+
+
 function IsPC() {
   var userAgentInfo = navigator.userAgent;
   var Agents = [

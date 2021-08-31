@@ -86,11 +86,6 @@ function findLangIndex(str) {
 }
 
 function MultiLanguage() {
-  console.log(
-    "update!!!!!!: " + localStorage.getItem("lang")
-      ? localStorage.getItem("lang")
-      : "en"
-  );
   unityInstance.SendMessage(
     "Language_Manager",
     "SendToUnity",
@@ -98,6 +93,7 @@ function MultiLanguage() {
   );
   unityInstance.SendMessage("Language_Manager", "loadLanguage");
 }
+
 
 function isMobileDevice() {
   const mobileDevice = [

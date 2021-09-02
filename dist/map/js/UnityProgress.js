@@ -9,7 +9,11 @@ if (isMobile) {
 }
 
 
-
+const warningDesc = `
+  <div class="word w1">Recommended browser: Google Chrome 75+ ,MS Edge 18+,Apple Safari 12.1+ ,Mozilla Firefox 67+.</div>
+  <div class="word w2">Recommended platform: Windows10 or newer,Mac OS version 10.6 or newer.</div>
+  <div class="word w3">It is recommended to update to the latest version of the graphics card driver.</div>
+`;
 
 function UnityProgress(unityInstance, progress) {
   if (!unityInstance.Module) return;
@@ -24,6 +28,7 @@ function UnityProgress(unityInstance, progress) {
   if (!unityInstance.progress) {
     unityInstance.progress = document.createElement("div");
     unityInstance.progress.className = "unity-progress";
+
     unityInstance.container.appendChild(unityInstance.progress);
 
     unityInstance.text = document.createElement("div");
@@ -41,6 +46,12 @@ function UnityProgress(unityInstance, progress) {
     unityInstance.progress.full = document.createElement("div");
     unityInstance.progress.full.className = "full";
     unityInstance.progress.bar.appendChild(unityInstance.progress.full);
+
+    unityInstance.desc = document.createElement("div");
+    unityInstance.desc.className = "alert-desc";
+    unityInstance.desc.innerHTML = warningDesc;
+    unityInstance.progress.appendChild(unityInstance.desc);
+
     unityInstance.container.appendChild(unityInstance.progress);
   }
 

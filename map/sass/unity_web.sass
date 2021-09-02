@@ -526,7 +526,8 @@ header nav
   flex-flow: wrap
   align-items: center
   justify-content: center
-  transform: translateX(-50%) translateY(-70%)
+  transform: translateX(-50%)
+  margin-top: -100px
   z-index: 20
   user-select: none
 
@@ -800,7 +801,7 @@ header nav
     
 
     +media('<=phone_L')
-      font-size: vw(30px,390px)
+      font-size: vw(28px,390px)
 
     +media('<=desktop')
       font-size: 36px
@@ -822,8 +823,8 @@ header nav
       font-size: 16px
       
     +media('<=phone_L')
-      font-size: vw(15px,390px)
-      padding-bottom: vw(40px,390px)
+      font-size: vw(14px,390px)
+      padding-bottom: vw(30px,390px)
     // +media('>=desktop')
     //   font-size: 24px
 
@@ -1160,11 +1161,12 @@ html[lang="de"]
       +media('<=tablet')
         top: -15%
         left: 30%
+        width: 219px
         background-image: url(map_block_l_m.svg)
 
       
       +media('<=phone_L')
-        top: -32%
+        top: -20%
 
       +media('<=phone')
         top: -50%
@@ -1240,8 +1242,68 @@ html[lang="de"]
   background-color: #fff
   z-index: 1000
 
+.alert-desc
+  position: absolute
+  bottom: -110px
+  left: 50%
+  margin-left: -150px
+  width: 300px
+  height: 100px
+
+.word
+  color: #3A3A3A
+  font-size: 14px
+  font-weight: bold
+  text-align: center
+  opacity: 0
+  position: absolute
+  
 
 
+.w1
+  animation: w1anim 15s infinite
+
+
+.w2
+  animation: w2anim 15s infinite
+
+
+.w3
+  animation: w3anim 15s infinite
+
+
+@keyframes w1anim
+  0%,10%
+    opacity: 0
+    transform: translateY(20px)
+  10%, 30%
+    opacity: 1
+    transform: translateY(0)
+  35%
+    opacity: 0
+    transform: translateY(10px)
+
+
+@keyframes w2anim
+  35%
+    opacity: 0
+    transform: translateY(20px)
+  40%,60%
+    opacity: 1
+    transform: translateY(0)
+  65%
+    opacity: 0
+    transform: translateY(10px)
+
+@keyframes w3anim
+  65%
+    opacity: 0
+    transform: translateY(20px)
+  70%,90%
+    opacity: 1
+    transform: translateY(0)
+  100%
+    opacity: 0
 
 
 .map-wrap

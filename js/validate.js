@@ -48,6 +48,9 @@ $(document).ready(function () {
       country: {
         required: true,
       },
+      processdata: {
+        required: true,
+      },
     },
     messages: {
       first_name: {
@@ -64,11 +67,12 @@ $(document).ready(function () {
       },
     },
     submitHandler: function (form) {
-      $(".spinner").removeClass("visually-hidden");
-      $(".submit-text").addClass("visually-hidden");
-      $("#fe4218").attr("disabled", true);
-      console.log("valid form submitted !!");
-      return true;
+      // $(".spinner").removeClass("visually-hidden");
+      // $(".submit-text").addClass("visually-hidden");
+      // $("#fe4218").attr("disabled", true);
+      // console.log("valid form submitted !!");
+      alert("hi");
+      return false;
     },
     highlight: function (input) {
       $(input).addClass("is-invalid");

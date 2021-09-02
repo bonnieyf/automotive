@@ -397,15 +397,21 @@ header
     width: 500px
     right: 80px
     height: auto
+
+.form-element-layout label.error
+  color: #dc3545
+  font-size: 14px
+  display: block
   
 #slider-content
   background-repeat: no-repeat
   background-position: center top
   background-size: cover
   border-bottom: 5px solid #D54725
+  background-image: url(./../images/kv.png)
 
-  // +media('<=tablet')
-  //   background-image: url(./../images/m_kv.png)
+  +media('<=tablet')
+    background-image: url(./../images/m_kv.png)
   
   .container
     position: relative
@@ -648,8 +654,35 @@ model-viewer
     
     
 .swiper-experience-card
-  max-width: 380px
+  max-width: 380px + 60px
   width: 100%
+  padding-left: 30px
+  padding-right: 30px
+
+  +media('<=phone')
+    padding-left: 0
+    padding-right: 0
+    max-width: 380px
+
+  .swiper-button-prev,
+  .swiper-button-next
+    z-index: 100
+    +media('<=phone')
+      display: none
+    &:hover
+      opacity: .5
+
+  .swiper-button-prev
+    left: 0
+    color: $white
+    &::after
+      font-size: 30px
+
+  .swiper-button-next
+    right: 0
+    color: $white
+    &::after
+      font-size: 30px
   
 
 .swiper-slide.swiper-slide-duplicate-active .card

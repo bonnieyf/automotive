@@ -107,57 +107,59 @@
     script(src="./js/indexDetectLang.js")
     script(src="./js/mapIndex.js")
     script.
-      let promise1 = new Promise((resolve,rehect)=>{
-        let unityInstance = UnityLoader.instantiate("unityLoad1", "aftersales_workshop/Build/aftersales_workshop.json",{
-          Module:{
-            preInit: function(){
-              unityInstance.Quit();
-              unityInstance = null
-              resolve('ok');
-            }
-          }
-        });
-      });
+      let unityInstance
+      const unityPromise = (id,url) =>{
+        return new Promise((res)=>{
+            setTimeout(()=>{
+              unityInstance = UnityLoader.instantiate(id, url,{
+                Module:{
+                  'onRuntimeInitialized': function(){
+                    
+                  }
+                }
+              })
+            },500)
+        })
+      }
 
-      let promise2 = new Promise((resolve,rehect)=>{
-        let unityInstance = UnityLoader.instantiate("unityLoad2", "engineering_lab/Build/engineering_lab.json",{
-          Module:{
-            preInit: function(){
-              unityInstance.Quit();
-              unityInstance = null
-              resolve('ok');
-            }
-          }
-      })
-      });
+      function IsPC (){
+        unityInstance.SendMessage("Man", "SendToUnity", 'false');
+      }
 
-      let promise3 = new Promise((resolve,rehect)=>{
-        let unityInstance = UnityLoader.instantiate("unityLoad3", "manufacturing_factory/Build/manufacturing_factory.json",{
-          Module:{
-            preInit: function(){
-              unityInstance.Quit();
-              unityInstance = null
-              resolve('ok');
-            }
-          }
-      })
-      });
-      
-      let promise4 = new Promise((resolve,rehect)=>{
-        let unityInstance = UnityLoader.instantiate("unityLoad4", "warehouse/Build/warehouse.json",{
-          Module:{
-            preInit: function(){
-              unityInstance.Quit();
-              unityInstance = null
-              resolve('ok');
-            }
-          }
-      })
-      });
-      
-      Promise.all([promise1,promise2,promise3,promise4]).then(res => {
+      let room1 = ()=>{
+        return unityPromise('unityLoad1',"aftersales_workshop/Build/aftersales_workshop.json")
+      }
+
+      let room2 = ()=>{
+        return unityPromise('unityLoad2',"engineering_lab/Build/engineering_lab.json")
+      }
+
+      let room3 = ()=>{
+        return unityPromise('unityLoad3',"manufacturing_factory/Build/manufacturing_factory.json")
+      }
+
+      let room4 = ()=>{
+        return unityPromise('unityLoad4',"warehouse/Build/warehouse.json")
+      }
+
+
+      const orderPromise = async(ajxArr)=>{
+        for(let aj of ajxArr){
+          console.log('hi')
+          const data = await aj()
+          console.log('123:'+data)
+        }
+        return
+      }
+
+      orderPromise([room1,room2,room3,room4]).then(res => {
         console.log(res);
         document.querySelectorAll('.unityload').forEach(item=>item.remove())
       });
+      
+      
+      
+      
+
   </body>
 </html>

@@ -15,8 +15,21 @@
   <script type="module"  src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.4.0/dist/lazyload.min.js"></script>
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PPTKG64');
+  </script>
+      
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPTKG64"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <!-- HEADER -->
 	<header class="header">
 		<nav class="custom-header navbar navbar-expand-lg navbar-light py-1">
@@ -25,7 +38,7 @@
 					<img loading="lazy" src="./images/logo_getac.svg" alt="Getac" class="logo-getac img-fluid" style="max-height: 30px;">
 				</div>
 				<div class="col-lg-6 col-9 text-end">
-          <a class="btn btn-orange" id="btn-stick" href="./map/index.html">Enter <span>the Virtual Exhibition</span></a>
+          <a class="btn btn-orange" role="button" data-bs-toggle="modal" data-bs-target="#modal-register" id="btn-stick" href="#">Enter <span>the Virtual Exhibition</span></a>
 					<div class="select-lang">
             <span class="select-lang--icon"><img loading="lazy" src="./images/icon_lang.svg" alt=""></span>
               <select class="select-lang--select form-select" aria-label="Default select example">

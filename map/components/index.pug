@@ -16,66 +16,19 @@
     //- <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.4.0/dist/lazyload.min.js"></script>
     script(src="./js/UnityLoader.js")
     script.
-
-      let promise1 = new Promise((resolve,rehect)=>{
-        let unityInstance = UnityLoader.instantiate("unityLoad1", "aftersales_workshop/Build/aftersales_workshop.json",{
-          Module:{
-            preInit: function(){
-              unityInstance.Quit();
-              unityInstance = null
-              resolve('ok');
-            }
-          }
-        });
-      });
-
-      let promise2 = new Promise((resolve,rehect)=>{
-        let unityInstance = UnityLoader.instantiate("unityLoad2", "engineering_lab/Build/engineering_lab.json",{
-          Module:{
-            preInit: function(){
-              unityInstance.Quit();
-              unityInstance = null
-              resolve('ok');
-            }
-          }
-      })
-      });
-
-      let promise3 = new Promise((resolve,rehect)=>{
-        let unityInstance = UnityLoader.instantiate("unityLoad3", "manufacturing_factory/Build/manufacturing_factory.json",{
-          Module:{
-            preInit: function(){
-              unityInstance.Quit();
-              unityInstance = null
-              resolve('ok');
-            }
-          }
-      })
-      });
-      
-      let promise4 = new Promise((resolve,rehect)=>{
-        let unityInstance = UnityLoader.instantiate("unityLoad4", "warehouse/Build/warehouse.json",{
-          Module:{
-            preInit: function(){
-              unityInstance.Quit();
-              unityInstance = null
-              resolve('ok');
-            }
-          }
-      })
-      });
-      
-      Promise.all([promise1,promise2,promise3,promise4]).then(res => {
-        console.log(res);
-        document.querySelectorAll('.unityload').forEach(item=>item.remove())
-      });
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PPTKG64');
+    
   
   </head>
   <body>
-    #unityLoad1.unityload
-    #unityLoad2.unityload
-    #unityLoad3.unityload
-    #unityLoad4.unityload
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPTKG64" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
       
     .map-wrap
       include _header
@@ -139,7 +92,11 @@
         .unity-map-copyright 
           p © 2021 GETAC. All Rights Reserved.
 
-      
+    
+    #unityLoad1.unityload
+    #unityLoad2.unityload
+    #unityLoad3.unityload
+    #unityLoad4.unityload
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="./../js.lib/jquery-3.6.0.min.js"></script>
@@ -149,9 +106,58 @@
     <script src="./js/functions.js"></script>
     script(src="./js/indexDetectLang.js")
     script(src="./js/mapIndex.js")
-    
-    //- script.
-    //-   var lazyLoadInstance = new LazyLoad();
-    //-   lazyLoadInstance.update();
+    script.
+      let promise1 = new Promise((resolve,rehect)=>{
+        let unityInstance = UnityLoader.instantiate("unityLoad1", "aftersales_workshop/Build/aftersales_workshop.json",{
+          Module:{
+            preInit: function(){
+              unityInstance.Quit();
+              unityInstance = null
+              resolve('ok');
+            }
+          }
+        });
+      });
+
+      let promise2 = new Promise((resolve,rehect)=>{
+        let unityInstance = UnityLoader.instantiate("unityLoad2", "engineering_lab/Build/engineering_lab.json",{
+          Module:{
+            preInit: function(){
+              unityInstance.Quit();
+              unityInstance = null
+              resolve('ok');
+            }
+          }
+      })
+      });
+
+      let promise3 = new Promise((resolve,rehect)=>{
+        let unityInstance = UnityLoader.instantiate("unityLoad3", "manufacturing_factory/Build/manufacturing_factory.json",{
+          Module:{
+            preInit: function(){
+              unityInstance.Quit();
+              unityInstance = null
+              resolve('ok');
+            }
+          }
+      })
+      });
+      
+      let promise4 = new Promise((resolve,rehect)=>{
+        let unityInstance = UnityLoader.instantiate("unityLoad4", "warehouse/Build/warehouse.json",{
+          Module:{
+            preInit: function(){
+              unityInstance.Quit();
+              unityInstance = null
+              resolve('ok');
+            }
+          }
+      })
+      });
+      
+      Promise.all([promise1,promise2,promise3,promise4]).then(res => {
+        console.log(res);
+        document.querySelectorAll('.unityload').forEach(item=>item.remove())
+      });
   </body>
 </html>

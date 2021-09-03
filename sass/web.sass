@@ -659,16 +659,17 @@ model-viewer
   padding-left: 30px
   padding-right: 30px
 
-  +media('<=phone')
+  +media('<=phone_L')
     padding-left: 0
     padding-right: 0
-    max-width: 380px
 
+    .swiper-button-prev,
+    .swiper-button-next
+        display: none
+    
   .swiper-button-prev,
   .swiper-button-next
     z-index: 100
-    +media('<=phone')
-      display: none
     &:hover
       opacity: .5
 

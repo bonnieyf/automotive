@@ -60,7 +60,20 @@ function getParameterByName(name, url = window.location.href) {
     results = regex.exec(url);
   if (!results) return null;
   if (!results[2]) return "";
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
+
+  let newResult = decodeURIComponent(results[2].replace(/\+/g, " "));
+  switch (newResult) {
+    case "de":
+      newResult = "de";
+      break;
+    default:
+      newResult = "en";
+      break;
+  }
+
+  alert(newResult);
+
+  return newResult;
 }
 
 function findLangIndex(str) {

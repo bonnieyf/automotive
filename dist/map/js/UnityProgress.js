@@ -15,6 +15,15 @@ const warningDesc = `
   <div class="word w3">It is recommended to update to the latest version of the graphics card driver.</div>
 `;
 
+const progressNumberHtml = `
+  Loading
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <div class="dot"></div>
+  <span class="unity-percent">0</span>
+  %
+`;
+
 function UnityProgress(unityInstance, progress) {
   if (!unityInstance.Module) return;
   if (!unityInstance.bg) {
@@ -28,7 +37,6 @@ function UnityProgress(unityInstance, progress) {
   if (!unityInstance.progress) {
     unityInstance.progress = document.createElement("div");
     unityInstance.progress.className = "unity-progress";
-
     unityInstance.container.appendChild(unityInstance.progress);
 
     unityInstance.text = document.createElement("div");
@@ -36,6 +44,11 @@ function UnityProgress(unityInstance, progress) {
       "data-name"
     )}`;
     unityInstance.progress.appendChild(unityInstance.text);
+
+    unityInstance.progressNumber = document.createElement("div");
+    unityInstance.progressNumber.className = "unity-progress-number";
+    unityInstance.progressNumber.innerHTML = progressNumberHtml;
+    unityInstance.progress.appendChild(unityInstance.progressNumber);
 
     unityInstance.text.innerText =
       unityInstance.container.getAttribute("data-name");
@@ -55,6 +68,9 @@ function UnityProgress(unityInstance, progress) {
     unityInstance.container.appendChild(unityInstance.progress);
   }
 
+  document.querySelector(".unity-percent").innerText = Math.floor(
+    100 * progress
+  );
   unityInstance.progress.full.style.width = 100 * progress + "%";
 
   if (progress == 1) {
@@ -103,8 +119,10 @@ function handelTeachingPopup() {
         display: "none",
         ease: "power2.out",
         oncomplete: function () {
-          tools.addClass("initAnimation");
-          body.addClass("menu-show");
+          setTimeout(function () {
+            tools.addClass("initAnimation");
+            body.addClass("menu-show");
+          }, 800);
         },
       });
     }, 2000);
@@ -123,8 +141,10 @@ function handelTeachingPopup() {
         display: "none",
         ease: "power2.out",
         oncomplete: function () {
-          tools.addClass("initAnimation");
-          body.addClass("menu-show");
+          setTimeout(function () {
+            tools.addClass("initAnimation");
+            body.addClass("menu-show");
+          }, 400);
         },
       });
     }, 2000);

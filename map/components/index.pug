@@ -107,18 +107,21 @@
     script(src="./js/indexDetectLang.js")
     script(src="./js/mapIndex.js")
     script.
-      let unityInstance
+      let unityInstance;
       const unityPromise = (id,url) =>{
-        return new Promise((res)=>{
+        return new Promise((resolve, reject)=>{
             setTimeout(()=>{
-              unityInstance = UnityLoader.instantiate(id, url,{
-                Module:{
-                  'onRuntimeInitialized': function(){
-                    
-                  }
-                }
-              })
+              
             },500)
+            unityInstance = UnityLoader.instantiate(id, url,{
+              Module:{
+                'onRuntimeInitialized': function(){
+                  unityInstance.Quit();
+                  unityInstance = null;
+                  resolve('ok')
+                }
+              }
+            })
         })
       }
 
@@ -143,23 +146,15 @@
       }
 
 
-      const orderPromise = async(ajxArr)=>{
+      const orderPromise = async (ajxArr) => {
         for(let aj of ajxArr){
-          console.log('hi')
           const data = await aj()
-          console.log('123:'+data)
         }
         return
       }
 
       orderPromise([room1,room2,room3,room4]).then(res => {
-        console.log(res);
         document.querySelectorAll('.unityload').forEach(item=>item.remove())
       });
-      
-      
-      
-      
-
   </body>
 </html>

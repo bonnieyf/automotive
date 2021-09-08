@@ -67,11 +67,10 @@ $(document).ready(function () {
       },
     },
     submitHandler: function (form) {
-      // $(".spinner").removeClass("visually-hidden");
-      // $(".submit-text").addClass("visually-hidden");
-      // $("#fe4218").attr("disabled", true);
-      // console.log("valid form submitted !!");
-      alert("hi");
+      $(".spinner").removeClass("visually-hidden");
+      $(".submit-text").addClass("visually-hidden");
+      $("#fe4218").attr("disabled", true);
+      console.log("valid form submitted !!");
       return false;
     },
     highlight: function (input) {

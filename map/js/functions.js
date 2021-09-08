@@ -70,9 +70,6 @@ function getParameterByName(name, url = window.location.href) {
       newResult = "en";
       break;
   }
-
-  alert(newResult);
-
   return newResult;
 }
 

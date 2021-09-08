@@ -61,7 +61,10 @@ function getParameterByName(name, url = window.location.href) {
   if (!results) return null;
   if (!results[2]) return "";
 
-  let newResult = decodeURIComponent(results[2].replace(/\+/g, " "));
+  let newResult = decodeURIComponent(results[2].replace(/\+/g, " ")).substr(
+    0,
+    2
+  );
   switch (newResult) {
     case "de":
       newResult = "de";

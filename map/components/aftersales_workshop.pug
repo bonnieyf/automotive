@@ -6,7 +6,7 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
-    title Getac | Automotive Virtual Exhibition - Workshop
+    title Getac | Automotive Virtual Exhibition
 
     include ./_unity_head
 
@@ -22,7 +22,10 @@ html(lang="en")
     include ./_unity_header
     include ./_unity_menu
     .webgl-content
-      #unityContainer(data-idx="1" data-name="Workshop" style="width: 100vw; height: 100vh")
+      #unityContainer(style="width: 100vw; height: 100vh")
+
+      .unity-bg.unity-bg-1
+      include ./_unity-progress
 
     include ./_popup
     include ./_popup_detail_workshop

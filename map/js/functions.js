@@ -16,6 +16,12 @@ const i18nLang = {
       popupTab2: "Why Getac",
       popupTab3: "Getac Solution",
       popupTab4: "Device in AR",
+      unityRecommendedText1:
+        "Recommended browser: Google Chrome 75+ ,MS Edge 18+,Apple Safari 12.1+ ,Mozilla Firefox 67+.",
+      unityRecommendedText2:
+        "Recommended platform: Windows10 or newer,Mac OS version 10.6 or newer.",
+      unityRecommendedText3:
+        "It is recommended to update to the latest version of the graphics card driver.",
     },
   },
   de: {
@@ -34,6 +40,12 @@ const i18nLang = {
       popupTab2: "Warum Getac",
       popupTab3: "Getac-Lösungen",
       popupTab4: "Gerät in AR",
+      unityRecommendedText1:
+        "Empfohlene Browser:Google Chrome 75+, Microsoft Edge 18+, Apple Safari 12.1+, Mozilla Firefox 67+",
+      unityRecommendedText2:
+        "Empfohlene Plattformen: Windows 10 oder neuere Version, Mac OS Version 10.6 oder neuere Version",
+      unityRecommendedText3:
+        "Es wird empfohlen, auf die neueste Version des Grafikkartentreibers zu aktualisieren.",
     },
   },
 };

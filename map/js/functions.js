@@ -48,6 +48,106 @@ const i18nLang = {
         "Es wird empfohlen, auf die neueste Version des Grafikkartentreibers zu aktualisieren.",
     },
   },
+  fr: {
+    translation: {
+      mapTitle: "AUTOMOTIVE VIRTUAL EXHIBITION(FR)",
+      mapDesc:
+        "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
+
+      ShowRoomScene1: "Map",
+      ShowRoomScene2: "Atelier",
+      ShowRoomScene3: "Warehouse",
+      ShowRoomScene4: "Fabrication automobile",
+      ShowRoomScene5: "Ingénierie et R&D",
+      popupUserguideTitle1: "Turn Around",
+      popupUserguideTitle2: "Move",
+      popupTab1: "Intro",
+      popupTab2: "Why Getac",
+      popupTab3: "Getac Solution",
+      popupTab4: "Device in AR",
+      unityRecommendedText1:
+        "Recommended browser: Google Chrome 75+ ,MS Edge 18+,Apple Safari 12.1+ ,Mozilla Firefox 67+.",
+      unityRecommendedText2:
+        "Recommended platform: Windows10 or newer,Mac OS version 10.6 or newer.",
+      unityRecommendedText3:
+        "It is recommended to update to the latest version of the graphics card driver.",
+    },
+  },
+  it: {
+    translation: {
+      mapTitle: "AUTOMOTIVE VIRTUAL EXHIBITION(IT)",
+      mapDesc:
+        "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
+
+      ShowRoomScene1: "Map",
+      ShowRoomScene2: "Workshop",
+      ShowRoomScene3: "Warehouse",
+      ShowRoomScene4: "Automotive Manufacturing",
+      ShowRoomScene5: "R&D and Engineering",
+      popupUserguideTitle1: "Turn Around",
+      popupUserguideTitle2: "Move",
+      popupTab1: "Intro",
+      popupTab2: "Why Getac",
+      popupTab3: "Getac Solution",
+      popupTab4: "Device in AR",
+      unityRecommendedText1:
+        "Recommended browser: Google Chrome 75+ ,MS Edge 18+,Apple Safari 12.1+ ,Mozilla Firefox 67+.",
+      unityRecommendedText2:
+        "Recommended platform: Windows10 or newer,Mac OS version 10.6 or newer.",
+      unityRecommendedText3:
+        "It is recommended to update to the latest version of the graphics card driver.",
+    },
+  },
+  es: {
+    translation: {
+      mapTitle: "AUTOMOTIVE VIRTUAL EXHIBITION(ES)",
+      mapDesc:
+        "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
+
+      ShowRoomScene1: "Map",
+      ShowRoomScene2: "Workshop",
+      ShowRoomScene3: "Warehouse",
+      ShowRoomScene4: "Automotive Manufacturing",
+      ShowRoomScene5: "R&D and Engineering",
+      popupUserguideTitle1: "Turn Around",
+      popupUserguideTitle2: "Move",
+      popupTab1: "Intro",
+      popupTab2: "Why Getac",
+      popupTab3: "Getac Solution",
+      popupTab4: "Device in AR",
+      unityRecommendedText1:
+        "Recommended browser: Google Chrome 75+ ,MS Edge 18+,Apple Safari 12.1+ ,Mozilla Firefox 67+.",
+      unityRecommendedText2:
+        "Recommended platform: Windows10 or newer,Mac OS version 10.6 or newer.",
+      unityRecommendedText3:
+        "It is recommended to update to the latest version of the graphics card driver.",
+    },
+  },
+  cn: {
+    translation: {
+      mapTitle: "AUTOMOTIVE VIRTUAL EXHIBITION(CN)",
+      mapDesc:
+        "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
+
+      ShowRoomScene1: "Map",
+      ShowRoomScene2: "Workshop",
+      ShowRoomScene3: "Warehouse",
+      ShowRoomScene4: "Automotive Manufacturing",
+      ShowRoomScene5: "R&D and Engineering",
+      popupUserguideTitle1: "Turn Around",
+      popupUserguideTitle2: "Move",
+      popupTab1: "Intro",
+      popupTab2: "Why Getac",
+      popupTab3: "Getac Solution",
+      popupTab4: "Device in AR",
+      unityRecommendedText1:
+        "Recommended browser: Google Chrome 75+ ,MS Edge 18+,Apple Safari 12.1+ ,Mozilla Firefox 67+.",
+      unityRecommendedText2:
+        "Recommended platform: Windows10 or newer,Mac OS version 10.6 or newer.",
+      unityRecommendedText3:
+        "It is recommended to update to the latest version of the graphics card driver.",
+    },
+  },
 };
 
 function updateContent() {
@@ -81,6 +181,18 @@ function getParameterByName(name, url = window.location.href) {
     case "de":
       newResult = "de";
       break;
+    case "fr":
+      newResult = "fr";
+      break;
+    case "it":
+      newResult = "it";
+      break;
+    case "es":
+      newResult = "es";
+      break;
+    case "cn":
+      newResult = "cn";
+      break;
     default:
       newResult = "en";
       break;
@@ -90,19 +202,21 @@ function getParameterByName(name, url = window.location.href) {
 
 function findLangIndex(str) {
   switch (str) {
-    // case "es":
-    //   str = 1;
-    //   break;
-    case "de":
+    case "es":
       str = 1;
       break;
-    // case "it":
-    //   str = 3;
-    //   break;
-    // case "fr":
-    //   str = 4;
-    //   break;
-
+    case "de":
+      str = 2;
+      break;
+    case "it":
+      str = 3;
+      break;
+    case "fr":
+      str = 4;
+      break;
+    case "cn":
+      str = 5;
+      break;
     default:
       str = 0;
       break;

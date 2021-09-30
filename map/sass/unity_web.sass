@@ -493,6 +493,8 @@ header nav
   background-color: black
   background-repeat: no-repeat
   background-size: cover
+  z-index: 100
+
   &.unity-bg-1
     background-image: url(loading_Workshop.jpg)
 
@@ -520,14 +522,19 @@ header nav
   position: absolute
   top: 50%
   left: 50%
-  width: 300px
-  height: 70px
+  max-width: 640px
+  width: 100%
+  padding-left: 20px
+  padding-right: 20px
+  box-sizing: border-box
+  height: 110px
   display: flex
   flex-flow: wrap
   align-items: center
   justify-content: center
-  transform: translateX(-50%) translateY(-70%)
-  z-index: 20
+  transform: translateX(-50%)
+  margin-top: -100px
+  z-index: 300
   user-select: none
 
   
@@ -686,22 +693,29 @@ header nav
       
 
 .unity-map--logo
-  position: absolute
-  top: 2.3%
-  left: 3.6%
+  // position: absolute
+  // top: 2.3%
+  // left: 3.6%
+  width: 100%
   z-index: 200
   user-select: none
+  max-width: 126px
+  margin-bottom: 20px
 
   +media('<=tablet')
     position: absolute
     top: 20px
-    left: 16px
+    left: 30px
+    margin-bottom: 0
 
   .logo-getac
-    width: 101px
+    width: 100%
 
     +media('<=tablet')
       width: 74px
+
+  +media('<=phone_L')
+    left: 16px
 
 .unity-map--lang
   position: absolute
@@ -759,6 +773,8 @@ header nav
   filter: drop-shadow(0 6px 8px rgba(black, 0.6))
 
   .bg
+    display: flex
+    align-items: center
     width: 100%
     height: 100%
     background: #d54725
@@ -773,7 +789,6 @@ header nav
 
 .unity-map-slogan
   max-width: 80%
-  padding-top: 20%
   margin-left: 10%
   padding-right: 5%
 
@@ -782,6 +797,8 @@ header nav
     margin-left: 0
     padding: 0 30px
     padding-top: 63px
+    margin-top: 0
+    padding-bottom: 40px
 
   +media('<=phone_L')
     padding-right: 15px
@@ -800,7 +817,7 @@ header nav
     
 
     +media('<=phone_L')
-      font-size: vw(30px,390px)
+      font-size: vw(28px,390px)
 
     +media('<=desktop')
       font-size: 36px
@@ -815,15 +832,11 @@ header nav
     // text-shadow: 0px 3px 2px #000000B3
     margin-bottom: 0
 
-    +media('<=tablet')
-      padding-bottom: 50px
-
     +media('<=desktop')
       font-size: 16px
       
     +media('<=phone_L')
-      font-size: vw(15px,390px)
-      padding-bottom: vw(40px,390px)
+      font-size: vw(14px,390px)
     // +media('>=desktop')
     //   font-size: 24px
 
@@ -1071,9 +1084,6 @@ html[lang="de"]
       width: 66%
       height: 21%
 
-    
-
-
     .titlebox
       top: 106%
       left: -5%
@@ -1160,11 +1170,12 @@ html[lang="de"]
       +media('<=tablet')
         top: -15%
         left: 30%
+        width: 219px
         background-image: url(map_block_l_m.svg)
 
       
       +media('<=phone_L')
-        top: -32%
+        top: -20%
 
       +media('<=phone')
         top: -50%
@@ -1241,7 +1252,122 @@ html[lang="de"]
   z-index: 1000
 
 
+.unity-progress-number
+  flex: 100%
+  max-width: 100%
+  text-align: center
+  color: #3A3A3A
+  font-size: 16px
+  font-weight: bold
+  text-align: center
+  padding-bottom: 10px
 
+  .dot
+    width: 3px
+    height: 3px
+    display: inline-block
+    background: #3A3A3A
+    animation: shade 2s linear infinite
+    margin-right: 3px
+
+    &:nth-child(2)
+      animation-delay: 0.2s
+    &:nth-child(3)
+      animation-delay: 0.4s
+
+  span
+
+    &.txt
+      margin-right: 10px
+      text-transform: uppercase
+
+    &.unity-percent
+      margin-left: 10px
+
+@keyframes shade
+  0%,
+  100%
+    background-color: transparent
+    transform: scale(0.3)
+
+  40%
+    background-color: #3A3A3A
+    transform: scale(1)
+  
+  50%
+    background-color: #3A3A3A
+    transform: scale(1)
+  
+
+.partner-logo
+  margin-top: 20px
+  max-width: 100%
+
+  +media('<=tablet')
+    margin-top: 10px
+    width: 60px
+
+
+
+.alert-desc
+  position: relative
+  flex: 100%
+  padding-top: 10px
+
+.word
+  color: #3A3A3A
+  font-size: 12px
+  font-weight: bold
+  text-align: center
+  // opacity: 0
+  // position: absolute
+  
+
+
+// .w1
+//   animation: w1anim 15s infinite
+
+
+// .w2
+//   animation: w2anim 15s infinite
+
+
+// .w3
+//   animation: w3anim 15s infinite
+
+
+@keyframes w1anim
+  0%,10%
+    opacity: 0
+    transform: translateY(20px)
+  10%, 30%
+    opacity: 1
+    transform: translateY(0)
+  35%
+    opacity: 0
+    transform: translateY(10px)
+
+
+@keyframes w2anim
+  35%
+    opacity: 0
+    transform: translateY(20px)
+  40%,60%
+    opacity: 1
+    transform: translateY(0)
+  65%
+    opacity: 0
+    transform: translateY(10px)
+
+@keyframes w3anim
+  65%
+    opacity: 0
+    transform: translateY(20px)
+  70%,90%
+    opacity: 1
+    transform: translateY(0)
+  100%
+    opacity: 0
 
 
 .map-wrap
@@ -1303,6 +1429,7 @@ html[lang="de"]
     display: inline-block
     display: flex
     align-items: center
+    
 
   a
     position: relative
@@ -1312,6 +1439,8 @@ html[lang="de"]
     height: 50px
     color: #888888
     font-size: 20px
+    font-weight: 500
+    font-family: Arial, Helvetica, sans-serif
     line-height: 1.2
     text-decoration: none
     padding: 0 10px
@@ -1567,9 +1696,10 @@ html[lang="de"]
 
 
 .overflow-scrollbar
-  height: 450px
+  height: 445px
   overflow: hidden
   overflow-y: auto
+  margin-bottom: 15px
 
   +media('<=tablet')
     height: auto

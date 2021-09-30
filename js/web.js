@@ -51,13 +51,17 @@ var swiper = new Swiper(".swiper-experience-card", {
     modifier: 1,
   },
   autoplay: {
-    delay: 2000,
+    delay: 3000,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
   },
   pagination: {
     el: ".swiper-experience-card .swiper-pagination",
     clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-experience-card .swiper-button-next",
+    prevEl: ".swiper-experience-card .swiper-button-prev",
   },
 });
 

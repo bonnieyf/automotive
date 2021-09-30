@@ -48,6 +48,9 @@ $(document).ready(function () {
       country: {
         required: true,
       },
+      processdata: {
+        required: true,
+      },
     },
     messages: {
       first_name: {
@@ -68,7 +71,7 @@ $(document).ready(function () {
       $(".submit-text").addClass("visually-hidden");
       $("#fe4218").attr("disabled", true);
       console.log("valid form submitted !!");
-      return true;
+      return false;
     },
     highlight: function (input) {
       $(input).addClass("is-invalid");

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Getac | Automotive Virtual Exhibition - Workshop</title><link rel="shortcut icon" href="../../favicon.ico" type=image/x-icon>
+    <title>Getac | Automotive Virtual Exhibition</title><link rel="shortcut icon" href="../../favicon.ico" type=image/x-icon>
 <link rel=apple-touch-icon href="../../apple-touch-icon.png">
 <script src="./../../js.lib/jquery-3.6.0.min.js"></script>
 <script src="./../../js.lib/popper.min.js"></script>
@@ -29,6 +29,14 @@
 <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.4.0/dist/lazyload.min.js"></script>
     <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PPTKG64');
+      
+    </script>
+    <script>
       window.$_REVECHAT_API || (function (d, w) {
           var r = $_REVECHAT_API = function (c) { r._.push(c); }; w.__revechat_account = '7078318'; w.__revechat_version = 2;
           r._ = []; var rc = d.createElement('script'); rc.type = 'text/javascript'; rc.async = true; rc.setAttribute('charset', 'utf-8');
@@ -42,11 +50,17 @@
       
     </script>
   </head>
-  <body>
+  <body><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPTKG64" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <div class="unity-right-tool unity-show-tools">
       <div class="tool-item"><div class="dropdown"><span class="icon" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="./../assets/icon_lang.svg" alt=""></span><div class="lang-dropdown dropdown-menu" aria-labelledby="dropdownMenuLink">
 <a class="dropdown-item" data-lang="en" href="#">English</a>
+<a class="dropdown-item" data-lang="es" href="#">Español</a>
 <a class="dropdown-item" data-lang="de" href="#">Deutsch</a>
+<a class="dropdown-item" data-lang="it" href="#">Italiano</a>
+<a class="dropdown-item" data-lang="fr" href="#">Français</a>
+<a class="dropdown-item" data-lang="cn" href="#">简体中文</a>
 </div>
       </div></div>
       <div class="tool-item"><span class="icon" id="modal-helper"><img src="./../assets/icon_help.svg" alt=""></span></div>
@@ -60,7 +74,24 @@
       <div class="menu-item" id="menu-rd"><a href="../engineering_lab/"><span class="icon"><img src="../assets/icon_menu_rd.svg" alt=""></span><span class="unit" data-i18n="ShowRoomScene5">R&D and Engineering</span></a></div>
     </div>
     <div class="webgl-content">
-      <div id="unityContainer" data-idx="1" data-name="Workshop" style="width: 100vw; height: 100vh"></div>
+      <div id="unityContainer" style="width: 100vw; height: 100vh"></div>
+      <div class="unity-bg unity-bg-1"></div>
+      <div class="unity-progress">
+        <div class="text" data-i18n="ShowRoomScene2"></div>
+        <div class="unity-progress-number"><span class="txt">Loading</span>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div><span class="unity-percent">0 </span>%
+        </div>
+        <div class="bar">
+          <div class="unity-progress-full full"></div>
+        </div>
+        <div class="alert-desc">
+          <div class="word" data-i18n="unityRecommendedText1"></div>
+          <div class="word" data-i18n="unityRecommendedText2"></div>
+          <div class="word" data-i18n="unityRecommendedText3"></div>
+        </div>
+      </div>
     </div><!-- Modal-User Guide -->
 <div class="custom-modal modal fade" id="modal-userguide" tabindex="-1" role="dialog" aria-labelledby="modal-registerTitle" aria-hidden="true">
 <div class="modal-dialog modal-xl modal-dialog-centered" role="document">

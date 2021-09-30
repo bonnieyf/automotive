@@ -1,0 +1,25 @@
+.unity-progress
+    case page
+        when 'aftersales_workshop'
+            .text(data-i18n="ShowRoomScene2")
+        when 'warehouse'
+            .text(data-i18n="ShowRoomScene3")
+        when 'manufacturing_factory'
+            .text(data-i18n="ShowRoomScene4")
+        when 'engineering_lab'
+            .text(data-i18n="ShowRoomScene5")
+    .unity-progress-number
+        span.txt Loading
+        .dot
+        .dot
+        .dot
+        span.unity-percent 0 
+        | %
+
+    .bar
+        .unity-progress-full.full
+
+    .alert-desc
+        .word(data-i18n="unityRecommendedText1")
+        .word(data-i18n="unityRecommendedText2")
+        .word(data-i18n="unityRecommendedText3")

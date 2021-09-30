@@ -6,17 +6,23 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
-    title Getac | Automotive Virtual Exhibition - R&D and Engineering
+    title Getac | Automotive Virtual Exhibition
 
     include ./_unity_head
 
     script.
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/engineering_lab.json", {onProgress: UnityProgress});
   body
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPTKG64" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     include ./_unity_header
     include ./_unity_menu
     .webgl-content
-      #unityContainer(data-idx="2" data-name="R&D and Engineering" style="width: 100vw; height: 100vh")
+      #unityContainer(style="width: 100vw; height: 100vh")
+
+      .unity-bg.unity-bg-2
+      include ./_unity-progress
 
     include ./_popup
     include ./_popup_detail_rd

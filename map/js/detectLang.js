@@ -1,22 +1,11 @@
-let getHashLang =
-  getParameterByName("lang") || localStorage.getItem("lang")
-    ? localStorage.getItem("lang")
-    : "en";
-localStorage.setItem("lang", getHashLang);
-document.documentElement.setAttribute("lang", getHashLang);
-
 window.onload = function () {
-  let initLang = localStorage.getItem("lang");
-  let langSelect = document.querySelector(".lang-dropdown");
-  let lanSelectOption = langSelect.querySelectorAll("a");
-
-  resetOption(lanSelectOption);
-  lanSelectOption[findLangIndex(initLang)].classList.add("active");
-
-  i18next.init(
+  i18next.use(i18nextBrowserLanguageDetector).init(
     {
-      fallbackLng: getHashLang,
+      fallbackLng: "en",
       resources: i18nLang,
+      detection: {
+        lookupQuerystring: "lang",
+      },
     },
     function (err, t) {
       console.log("error:" + err, t);
@@ -24,15 +13,27 @@ window.onload = function () {
     }
   );
 
+  let langSelect = document.querySelector(".lang-dropdown");
+  let lanSelectOption = langSelect.querySelectorAll("a");
+
+  let languageOptionValues = $.map(lanSelectOption, function (option) {
+    return option.getAttribute("data-lang");
+  });
+
+  for (var i = 0; i < i18next.languages.length; i++) {
+    var i18nextLanguage = i18next.languages[i];
+    if (languageOptionValues.includes(i18nextLanguage)) {
+      let index = languageOptionValues.findIndex((x) => x == i18nextLanguage);
+      lanSelectOption[index].classList.add("active");
+      break;
+    }
+  }
+
   lanSelectOption.forEach((item) => {
     item.addEventListener("click", function () {
-      let cur = this.getAttribute("data-lang") || "en";
-      localStorage.setItem("lang", cur);
-      document.documentElement.setAttribute("lang", cur);
-
+      let cur = this.getAttribute("data-lang");
       $(".dropdown-item.active").removeClass("active");
       $(this).addClass("active");
-
       changeLang(cur);
       MultiLanguage();
     });
@@ -45,9 +46,3 @@ window.onload = function () {
     document.body.classList.toggle("menu-show");
   });
 };
-
-function resetOption(elem) {
-  for (let i = 0; i < elem.length; i++) {
-    elem[i].classList.remove = "active";
-  }
-}

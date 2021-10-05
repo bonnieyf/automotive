@@ -16,6 +16,7 @@ const i18nLang = {
       popupTab2: "Why Getac",
       popupTab3: "Getac Solution",
       popupTab4: "Device in AR",
+      unityLoading: "Loading",
       unityRecommendedText1:
         "Recommended browser: Google Chrome 75+ ,MS Edge 18+,Apple Safari 12.1+ ,Mozilla Firefox 67+.",
       unityRecommendedText2:
@@ -40,6 +41,7 @@ const i18nLang = {
       popupTab2: "Warum Getac",
       popupTab3: "Getac-Lösungen",
       popupTab4: "Gerät in AR",
+      unityLoading: "Empfohlene",
       unityRecommendedText1:
         "Empfohlene Browser:Google Chrome 75+, Microsoft Edge 18+, Apple Safari 12.1+, Mozilla Firefox 67+",
       unityRecommendedText2:
@@ -126,7 +128,7 @@ const i18nLang = {
         "Se recomienda actualizar la última versión de la tarjeta gráfica.",
     },
   },
-  cn: {
+  zh: {
     translation: {
       mapTitle: "汽车产业虚拟展会",
       mapDesc:
@@ -176,62 +178,16 @@ function getParameterByName(name, url = window.location.href) {
   if (!results) return null;
   if (!results[2]) return "";
 
-  let newResult = decodeURIComponent(results[2].replace(/\+/g, " ")).substr(
-    0,
-    2
-  );
-  switch (newResult) {
-    case "de":
-      newResult = "de";
-      break;
-    case "fr":
-      newResult = "fr";
-      break;
-    case "it":
-      newResult = "it";
-      break;
-    case "es":
-      newResult = "es";
-      break;
-    case "cn":
-      newResult = "cn";
-      break;
-    default:
-      newResult = "en";
-      break;
-  }
-  return newResult;
-}
-
-function findLangIndex(str) {
-  switch (str) {
-    case "es":
-      str = 1;
-      break;
-    case "de":
-      str = 2;
-      break;
-    case "it":
-      str = 3;
-      break;
-    case "fr":
-      str = 4;
-      break;
-    case "cn":
-      str = 5;
-      break;
-    default:
-      str = 0;
-      break;
-  }
-  return str;
+  return decodeURIComponent(results[2].replace(/\+/g, " ")).substr(0, 2);
 }
 
 function MultiLanguage() {
   unityInstance.SendMessage(
     "Language_Manager",
     "SendToUnity",
-    localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
+    window.localStorage.i18nextLng === "zh"
+      ? "cn"
+      : window.localStorage.i18nextLng || "en"
   );
   unityInstance.SendMessage("Language_Manager", "loadLanguage");
 }

@@ -1,21 +1,12 @@
-
-let getHashLang =
-  getParameterByName("lang") || localStorage.getItem("lang") || "en";
-localStorage.setItem("lang", getHashLang);
-document.documentElement.setAttribute("lang", getHashLang);
-
 window.onload = function () {
-  let initLang = localStorage.getItem("lang");
-  let langSelect = document.querySelector(".select-lang--select");
-  let lanSelectOption = langSelect.options;
-
   // inital lang
-  resetOption(lanSelectOption);
-  lanSelectOption[findLangIndex(initLang)].selected = true;
-  i18next.init(
+  i18next.use(i18nextBrowserLanguageDetector).init(
     {
-      fallbackLng: getHashLang,
+      fallbackLng: "en",
       resources: i18nLang,
+      detection: {
+        lookupQuerystring: "lang",
+      },
     },
     function (err, t) {
       console.log("error:" + err, t);
@@ -23,19 +14,23 @@ window.onload = function () {
     }
   );
 
-  langSelect.addEventListener("change", function () {
-    let cur = this.value;
-    localStorage.setItem("lang", cur);
-    document.documentElement.setAttribute("lang", cur);
-    resetOption(lanSelectOption);
-    this.options[findLangIndex(cur)].selected = true;
+  let langSelect = document.querySelector(".select-lang--select");
+  let lanSelectOptions = langSelect.options;
 
-    changeLang(cur);
+  let languageOptionValues = $.map(lanSelectOptions, function (option) {
+    return option.value;
+  });
+
+  for (var i = 0; i < i18next.languages.length; i++) {
+    var i18nextLanguage = i18next.languages[i];
+    if (languageOptionValues.includes(i18nextLanguage)) {
+      langSelect.value = i18nextLanguage;
+      break;
+    }
+  }
+
+  langSelect.addEventListener("change", function () {
+    let val = this.value;
+    changeLang(val);
   });
 };
-
-function resetOption(elem) {
-  for (let i = 0; i < elem.length; i++) {
-    elem[i].removeAttribute("selected");
-  }
-}

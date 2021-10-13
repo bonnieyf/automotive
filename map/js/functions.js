@@ -1,6 +1,7 @@
 const i18nLang = {
   en: {
     translation: {
+      copyright: "© 2021 GETAC. All Rights Reserved.",
       mapTitle: "AUTOMOTIVE VIRTUAL EXHIBITION",
       mapDesc:
         "Take a walk through our virtual exhibition to see how rugged mobile solutions can drive a smarter approach throughout the Automotive value-chain.",
@@ -27,6 +28,7 @@ const i18nLang = {
   },
   de: {
     translation: {
+      copyright: "© 2021 GETAC. Alle Rechte vorbehalten.",
       mapTitle: "VIRTUELLE AUTOMOBIL-MESSE",
       mapDesc:
         "Gehen Sie auf einen Rundgang durch unsere virtuelle Ausstellung und erfahren Sie, wie robuste mobile Lösungen einen intelligenteren Ansatz in der gesamten Wertschöpfungskette der Automobilbranche voranbringen können.",
@@ -52,6 +54,7 @@ const i18nLang = {
   },
   fr: {
     translation: {
+      copyright: "© 2021 GETAC. Tous droits réservés.",
       mapTitle: "EXPOSITION VIRTUELLE AUTOMOBILE",
       mapDesc:
         "Visitez notre showroom virtuel pour voir comment nos solutions mobiles renforcées permettent de mettre en place, dans le secteur automobile, une approche plus intelligente au sein de la chaîne de valeur.",
@@ -78,6 +81,7 @@ const i18nLang = {
   },
   it: {
     translation: {
+      copyright: "© 2021 GETAC. Tutti i diritti riservati",
       mapTitle: "FIERA VIRTUALE DELL'AUTOMOTIVE",
       mapDesc:
         "Visita la nostra fiera virtuale e scopri come le soluzioni mobile rugged possono favorire la value-chain in ambito automotive.",
@@ -104,6 +108,7 @@ const i18nLang = {
   },
   es: {
     translation: {
+      copyright: "© 2021 GETAC. Todos los derechos reservados.",
       mapTitle: "EXPOSICIÓN VIRTUAL DE LA INDUSTRIA AUTOMOTRIZ",
       mapDesc:
         "Recorra nuestra exposición virtual para ver cómo las soluciones móviles robustas pueden impulsar un enfoque más inteligente en toda la cadena de valor de producción automotriz.",
@@ -130,6 +135,7 @@ const i18nLang = {
   },
   zh: {
     translation: {
+      copyright: "© 2021 GETAC.版权所有。",
       mapTitle: "汽车产业虚拟展会",
       mapDesc:
         "浏览虚拟展会，了解强固移动解决方案如何在整条汽车行业价值链中推动更智能的方法。",

@@ -26,6 +26,21 @@ $(document).ready(function () {
     "Value must not contain any URL's"
   );
 
+  jQuery.validator.addMethod(
+    "email",
+    function (value, element) {
+      let pattern =
+        /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      let otherEmail = /.+@(yahoo|gmail|aol|live|outlook).com/gi;
+      if (pattern.test(value) && !value.match(otherEmail)) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    "Please enter a valid email address."
+  );
+
   $("#form533").validate({
     rules: {
       first_name: {
@@ -36,14 +51,15 @@ $(document).ready(function () {
         required: true,
         maxlength: 35,
       },
+      emailAddress: {
+        required: true,
+        maxlength: 35,
+        email: true,
+      },
       company: {
         required: true,
         maxlength: 35,
         domain: true,
-      },
-      email: {
-        required: true,
-        maxlength: 35,
       },
       country: {
         required: true,
@@ -71,6 +87,7 @@ $(document).ready(function () {
       $(".submit-text").addClass("visually-hidden");
       $("#fe4218").attr("disabled", true);
       console.log("valid form submitted !!");
+      form.submit();
       return false;
     },
     highlight: function (input) {

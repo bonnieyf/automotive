@@ -26,16 +26,32 @@ $(document).ready(function () {
     "Value must not contain any URL's"
   );
 
+  let userLang = navigator.language || navigator.userLanguage;
+
   jQuery.validator.addMethod(
     "email",
     function (value, element) {
       let pattern =
         /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-      let otherEmail = /.+@(yahoo|gmail|aol|live|outlook).com/gi;
-      if (pattern.test(value) && !value.match(otherEmail)) {
-        return true;
+      let otherEmail =
+        /.+@(gmail|yahoo|aol|live|outlook|qq|163|126|sina|139|yeah|msn|hotmail|ask).com/gi;
+
+      if (userLang.toLowerCase() === "zh-cn") {
+        if (pattern.test(value)) {
+          return true;
+        } else {
+          return false;
+        }
       } else {
-        return false;
+        if (
+          pattern.test(value) &&
+          !otherEmail.test(value) &&
+          !value.match(/.+@3721.net/gi)
+        ) {
+          return true;
+        } else {
+          return false;
+        }
       }
     },
     "Please enter a valid email address."
@@ -66,20 +82,6 @@ $(document).ready(function () {
       },
       processdata: {
         required: true,
-      },
-    },
-    messages: {
-      first_name: {
-        minlength: "Invalid length for field value",
-        maxlength: "Invalid length for field value",
-      },
-      last_name: {
-        minlength: "Invalid length for field value",
-        maxlength: "Invalid length for field value",
-      },
-      company: {
-        minlength: "Invalid length for field value",
-        maxlength: "Invalid length for field value",
       },
     },
     submitHandler: function (form) {

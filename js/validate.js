@@ -34,7 +34,7 @@ $(document).ready(function () {
       let pattern =
         /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
       let otherEmail =
-        /.+@(gmail|yahoo|aol|live|outlook|qq|163|126|sina|139|yeah|msn|hotmail|ask).com/gi;
+        /.+@(gmail|yahoo|aol|live|outlook|qq|163|126|sina|139|yeah|msn|hotmail|ask|ecom|ruggon|honeywell|dell|durabook|panasonic|zebra|winmate|aaeon|twinhead).com/gi;
 
       if (userLang.toLowerCase() === "zh-cn") {
         if (pattern.test(value)) {
